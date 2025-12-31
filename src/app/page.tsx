@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import PhotoUpload from '@/components/PhotoUpload'
 import StyleSelector from '@/components/StyleSelector'
-import InspirationLinks from '@/components/InspirationLinks'  // ADD THIS
+import InspirationLinks from '@/components/InspirationLinks'
 
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
@@ -11,21 +11,86 @@ export default function Home() {
   const [result, setResult] = useState<any>(null)
   const [loading, setLoading] = useState(false)
 
-  // ... your existing functions ...
+  const handleGenerate = async () => {
+    if (!selectedImage || !selectedStyle) {
+      alert('Please upload an image and select a style')
+      return
+    }
+
+    setLoading(true)
+    try {
+      const response = await fetch('/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          imageData: selectedImage,
+          style: selectedStyle,
+        }),
+      })
+
+      if (!response.ok) throw new Error('Generation failed')
+
+      const data = await response.json()
+      setResult(data)
+    } catch (error) {
+      console.error('Error:', error)
+      alert('Failed to generate design. Please try again.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleDownload = () => {
+    if (!result?.imageUrl) return
+    const link = document.createElement('a')
+    link.href = result.imageUrl
+    link.download = `man-cave-${selectedStyle}-${Date.now()}.jpg`
+    link.click()
+  }
 
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12">
-        {/* ... existing content ... */}
+        <div className="text-center max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            Transform Your Space into the Ultimate <span className="text-orange-500">Man Cave</span>
+          </h1>
+          <p className="text-xl text-gray-400 mb-8">
+            Upload a photo and see your room instantly transformed with AI-powered design
+          </p>
+        </div>
       </section>
 
       {/* Upload Section */}
-      {!result && (
-        <section>
+      {!result && !loading && (
+        <section className="container mx-auto px-4">
           <PhotoUpload onPhotoSelect={setSelectedImage} />
-          <StyleSelector onStyleSelect={setSelectedStyle} />
-          <button onClick={handleGenerate}>Generate</button>
+          {selectedImage && (
+            <div className="mt-8">
+              <StyleSelector onStyleSelect={setSelectedStyle} />
+              {selectedStyle && (
+                <div className="text-center mt-8">
+                  <button
+                    onClick={handleGenerate}
+                    className="px-12 py-4 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-medium text-lg transition"
+                  >
+                    Generate My Man Cave
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+        </section>
+      )}
+
+      {/* Loading State */}
+      {loading && (
+        <section className="container mx-auto px-4 py-12">
+          <div className="text-center">
+            <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-orange-500 mb-4"></div>
+            <p className="text-xl text-gray-400">Generating your dream man cave...</p>
+          </div>
         </section>
       )}
 
@@ -61,7 +126,7 @@ export default function Home() {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
-                onClick={() => {/* download logic */ }}
+                onClick={handleDownload}
                 className="px-8 py-4 bg-gray-800 hover:bg-gray-700 text-white rounded-lg font-medium transition"
               >
                 Download Image
@@ -75,7 +140,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* NEW: Inspiration Links Component */}
+          {/* Inspiration Links Component */}
           <section className="container mx-auto px-4 pb-16">
             <InspirationLinks />
           </section>
