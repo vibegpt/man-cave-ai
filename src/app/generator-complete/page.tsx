@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import PhotoUpload from '../../../components/PhotoUpload';
-import StyleSelector from '../../../components/StyleSelector';
+import PhotoUpload from '@/components/PhotoUpload';
+import StyleSelector from '@/components/StyleSelector';
 
 type Step = 'upload' | 'style' | 'generate' | 'results';
 

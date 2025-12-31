@@ -1,4 +1,4 @@
-import SEOPageLayout from '../../components/seo/SEOPageLayout';
+import SEOPageLayout from '@/components/seo/SEOPageLayout';
 
 const PAGE_DATA = {
   title: 'man-cave-shed',
