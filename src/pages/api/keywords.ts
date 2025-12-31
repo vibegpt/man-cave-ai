@@ -28,10 +28,12 @@ async function handleGet(req: NextApiRequest, res: NextApiResponse) {
     let query = supabaseAdmin.from('keywords').select('*')
 
     if (category) {
-      query = query.eq('category', category)
+      const categoryStr = Array.isArray(category) ? category[0] : category
+      query = query.eq('category', categoryStr)
     }
     if (status) {
-      query = query.eq('status', status)
+      const statusStr = Array.isArray(status) ? status[0] : status
+      query = query.eq('status', statusStr)
     }
     if (priority_min) {
       query = query.gte('priority', Number(priority_min))

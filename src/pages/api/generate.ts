@@ -90,9 +90,9 @@ Return only valid JSON, no additional text.`
       .select()
       .single()
 
-    if (pageError) {
+    if (pageError || !page) {
       console.error('Error saving page:', pageError)
-      return res.status(500).json({ error: 'Failed to save page', details: pageError.message })
+      return res.status(500).json({ error: 'Failed to save page', details: pageError?.message || 'No data returned' })
     }
 
     // Save generation record
