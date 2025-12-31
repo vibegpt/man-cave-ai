@@ -82,10 +82,12 @@ async function handlePut(req: NextApiRequest, res: NextApiResponse) {
       return res.status(400).json({ error: 'ID is required' })
     }
 
+    const idStr = Array.isArray(id) ? id[0] : id
+
     const { data, error } = await supabaseAdmin
       .from('keywords')
       .update(req.body)
-      .eq('id', id)
+      .eq('id', idStr)
       .select()
       .single()
 
@@ -107,10 +109,12 @@ async function handleDelete(req: NextApiRequest, res: NextApiResponse) {
       return res.status(400).json({ error: 'ID is required' })
     }
 
+    const idStr = Array.isArray(id) ? id[0] : id
+
     const { error } = await supabaseAdmin
       .from('keywords')
       .delete()
-      .eq('id', id)
+      .eq('id', idStr)
 
     if (error) {
       return res.status(500).json({ error: error.message })
