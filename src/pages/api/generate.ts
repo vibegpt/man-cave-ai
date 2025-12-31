@@ -46,8 +46,8 @@ Return only valid JSON, no additional text.`
 
     const startTime = Date.now()
 
-    // Generate content using Google AI
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' })
+    // Generate content using Google AI (Nano Banana - Gemini 3 Pro)
+    const model = genAI.getGenerativeModel({ model: 'gemini-3-pro' })
     const result = await model.generateContent(prompt)
     const response = result.response
     const text = response.text()
@@ -100,7 +100,7 @@ Return only valid JSON, no additional text.`
       page_id: page.id,
       prompt,
       generated_content: text,
-      model_used: 'gemini-pro',
+      model_used: 'gemini-3-pro',
       version: 1,
       generation_time: generationTime,
       status: 'completed',

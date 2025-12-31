@@ -1,50 +1,48 @@
-import Head from "next/head";
-import Link from "next/link";
+import SEOPageLayout from '../../components/seo/SEOPageLayout';
+
+const PAGE_DATA = {
+  title: 'golf-simulator-man-cave',
+  metaTitle: 'Golf Simulator Man Cave Ideas 2024 | Free AI Design Generator',
+  metaDescription: 'Design the ultimate golf simulator man cave. Get AI-powered layouts for golf bays, putting greens, and lounge areas. Free design tool, instant visualization.',
+  h1: 'Golf Simulator Man Cave Ideas',
+  subtitle: 'Create your dream indoor golf setup with AI-powered design visualization',
+  content: `
+    <p>A <strong>golf simulator man cave</strong> combines cutting-edge technology with the ultimate guy hangout. Whether you're converting a garage, basement, or spare room, our AI can help you visualize the perfect golf bay setup with lounge seating for spectators.</p>
+    
+    <h2 class="text-xl font-bold text-white mt-8 mb-4">Golf Simulator Room Requirements</h2>
+    <p>Most golf simulators need: minimum 10ft width, 15-20ft depth, and 9-10ft ceiling height for a full swing. Our AI designs account for these requirements while maximizing the remaining space for seating, a bar area, or additional entertainment like TVs showing live golf.</p>
+    
+    <h2 class="text-xl font-bold text-white mt-8 mb-4">Creating the Complete Golf Experience</h2>
+    <p>Beyond the simulator itself, top golf man caves include: <strong>turf flooring</strong> that extends beyond the hitting mat, <strong>ambient lighting</strong> that doesn't interfere with the projector, a <strong>small bar or beverage station</strong>, comfortable seating for friends watching, and golf decor like course photos or equipment displays.</p>
+    
+    <h2 class="text-xl font-bold text-white mt-8 mb-4">Budget Considerations</h2>
+    <p>Golf simulator setups range dramatically: DIY solutions with affordable launch monitors start around $2,000-5,000, mid-range setups with better accuracy run $10,000-20,000, and premium commercial-grade simulators with full enclosures can exceed $50,000. Our AI can visualize setups at every price point.</p>
+  `,
+  relatedPages: [
+    { slug: 'man-cave-ideas', title: 'Man Cave Ideas' },
+    { slug: 'garage-man-cave', title: 'Garage Man Cave' },
+    { slug: 'basement-man-cave-ideas', title: 'Basement Man Cave' },
+    { slug: 'man-cave-lighting', title: 'Man Cave Lighting' },
+    { slug: 'man-cave-bar', title: 'Man Cave Bar' },
+    { slug: 'man-cave-furniture', title: 'Man Cave Furniture' },
+  ],
+  faqs: [
+    {
+      question: 'How much room do I need for a golf simulator?',
+      answer: 'Minimum requirements are typically 10ft wide × 15ft deep × 9ft tall for comfortable full swings with a driver. Ideally, you want 12ft+ width, 18-20ft depth, and 10ft+ ceilings. Left-handed golfers may need extra clearance. Always check your specific simulator\'s requirements.'
+    },
+    {
+      question: 'What\'s the best golf simulator for a man cave?',
+      answer: 'Popular options include: SkyTrak ($2,000) for budget-conscious golfers, Garmin Approach R10 ($600) for entry-level, FlightScope Mevo+ ($2,000) for accuracy, and Trackman 4 ($20,000+) for professional-grade. Pair with hitting software like E6 Connect or GSPro for course play.'
+    },
+    {
+      question: 'Do I need a projector for a golf simulator?',
+      answer: 'Not necessarily—many golfers start with just a launch monitor and net. However, a projector and impact screen dramatically improve the experience by showing ball flight, virtual courses, and data. Short-throw projectors work best in tight spaces, typically ranging $1,000-3,000.'
+    },
+  ],
+  defaultStyle: 'golf',
+};
 
 export default function Page() {
-  return (
-    <>
-      <Head>
-        <title>Man Cave With Golf Simulator | ManCaveAI</title>
-        <meta name="description" content="Generate man cave with golf simulator concepts from a photo in seconds, then shop a recommended list." />
-      </Head>
-      <main style={{ maxWidth: 960, margin: "0 auto", padding: "32px 16px", lineHeight: 1.6 }}>
-        <header style={{ marginBottom: 24 }}>
-          <h1 style={{ fontSize: 36, margin: "0 0 12px" }}>Man Cave With Golf Simulator</h1>
-          <p style={{ fontSize: 18, margin: "0 0 16px", opacity: 0.85 }}>
-            Upload a room photo, generate multiple concepts, and get a “Shop this look” list.
-          </p>
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <Link href="/generator" style={{ padding: "10px 14px", border: "1px solid #000", borderRadius: 10, textDecoration: "none" }}>
-              Try the Man Cave Generator
-            </Link>
-            <Link href="/gallery" style={{ padding: "10px 14px", border: "1px solid #000", borderRadius: 10, textDecoration: "none" }}>
-              View Real Examples
-            </Link>
-          </div>
-        </header>
-
-        <section style={{ margin: "28px 0" }}>
-          <h2 style={{ fontSize: 22 }}>Popular searches we cover</h2>
-          <p style={{ opacity: 0.8 }}>
-            “man cave with golf simulator”, “golf simulator man cave”, “man cave golf simulator”, “golf simulator man cave ideas”.
-          </p>
-        </section>
-
-        <section style={{ margin: "28px 0" }}>
-          <h2 style={{ fontSize: 22 }}>Related pages</h2>
-          <ul>
-            <li><a href="/basement-man-cave-ideas">basement man cave ideas</a></li>
-            <li><a href="/garage-man-cave">garage man cave</a></li>
-            <li><a href="/man-cave-bar">man cave bar</a></li>
-            <li><a href="/man-cave-decor">man cave decor</a></li>
-            <li><a href="/man-cave-furniture">man cave furniture</a></li>
-            <li><a href="/man-cave-gifts">man cave gifts</a></li>
-            <li><a href="/man-cave-ideas">man cave ideas</a></li>
-            <li><a href="/man-cave-lighting">man cave lighting</a></li>
-          </ul>
-        </section>
-      </main>
-    </>
-  );
+  return <SEOPageLayout {...PAGE_DATA} />;
 }

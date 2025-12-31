@@ -1,50 +1,48 @@
-import Head from "next/head";
-import Link from "next/link";
+import SEOPageLayout from '../../components/seo/SEOPageLayout';
+
+const PAGE_DATA = {
+  title: 'man-cave-lighting',
+  metaTitle: 'Man Cave Lighting Ideas 2024 | Free AI Design Generator',
+  metaDescription: 'Design perfect man cave lighting. Get AI-powered ideas for LED strips, neon signs, ambient lighting & more. Free visualization tool, instant results.',
+  h1: 'Man Cave Lighting Ideas',
+  subtitle: 'Set the perfect atmosphere with the right lighting design',
+  content: `
+    <p><strong>Lighting transforms the mood</strong> of your man cave more than almost any other element. From dramatic LED strips to warm ambient fixtures, the right lighting creates an immersive atmosphere that makes your space feel special.</p>
+    
+    <h2 class="text-xl font-bold text-white mt-8 mb-4">Types of Man Cave Lighting</h2>
+    <p><strong>LED strip lights:</strong> The most versatile option—place behind TVs, under bars, along ceilings, or under furniture for ambient glow. <strong>Neon signs:</strong> Statement pieces that add personality and color. <strong>Pendant lights:</strong> Great over bars and pool tables. <strong>Recessed lights:</strong> Clean ceiling-mounted options with dimmer controls. <strong>Smart bulbs:</strong> Color-changing options that sync with music or games.</p>
+    
+    <h2 class="text-xl font-bold text-white mt-8 mb-4">Lighting by Activity</h2>
+    <p><strong>Movie watching:</strong> Bias lighting behind the TV reduces eye strain while keeping the room dark. <strong>Gaming:</strong> RGB strips that sync with gameplay create immersion. <strong>Entertaining:</strong> Dimmable ambient lighting with accent neons. <strong>Bar area:</strong> Pendant lights or under-cabinet LEDs for functionality with style.</p>
+    
+    <h2 class="text-xl font-bold text-white mt-8 mb-4">Budget-Friendly Lighting Upgrades</h2>
+    <p>Start with LED strip lights ($15-30) behind your TV or under furniture. Add smart bulbs ($10-15 each) to existing fixtures for color control. Neon signs start around $50 for pre-made designs. These affordable upgrades dramatically change the vibe without major installation.</p>
+  `,
+  relatedPages: [
+    { slug: 'man-cave-decor', title: 'Man Cave Decor' },
+    { slug: 'man-cave-signs', title: 'Man Cave Signs' },
+    { slug: 'man-cave-ideas', title: 'Man Cave Ideas' },
+    { slug: 'basement-man-cave-ideas', title: 'Basement Man Cave' },
+    { slug: 'man-cave-bar', title: 'Man Cave Bar' },
+    { slug: 'garage-man-cave', title: 'Garage Man Cave' },
+  ],
+  faqs: [
+    {
+      question: 'What is the best lighting for a man cave?',
+      answer: 'Layered lighting works best: ambient LEDs for overall mood, task lighting for specific areas (bar, gaming), and accent lights (neon signs, display lighting) for personality. Dimmer switches or smart controls let you adjust for different activities.'
+    },
+    {
+      question: 'How do I set up LED strip lights in a man cave?',
+      answer: 'Common placements include: behind the TV (bias lighting), under bar counters, along ceiling edges, under furniture, and around doorways. Use adhesive-backed strips for easy installation. Get RGB strips with a controller for color options. Plan your power source location before installing.'
+    },
+    {
+      question: 'Are neon signs expensive to run?',
+      answer: 'LED "neon" signs are very efficient—a typical sign uses 15-30 watts, costing about $1-3/month running 8 hours daily. Traditional glass neon uses more power but is still modest. The visual impact far outweighs the minimal electricity cost.'
+    },
+  ],
+  defaultStyle: 'gaming',
+};
 
 export default function Page() {
-  return (
-    <>
-      <Head>
-        <title>Man Cave Lighting | ManCaveAI</title>
-        <meta name="description" content="Generate man cave lighting concepts from a photo in seconds, then shop a recommended list." />
-      </Head>
-      <main style={{ maxWidth: 960, margin: "0 auto", padding: "32px 16px", lineHeight: 1.6 }}>
-        <header style={{ marginBottom: 24 }}>
-          <h1 style={{ fontSize: 36, margin: "0 0 12px" }}>Man Cave Lighting</h1>
-          <p style={{ fontSize: 18, margin: "0 0 16px", opacity: 0.85 }}>
-            Upload a room photo, generate multiple concepts, and get a “Shop this look” list.
-          </p>
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <Link href="/generator" style={{ padding: "10px 14px", border: "1px solid #000", borderRadius: 10, textDecoration: "none" }}>
-              Try the Man Cave Generator
-            </Link>
-            <Link href="/gallery" style={{ padding: "10px 14px", border: "1px solid #000", borderRadius: 10, textDecoration: "none" }}>
-              View Real Examples
-            </Link>
-          </div>
-        </header>
-
-        <section style={{ margin: "28px 0" }}>
-          <h2 style={{ fontSize: 22 }}>Popular searches we cover</h2>
-          <p style={{ opacity: 0.8 }}>
-            “man cave lighting”, “man cave lights”, “man cave ceiling lights”, “man cave lighting ideas”, “lighting for a man cave”, “lights for a man cave”, “man cave neon lights”, “ceiling lights for man cave”, “man cave led lighting”, “man cave ceiling lighting”.
-          </p>
-        </section>
-
-        <section style={{ margin: "28px 0" }}>
-          <h2 style={{ fontSize: 22 }}>Related pages</h2>
-          <ul>
-            <li><a href="/basement-man-cave-ideas">basement man cave ideas</a></li>
-            <li><a href="/garage-man-cave">garage man cave</a></li>
-            <li><a href="/golf-simulator-man-cave">golf simulator man cave</a></li>
-            <li><a href="/man-cave-bar">man cave bar</a></li>
-            <li><a href="/man-cave-decor">man cave decor</a></li>
-            <li><a href="/man-cave-furniture">man cave furniture</a></li>
-            <li><a href="/man-cave-gifts">man cave gifts</a></li>
-            <li><a href="/man-cave-ideas">man cave ideas</a></li>
-          </ul>
-        </section>
-      </main>
-    </>
-  );
+  return <SEOPageLayout {...PAGE_DATA} />;
 }

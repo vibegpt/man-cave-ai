@@ -1,50 +1,48 @@
-import Head from "next/head";
-import Link from "next/link";
+import SEOPageLayout from '../../components/seo/SEOPageLayout';
+
+const PAGE_DATA = {
+  title: 'man-cave-gifts',
+  metaTitle: 'Man Cave Gifts 2024 | Best Gift Ideas for His Space',
+  metaDescription: 'Find the perfect man cave gift. Discover unique ideas from neon signs to barware to gaming accessories. AI-powered gift visualization for any budget.',
+  h1: 'Man Cave Gifts',
+  subtitle: 'Find the perfect gift to upgrade any man cave',
+  content: `
+    <p>Looking for a <strong>gift that stands out</strong>? Man cave gifts combine personalization with functionality—items he'll actually use and display proudly. Our AI can help visualize how different gifts would look in his space.</p>
+    
+    <h2 class="text-xl font-bold text-white mt-8 mb-4">Best Man Cave Gift Categories</h2>
+    <p><strong>Personalized items:</strong> Custom neon signs, engraved barware, monogrammed accessories. <strong>Tech gifts:</strong> Smart speakers, LED strip lights, wireless chargers. <strong>Bar accessories:</strong> Whiskey stones, cocktail sets, bottle openers. <strong>Entertainment:</strong> Dartboards, card sets, gaming accessories. <strong>Decor:</strong> Vintage signs, sports memorabilia, canvas prints.</p>
+    
+    <h2 class="text-xl font-bold text-white mt-8 mb-4">Gift Ideas by Budget</h2>
+    <p><strong>Under $25:</strong> LED coasters, pint glasses, wall bottle opener. <strong>$25-75:</strong> Neon signs, whiskey decanter sets, Bluetooth speakers. <strong>$75-200:</strong> Electronic dartboards, mini fridges, gaming headsets. <strong>$200+:</strong> Kegerators, custom bar signs, premium gaming chairs.</p>
+    
+    <h2 class="text-xl font-bold text-white mt-8 mb-4">Personalized vs. Universal Gifts</h2>
+    <p>Personalized gifts with names, dates, or team logos feel more thoughtful but can't be returned if wrong. Universal items like quality barware or tech accessories are safer bets if you're unsure of his preferences or existing setup.</p>
+  `,
+  relatedPages: [
+    { slug: 'man-cave-signs', title: 'Man Cave Signs' },
+    { slug: 'man-cave-decor', title: 'Man Cave Decor' },
+    { slug: 'man-cave-bar', title: 'Man Cave Bar' },
+    { slug: 'man-cave-lighting', title: 'Man Cave Lighting' },
+    { slug: 'man-cave-ideas', title: 'Man Cave Ideas' },
+    { slug: 'man-cave-furniture', title: 'Man Cave Furniture' },
+  ],
+  faqs: [
+    {
+      question: 'What is the best gift for a man cave?',
+      answer: 'The best gifts combine personalization with utility. Top choices include: custom neon signs ($50-150), quality whiskey glasses or decanters ($30-100), electronic dartboards ($100-300), and personalized bar accessories. Consider his interests—sports fan, gamer, whiskey enthusiast—and choose accordingly.'
+    },
+    {
+      question: 'What do you get someone who has everything for their man cave?',
+      answer: 'Focus on consumables (craft beer subscriptions, premium spirits), experiences (tickets, events), or ultra-personalized items (custom artwork of his space, commissioned signs). High-end tech upgrades like smart lighting systems or quality speakers also work well.'
+    },
+    {
+      question: 'Are neon signs good man cave gifts?',
+      answer: 'Neon signs are one of the most popular man cave gifts—they\'re visually impactful, highly customizable, and work in any theme. LED "neon" signs are more affordable ($50-100) and energy-efficient than traditional glass neon ($200+). Custom designs take 1-3 weeks to produce.'
+    },
+  ],
+  defaultStyle: 'custom',
+};
 
 export default function Page() {
-  return (
-    <>
-      <Head>
-        <title>Man Cave Gifts | ManCaveAI</title>
-        <meta name="description" content="Generate man cave gifts concepts from a photo in seconds, then shop a recommended list." />
-      </Head>
-      <main style={{ maxWidth: 960, margin: "0 auto", padding: "32px 16px", lineHeight: 1.6 }}>
-        <header style={{ marginBottom: 24 }}>
-          <h1 style={{ fontSize: 36, margin: "0 0 12px" }}>Man Cave Gifts</h1>
-          <p style={{ fontSize: 18, margin: "0 0 16px", opacity: 0.85 }}>
-            Upload a room photo, generate multiple concepts, and get a “Shop this look” list.
-          </p>
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <Link href="/generator" style={{ padding: "10px 14px", border: "1px solid #000", borderRadius: 10, textDecoration: "none" }}>
-              Try the Man Cave Generator
-            </Link>
-            <Link href="/gallery" style={{ padding: "10px 14px", border: "1px solid #000", borderRadius: 10, textDecoration: "none" }}>
-              View Real Examples
-            </Link>
-          </div>
-        </header>
-
-        <section style={{ margin: "28px 0" }}>
-          <h2 style={{ fontSize: 22 }}>Popular searches we cover</h2>
-          <p style={{ opacity: 0.8 }}>
-            “man cave gifts”, “gifts for man cave”, “man cave gift ideas”, “man cave ideas gifts”, “gifts for a man cave”, “best man cave gifts”, “good man cave gifts”, “unusual man cave gifts”, “cool gifts for a man cave”, “good gifts for a man cave”.
-          </p>
-        </section>
-
-        <section style={{ margin: "28px 0" }}>
-          <h2 style={{ fontSize: 22 }}>Related pages</h2>
-          <ul>
-            <li><a href="/basement-man-cave-ideas">basement man cave ideas</a></li>
-            <li><a href="/garage-man-cave">garage man cave</a></li>
-            <li><a href="/golf-simulator-man-cave">golf simulator man cave</a></li>
-            <li><a href="/man-cave-bar">man cave bar</a></li>
-            <li><a href="/man-cave-decor">man cave decor</a></li>
-            <li><a href="/man-cave-furniture">man cave furniture</a></li>
-            <li><a href="/man-cave-ideas">man cave ideas</a></li>
-            <li><a href="/man-cave-lighting">man cave lighting</a></li>
-          </ul>
-        </section>
-      </main>
-    </>
-  );
+  return <SEOPageLayout {...PAGE_DATA} />;
 }

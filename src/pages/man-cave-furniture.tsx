@@ -1,50 +1,48 @@
-import Head from "next/head";
-import Link from "next/link";
+import SEOPageLayout from '../../components/seo/SEOPageLayout';
+
+const PAGE_DATA = {
+  title: 'man-cave-furniture',
+  metaTitle: 'Man Cave Furniture Ideas 2024 | Free AI Design Generator',
+  metaDescription: 'Find perfect man cave furniture. Get AI-powered layout ideas for sofas, recliners, bar stools & gaming chairs. Free design tool, instant visualization.',
+  h1: 'Man Cave Furniture Ideas',
+  subtitle: 'Find the perfect furniture to make your man cave comfortable and functional',
+  content: `
+    <p>The right <strong>furniture makes or breaks</strong> your man cave experience. From massive sectionals for game day crowds to specialized gaming chairs, our AI helps you visualize how different furniture arrangements work in your space.</p>
+    
+    <h2 class="text-xl font-bold text-white mt-8 mb-4">Essential Man Cave Furniture</h2>
+    <p><strong>Seating</strong> is priority one: sectional sofas for groups, recliners for solo relaxation, bar stools for counter seating. <strong>Tables</strong> include coffee tables, end tables for drinks, and bar-height tables. <strong>Storage</strong> covers entertainment centers, display shelves, and hidden storage ottomans. <strong>Specialty items</strong> like gaming desks, poker tables, or pub tables complete the setup.</p>
+    
+    <h2 class="text-xl font-bold text-white mt-8 mb-4">Furniture by Man Cave Type</h2>
+    <p><strong>Sports viewing:</strong> Deep sectionals, oversized recliners, bar with stools. <strong>Gaming:</strong> Ergonomic gaming chairs, L-shaped desks, monitor stands. <strong>Home theater:</strong> Tiered seating, cup holder-equipped recliners, acoustic panels. <strong>Bar/lounge:</strong> Leather club chairs, bar stools, cocktail tables.</p>
+    
+    <h2 class="text-xl font-bold text-white mt-8 mb-4">Smart Furniture Shopping</h2>
+    <p>Measure your space carefully before buying—man caves often have tight doorways that limit furniture size. Consider modular furniture that can be reconfigured. Dark colors hide wear better in high-use spaces. Our AI can help you visualize furniture placement before purchasing.</p>
+  `,
+  relatedPages: [
+    { slug: 'man-cave-ideas', title: 'Man Cave Ideas' },
+    { slug: 'man-cave-bar', title: 'Man Cave Bar' },
+    { slug: 'man-cave-decor', title: 'Man Cave Decor' },
+    { slug: 'basement-man-cave-ideas', title: 'Basement Man Cave' },
+    { slug: 'garage-man-cave', title: 'Garage Man Cave' },
+    { slug: 'man-cave-lighting', title: 'Man Cave Lighting' },
+  ],
+  faqs: [
+    {
+      question: 'What is the best sofa for a man cave?',
+      answer: 'Large sectionals are most popular for group viewing. Look for: deep seats (24"+), durable fabric (microfiber or leather), dark colors that hide stains, built-in cup holders or USB ports as bonuses. Brands like Ashley, Lovesac, and Costco offer good value for man cave sofas.'
+    },
+    {
+      question: 'How do I fit furniture in a small man cave?',
+      answer: 'Use multi-functional pieces: storage ottomans, nesting tables, wall-mounted shelves. A loveseat plus 1-2 accent chairs often works better than a large sectional. Consider apartment-sized furniture lines. Our AI can visualize different arrangements for tight spaces.'
+    },
+    {
+      question: 'Are gaming chairs worth it for a man cave?',
+      answer: 'Gaming chairs offer good ergonomics for long sessions at a desk. However, for console gaming or watching TV, a quality recliner or sectional is more versatile. Consider your primary activities—if you\'re mostly PC gaming, invest in a good gaming chair.'
+    },
+  ],
+  defaultStyle: 'gaming',
+};
 
 export default function Page() {
-  return (
-    <>
-      <Head>
-        <title>Man Cave Furniture | ManCaveAI</title>
-        <meta name="description" content="Generate man cave furniture concepts from a photo in seconds, then shop a recommended list." />
-      </Head>
-      <main style={{ maxWidth: 960, margin: "0 auto", padding: "32px 16px", lineHeight: 1.6 }}>
-        <header style={{ marginBottom: 24 }}>
-          <h1 style={{ fontSize: 36, margin: "0 0 12px" }}>Man Cave Furniture</h1>
-          <p style={{ fontSize: 18, margin: "0 0 16px", opacity: 0.85 }}>
-            Upload a room photo, generate multiple concepts, and get a “Shop this look” list.
-          </p>
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <Link href="/generator" style={{ padding: "10px 14px", border: "1px solid #000", borderRadius: 10, textDecoration: "none" }}>
-              Try the Man Cave Generator
-            </Link>
-            <Link href="/gallery" style={{ padding: "10px 14px", border: "1px solid #000", borderRadius: 10, textDecoration: "none" }}>
-              View Real Examples
-            </Link>
-          </div>
-        </header>
-
-        <section style={{ margin: "28px 0" }}>
-          <h2 style={{ fontSize: 22 }}>Popular searches we cover</h2>
-          <p style={{ opacity: 0.8 }}>
-            “man cave furniture”, “man cave couch”, “man cave furnishings”, “furniture for man cave”, “man cave chairs”, “man cave furniture ideas”, “man cave couches”, “man cave sofa”, “man cave chair”, “best man cave couches”.
-          </p>
-        </section>
-
-        <section style={{ margin: "28px 0" }}>
-          <h2 style={{ fontSize: 22 }}>Related pages</h2>
-          <ul>
-            <li><a href="/basement-man-cave-ideas">basement man cave ideas</a></li>
-            <li><a href="/garage-man-cave">garage man cave</a></li>
-            <li><a href="/golf-simulator-man-cave">golf simulator man cave</a></li>
-            <li><a href="/man-cave-bar">man cave bar</a></li>
-            <li><a href="/man-cave-decor">man cave decor</a></li>
-            <li><a href="/man-cave-gifts">man cave gifts</a></li>
-            <li><a href="/man-cave-ideas">man cave ideas</a></li>
-            <li><a href="/man-cave-lighting">man cave lighting</a></li>
-          </ul>
-        </section>
-      </main>
-    </>
-  );
+  return <SEOPageLayout {...PAGE_DATA} />;
 }

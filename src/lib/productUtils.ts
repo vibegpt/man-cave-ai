@@ -1,0 +1,102 @@
+export interface Product {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  priority: string;
+  image: string;
+  affiliateUrl: string;
+  description: string;
+}
+
+// Load products data directly
+const productsData = {
+  "gaming": {
+    "name": "Gaming Paradise",
+    "products": [
+      {
+        "id": "gaming-1",
+        "name": "RGB Gaming Desk - 60 inch",
+        "category": "Furniture",
+        "price": 299.99,
+        "priority": "essential",
+        "image": "https://m.media-amazon.com/images/I/71Zq3qJ8VJL._AC_SL1500_.jpg",
+        "affiliateUrl": "https://amazon.com/dp/B08T6QBBN5?tag=YOUR_AFFILIATE_ID",
+        "description": "Spacious gaming desk with RGB LED lights"
+      },
+      {
+        "id": "gaming-2",
+        "name": "Gaming Chair - Ergonomic Racing Style",
+        "category": "Furniture",
+        "price": 249.99,
+        "priority": "essential",
+        "image": "https://m.media-amazon.com/images/I/71wVnJqpjEL._AC_SL1500_.jpg",
+        "affiliateUrl": "https://amazon.com/dp/B07BKQXQDS?tag=YOUR_AFFILIATE_ID",
+        "description": "Ergonomic gaming chair with lumbar support"
+      }
+    ]
+  },
+  "sports_bar": {
+    "name": "Sports Bar Man Cave",
+    "products": [
+      {
+        "id": "sports-1",
+        "name": "65 inch Samsung 4K Smart TV",
+        "category": "Electronics",
+        "price": 697.00,
+        "priority": "essential",
+        "image": "https://m.media-amazon.com/images/I/71wVnJqpjEL._AC_SL1500_.jpg",
+        "affiliateUrl": "https://amazon.com/dp/B0BVXF72HV?tag=YOUR_AFFILIATE_ID",
+        "description": "Crystal UHD 4K TV perfect for watching the game"
+      },
+      {
+        "id": "sports-2",
+        "name": "Industrial Bar Stools Set of 4",
+        "category": "Furniture",
+        "price": 399.99,
+        "priority": "essential",
+        "image": "https://m.media-amazon.com/images/I/71Zq3qJ8VJL._AC_SL1500_.jpg",
+        "affiliateUrl": "https://amazon.com/dp/B08T6QBBN5?tag=YOUR_AFFILIATE_ID",
+        "description": "30-inch swivel bar stools with backs"
+      }
+    ]
+  },
+  "home_theater": {
+    "name": "Home Theater",
+    "products": [
+      {
+        "id": "theater-1",
+        "name": "Theater Recliners - Set of 4",
+        "category": "Furniture",
+        "price": 1899.99,
+        "priority": "essential",
+        "image": "https://m.media-amazon.com/images/I/71wVnJqpjEL._AC_SL1500_.jpg",
+        "affiliateUrl": "https://amazon.com/dp/B0BVXF72HV?tag=YOUR_AFFILIATE_ID",
+        "description": "Leather power reclining theater seats"
+      }
+    ]
+  }
+};
+
+export function getProductsForStyle(styleId: string): Product[] {
+  if (styleId === 'custom') {
+    styleId = 'gaming';
+  }
+
+  const styleData = productsData[styleId as keyof typeof productsData];
+  
+  if (!styleData) {
+    return [];
+  }
+
+  return styleData.products;
+}
+
+export function getStyleName(styleId: string): string {
+  if (styleId === 'custom') {
+    return 'Custom Man Cave';
+  }
+
+  const styleData = productsData[styleId as keyof typeof productsData];
+  return styleData?.name || 'Man Cave';
+}

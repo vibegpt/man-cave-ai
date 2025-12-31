@@ -1,50 +1,48 @@
-import Head from "next/head";
-import Link from "next/link";
+import SEOPageLayout from '../../components/seo/SEOPageLayout';
+
+const PAGE_DATA = {
+  title: 'basement-man-cave-ideas',
+  metaTitle: 'Basement Man Cave Ideas 2024 | Free AI Design Generator',
+  metaDescription: 'Transform your basement into the ultimate man cave. Get AI-powered design ideas for sports bars, gaming rooms, home theaters & more. Free tool, no signup required.',
+  h1: 'Basement Man Cave Ideas',
+  subtitle: 'Transform your basement into the ultimate hangout space with AI-powered design inspiration',
+  content: `
+    <p>Your basement has unlimited potential to become the perfect man cave retreat. Whether you're dreaming of a <strong>sports bar setup</strong>, a <strong>gaming paradise</strong>, or a <strong>home theater</strong>, our AI tool can visualize your ideas in seconds.</p>
+    
+    <h2 class="text-xl font-bold text-white mt-8 mb-4">Popular Basement Man Cave Styles</h2>
+    <p>The most requested basement transformations include sports-themed bars with multiple TVs, immersive gaming setups with RGB lighting, whiskey lounges with leather seating, and home theaters with projector screens. Our AI understands these styles and can adapt them to your specific basement layout.</p>
+    
+    <h2 class="text-xl font-bold text-white mt-8 mb-4">Making the Most of Your Basement Space</h2>
+    <p>Basements offer unique advantages for man caves: natural soundproofing for loud games or movies, temperature consistency, and usually more square footage than other rooms. Consider dividing large basements into zones—a bar area, seating area, and activity zone—for maximum functionality.</p>
+    
+    <h2 class="text-xl font-bold text-white mt-8 mb-4">Basement-Specific Considerations</h2>
+    <p>When planning your basement man cave, factor in ceiling height for mounted TVs or projectors, moisture control for electronics, and lighting since natural light is limited. Our AI designs account for typical basement characteristics to give you realistic, achievable results.</p>
+  `,
+  relatedPages: [
+    { slug: 'man-cave-ideas', title: 'Man Cave Ideas' },
+    { slug: 'man-cave-bar', title: 'Man Cave Bar' },
+    { slug: 'man-cave-lighting', title: 'Man Cave Lighting' },
+    { slug: 'garage-man-cave', title: 'Garage Man Cave' },
+    { slug: 'man-cave-furniture', title: 'Man Cave Furniture' },
+    { slug: 'man-cave-decor', title: 'Man Cave Decor' },
+  ],
+  faqs: [
+    {
+      question: 'How much does it cost to convert a basement into a man cave?',
+      answer: 'Basic basement man cave conversions start around $5,000-10,000 for furniture, TV, and basic decor. Mid-range setups with a bar, better sound system, and custom lighting run $15,000-30,000. High-end builds with home theaters, golf simulators, or full bars can exceed $50,000+.'
+    },
+    {
+      question: 'What is the best flooring for a basement man cave?',
+      answer: 'Luxury vinyl plank (LVP) is the top choice for basement man caves—it\'s waterproof, durable, and looks like real wood. Interlocking rubber tiles work great for gaming areas or gyms. Avoid carpet in basements due to moisture concerns unless you have excellent waterproofing.'
+    },
+    {
+      question: 'How do I deal with low ceilings in my basement man cave?',
+      answer: 'Maximize perceived height with recessed lighting, dark ceiling paint, low-profile furniture, and wall-mounted TVs. Avoid hanging lights or ceiling fans that reduce clearance. Our AI designs account for typical basement ceiling heights of 7-8 feet.'
+    },
+  ],
+  defaultStyle: 'sports-bar',
+};
 
 export default function Page() {
-  return (
-    <>
-      <Head>
-        <title>Basement Man Cave Ideas | ManCaveAI</title>
-        <meta name="description" content="Generate basement man cave ideas concepts from a photo in seconds, then shop a recommended list." />
-      </Head>
-      <main style={{ maxWidth: 960, margin: "0 auto", padding: "32px 16px", lineHeight: 1.6 }}>
-        <header style={{ marginBottom: 24 }}>
-          <h1 style={{ fontSize: 36, margin: "0 0 12px" }}>Basement Man Cave Ideas</h1>
-          <p style={{ fontSize: 18, margin: "0 0 16px", opacity: 0.85 }}>
-            Upload a room photo, generate multiple concepts, and get a “Shop this look” list.
-          </p>
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <Link href="/generator" style={{ padding: "10px 14px", border: "1px solid #000", borderRadius: 10, textDecoration: "none" }}>
-              Try the Man Cave Generator
-            </Link>
-            <Link href="/gallery" style={{ padding: "10px 14px", border: "1px solid #000", borderRadius: 10, textDecoration: "none" }}>
-              View Real Examples
-            </Link>
-          </div>
-        </header>
-
-        <section style={{ margin: "28px 0" }}>
-          <h2 style={{ fontSize: 22 }}>Popular searches we cover</h2>
-          <p style={{ opacity: 0.8 }}>
-            “basement man cave ideas”, “basement man cave”, “man cave basement”, “man cave basement ideas”, “basement man cave designs”, “man cave ideas basement”, “small basement man cave ideas”, “man cave basement bar”, “man caves in basement”, “man cave ideas for basement”.
-          </p>
-        </section>
-
-        <section style={{ margin: "28px 0" }}>
-          <h2 style={{ fontSize: 22 }}>Related pages</h2>
-          <ul>
-            <li><a href="/garage-man-cave">garage man cave</a></li>
-            <li><a href="/golf-simulator-man-cave">golf simulator man cave</a></li>
-            <li><a href="/man-cave-bar">man cave bar</a></li>
-            <li><a href="/man-cave-decor">man cave decor</a></li>
-            <li><a href="/man-cave-furniture">man cave furniture</a></li>
-            <li><a href="/man-cave-gifts">man cave gifts</a></li>
-            <li><a href="/man-cave-ideas">man cave ideas</a></li>
-            <li><a href="/man-cave-lighting">man cave lighting</a></li>
-          </ul>
-        </section>
-      </main>
-    </>
-  );
+  return <SEOPageLayout {...PAGE_DATA} />;
 }

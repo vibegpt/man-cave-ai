@@ -1,0 +1,23 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mancaveai.com/sitemap.xml
+
+# Block API routes from crawling
+Disallow: /api/
+
+# Block internal pages
+Disallow: /test/
+Disallow: /tools/
+Disallow: /images/
+
+# Allow all images and static assets
+Allow: /style-previews/
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.svg$
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
