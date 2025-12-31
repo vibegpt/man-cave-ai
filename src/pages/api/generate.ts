@@ -97,7 +97,7 @@ Return only valid JSON, no additional text.`
 
     // Save generation record
     const contentGen: ContentGenerationInsert = {
-      page_id: page.id,
+      page_id: (page as any).id,
       prompt,
       generated_content: text,
       model_used: 'gemini-3-pro',
