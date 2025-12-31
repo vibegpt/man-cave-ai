@@ -23,7 +23,7 @@ export default function Home() {
       {/* Upload Section */}
       {!result && (
         <section>
-          <PhotoUpload onImageSelect={setSelectedImage} />
+          <PhotoUpload onPhotoSelect={setSelectedImage} />
           <StyleSelector onStyleSelect={setSelectedStyle} />
           <button onClick={handleGenerate}>Generate</button>
         </section>
