@@ -28,13 +28,16 @@ async function handleGet(req: NextApiRequest, res: NextApiResponse) {
     let query = supabaseAdmin.from('seo_pages').select('*')
 
     if (slug) {
-      query = query.eq('slug', slug)
+      const slugStr = Array.isArray(slug) ? slug[0] : slug
+      query = query.eq('slug', slugStr)
     }
     if (published !== undefined) {
-      query = query.eq('published', published === 'true')
+      const publishedStr = Array.isArray(published) ? published[0] : published
+      query = query.eq('published', publishedStr === 'true')
     }
     if (category) {
-      query = query.eq('category', category)
+      const categoryStr = Array.isArray(category) ? category[0] : category
+      query = query.eq('category', categoryStr)
     }
 
     query = query
@@ -79,10 +82,12 @@ async function handlePut(req: NextApiRequest, res: NextApiResponse) {
       return res.status(400).json({ error: 'ID is required' })
     }
 
+    const idStr = Array.isArray(id) ? id[0] : id
+
     const { data, error } = await supabaseAdmin
       .from('seo_pages')
       .update(req.body)
-      .eq('id', id)
+      .eq('id', idStr)
       .select()
       .single()
 
@@ -104,10 +109,12 @@ async function handleDelete(req: NextApiRequest, res: NextApiResponse) {
       return res.status(400).json({ error: 'ID is required' })
     }
 
+    const idStr = Array.isArray(id) ? id[0] : id
+
     const { error } = await supabaseAdmin
       .from('seo_pages')
       .delete()
-      .eq('id', id)
+      .eq('id', idStr)
 
     if (error) {
       return res.status(500).json({ error: error.message })
