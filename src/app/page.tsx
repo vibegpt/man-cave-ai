@@ -152,10 +152,10 @@ export default function Home() {
       <section className="container mx-auto px-4 py-12">
         <div className="text-center max-w-4xl mx-auto mb-12">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Design your perfect <span className="text-orange-500">man cave</span>
+            Create your perfect <span className="text-orange-500">man cave</span>
           </h1>
           <p className="text-xl text-gray-400">
-            Upload a photo. Get AI-powered design ideas in seconds.
+            Upload your garage, basement, shed or room photo. Get AI powered man cave ideas in seconds
           </p>
         </div>
 

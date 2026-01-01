@@ -71,16 +71,7 @@ export default function PhotoUpload({ onPhotoSelect }: PhotoUploadProps) {
   return (
     <div className="max-w-5xl mx-auto px-6">
       {!preview ? (
-        <div className="space-y-16">
-          <div className="text-center space-y-4">
-            <h1 className="text-5xl md:text-6xl font-semibold text-white tracking-tight">
-              Upload Your Space
-            </h1>
-            <p className="text-xl text-gray-400 font-light max-w-2xl mx-auto">
-              Transform any room into your dream man cave
-            </p>
-          </div>
-
+        <div className="space-y-12">
           <div
             onDragEnter={handleDrag}
             onDragLeave={handleDrag}
