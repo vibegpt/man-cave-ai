@@ -8,8 +8,22 @@ import InspirationLinks from '@/components/InspirationLinks'
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [selectedStyle, setSelectedStyle] = useState<string>('')
+  const [customDescription, setCustomDescription] = useState<string>('')
   const [result, setResult] = useState<any>(null)
   const [loading, setLoading] = useState(false)
+  const [showPhotoUpload, setShowPhotoUpload] = useState(true)
+
+  const handleStyleSelect = (styleId: string, customDesc?: string) => {
+    setSelectedStyle(styleId)
+    if (customDesc) {
+      setCustomDescription(customDesc)
+    }
+  }
+
+  const handleImageSelect = (imageData: string) => {
+    setSelectedImage(imageData)
+    setShowPhotoUpload(false)
+  }
 
   const handleGenerate = async () => {
     if (!selectedImage || !selectedStyle) {
@@ -25,6 +39,7 @@ export default function Home() {
         body: JSON.stringify({
           imageData: selectedImage,
           style: selectedStyle,
+          customDescription: customDescription || undefined,
         }),
       })
 
@@ -65,21 +80,68 @@ export default function Home() {
       {/* Upload Section */}
       {!result && !loading && (
         <section className="container mx-auto px-4">
-          <PhotoUpload onPhotoSelect={setSelectedImage} />
-          {selectedImage && (
-            <div className="mt-8">
-              <StyleSelector onStyleSelect={setSelectedStyle} />
-              {selectedStyle && (
-                <div className="text-center mt-8">
-                  <button
-                    onClick={handleGenerate}
-                    className="px-12 py-4 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-medium text-lg transition"
-                  >
-                    Generate My Man Cave
-                  </button>
+          {showPhotoUpload && <PhotoUpload onPhotoSelect={handleImageSelect} />}
+
+          {selectedImage && !showPhotoUpload && (
+            <>
+              {/* Selected Image Preview */}
+              <div className="max-w-3xl mx-auto mb-12">
+                <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-lg font-semibold text-white">Your Space</h3>
+                    <button
+                      onClick={() => {
+                        setShowPhotoUpload(true)
+                        setSelectedImage(null)
+                        setSelectedStyle('')
+                        setCustomDescription('')
+                      }}
+                      className="text-sm text-orange-500 hover:text-orange-400 transition"
+                    >
+                      Change Image
+                    </button>
+                  </div>
+                  <img src={selectedImage} alt="Your space" className="w-full rounded-lg" />
                 </div>
+              </div>
+
+              {/* Style Selector */}
+              <div className="mt-8">
+                <StyleSelector onStyleSelect={handleStyleSelect} selectedStyle={selectedStyle} />
+
+                {/* Selected Style Confirmation & Generate Button */}
+                {selectedStyle && (
+                  <div className="max-w-3xl mx-auto mt-8 space-y-6">
+                    <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4 text-center">
+                      <div className="flex items-center justify-center gap-2 text-green-500">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span className="font-medium">
+                          Style selected: {customDescription ? 'Custom Design' : selectedStyle.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="text-center">
+                      <button
+                        onClick={handleGenerate}
+                        className="px-12 py-4 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-medium text-lg transition shadow-lg shadow-orange-600/20"
+                      >
+                        Generate My Man Cave
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Inspiration Links - Before Generation */}
+              {!selectedStyle && (
+                <section className="container mx-auto px-4 mt-16">
+                  <InspirationLinks />
+                </section>
               )}
-            </div>
+            </>
           )}
         </section>
       )}
