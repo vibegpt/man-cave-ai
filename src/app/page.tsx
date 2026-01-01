@@ -149,52 +149,52 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12">
-        <div className="text-center max-w-4xl mx-auto mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+      <section className="container mx-auto px-4 py-8">
+        <div className="text-center max-w-4xl mx-auto mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Create your perfect <span className="text-orange-500">man cave</span>
           </h1>
-          <p className="text-xl text-gray-400">
+          <p className="text-lg text-gray-400">
             Upload your garage, basement, shed or room photo. Get AI powered man cave ideas in seconds
           </p>
         </div>
 
         {/* Upload Section */}
-        <div className="max-w-3xl mx-auto mb-12">
+        <div className="max-w-4xl mx-auto mb-8">
           <PhotoUpload onPhotoSelect={handleImageSelect} />
           
           {/* Show selected image preview */}
           {selectedImage && (
-            <div className="mt-6 bg-gray-900 rounded-xl p-4 border border-gray-800">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Your Photo</h3>
+            <div className="mt-4 bg-gray-900 rounded-xl p-3 border border-gray-800">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Your Photo</h3>
                 <button
                   onClick={() => setSelectedImage(null)}
-                  className="text-sm text-orange-500 hover:text-orange-400 transition"
+                  className="text-xs text-orange-500 hover:text-orange-400 transition"
                 >
                   Change
                 </button>
               </div>
-              <img src={selectedImage} alt="Your space" className="w-full rounded-lg max-h-96 object-cover" />
+              <img src={selectedImage} alt="Your space" className="w-full rounded-lg max-h-64 object-cover" />
             </div>
           )}
         </div>
 
         {/* Style Selector - Always visible */}
-        <div className="max-w-3xl mx-auto mb-8">
+        <div className="max-w-4xl mx-auto mb-6">
           <StyleSelector onStyleSelect={handleStyleSelect} selectedStyle={selectedStyle} />
         </div>
 
         {/* Generate Button */}
         {selectedImage && selectedStyle && (
-          <div className="text-center max-w-3xl mx-auto">
+          <div className="text-center max-w-4xl mx-auto">
             <button
               onClick={handleGenerate}
-              className="px-12 py-4 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-bold text-lg transition shadow-lg shadow-orange-600/30"
+              className="px-10 py-3.5 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-bold text-base transition shadow-lg shadow-orange-600/30"
             >
               Generate Design
             </button>
-            <p className="text-sm text-gray-500 mt-4">
+            <p className="text-xs text-gray-500 mt-3">
               ✓ Free to try  ✓ 30 second results  ✓ No signup
             </p>
           </div>
