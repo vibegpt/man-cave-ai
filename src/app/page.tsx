@@ -32,20 +32,23 @@ export default function Home() {
 
     setLoading(true)
     try {
-      const response = await fetch('/api/generate', {
+      const response = await fetch('/api/generate-image', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          imageData: selectedImage,
-          style: selectedStyle,
+          imageBase64: selectedImage,
+          styleId: selectedStyle,
           customDescription: customDescription || undefined,
         }),
       })
 
-      if (!response.ok) throw new Error('Generation failed')
-
       const data = await response.json()
-      setResult(data)
+      
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || 'Generation failed')
+      }
+
+      setResult({ imageUrl: data.generatedImageUrl })
     } catch (error) {
       console.error('Error:', error)
       alert('Failed to generate design. Please try again.')
