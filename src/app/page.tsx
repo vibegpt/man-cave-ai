@@ -174,25 +174,9 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Upload Section */}
+        {/* Upload Section - PhotoUpload handles showing the preview */}
         <div className="max-w-4xl mx-auto mb-8">
           <PhotoUpload onPhotoSelect={handleImageSelect} />
-          
-          {/* Show selected image preview */}
-          {selectedImage && (
-            <div className="mt-4 bg-gray-900 rounded-xl p-3 border border-gray-800">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Your Photo</h3>
-                <button
-                  onClick={() => setSelectedImage(null)}
-                  className="text-xs text-orange-500 hover:text-orange-400 transition"
-                >
-                  Change
-                </button>
-              </div>
-              <img src={selectedImage} alt="Your space" className="w-full rounded-lg max-h-64 object-cover" />
-            </div>
-          )}
         </div>
 
         {/* Style Selector - Always visible */}
