@@ -41,6 +41,7 @@ export default function PhotoUpload({ onPhotoSelect }: PhotoUploadProps) {
     reader.onloadend = () => {
       const result = reader.result as string;
       setPreview(result);
+      onPhotoSelect(result); // ✅ AUTO-SELECT IMAGE
       setIsProcessing(false);
     };
     reader.readAsDataURL(file);
@@ -59,12 +60,6 @@ export default function PhotoUpload({ onPhotoSelect }: PhotoUploadProps) {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       processFile(e.target.files[0]);
-    }
-  };
-
-  const handleContinue = () => {
-    if (preview) {
-      onPhotoSelect(preview);
     }
   };
 
