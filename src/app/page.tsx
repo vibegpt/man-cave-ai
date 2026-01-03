@@ -78,40 +78,38 @@ export default function Home() {
       <main className="min-h-screen bg-black text-white">
         {/* Header with Logo */}
         <header className="border-b border-gray-900">
-          <div className="container mx-auto px-4 py-4">
+          <div className="container mx-auto px-4 py-3">
             <Logo />
           </div>
         </header>
 
-        <section className="container mx-auto px-4 py-12">
-          {/* Success Message */}
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/20 rounded-full px-6 py-3">
-              <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <section className="container mx-auto px-4 py-6">
+          {/* Compact Success Header */}
+          <div className="text-center mb-4">
+            <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-2 mb-2">
+              <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              <span className="text-green-500 font-medium">Design complete!</span>
+              <span className="text-green-500 font-medium text-sm">Design complete!</span>
             </div>
+            <h1 className="text-2xl md:text-3xl font-bold">
+              Your <span className="text-orange-500">
+                {selectedStyle === 'custom' ? 'Custom' : selectedStyle.charAt(0).toUpperCase() + selectedStyle.slice(1).replace(/_/g, ' ')}
+              </span> Man Cave
+            </h1>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-2 text-center">
-            Your <span className="text-orange-500">
-              {selectedStyle === 'custom' ? 'Custom' : selectedStyle.charAt(0).toUpperCase() + selectedStyle.slice(1).replace(/_/g, ' ')}
-            </span> Man Cave
-          </h1>
-          <p className="text-gray-400 text-center mb-12">Here's your AI-generated transformation</p>
-
-          {/* Before/After Images */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
+          {/* Before/After Images - More Compact */}
+          <div className="grid md:grid-cols-2 gap-4 max-w-5xl mx-auto mb-6">
             {/* Before */}
-            <div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-              <h3 className="text-sm font-semibold mb-3 text-gray-400 uppercase tracking-wider">Before</h3>
+            <div className="bg-gray-900 rounded-xl p-3 border border-gray-800">
+              <h3 className="text-xs font-semibold mb-2 text-gray-400 uppercase tracking-wider">Before</h3>
               <img src={selectedImage!} alt="Before" className="rounded-lg w-full" />
             </div>
 
             {/* After */}
-            <div className="bg-gray-900 rounded-xl p-4 border border-orange-500/30">
-              <h3 className="text-sm font-semibold mb-3 text-orange-500 uppercase tracking-wider">
+            <div className="bg-gray-900 rounded-xl p-3 border border-orange-500/30">
+              <h3 className="text-xs font-semibold mb-2 text-orange-500 uppercase tracking-wider">
                 After — {selectedStyle === 'custom' ? 'Custom' : selectedStyle.replace(/_/g, ' ')}
               </h3>
               <img src={result.imageUrl} alt="After" className="rounded-lg w-full" />
@@ -119,25 +117,23 @@ export default function Home() {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
             <button
               onClick={handleCreateAnother}
-              className="px-8 py-4 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-medium transition shadow-lg shadow-orange-600/20"
+              className="px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-medium transition shadow-lg shadow-orange-600/20"
             >
               Create Another Design
             </button>
             <button
               onClick={handleDownload}
-              className="px-8 py-4 bg-gray-800 hover:bg-gray-700 text-white rounded-lg font-medium transition border border-gray-700"
+              className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg font-medium transition border border-gray-700"
             >
               Download Image
             </button>
           </div>
 
-          {/* Inspiration Links Component */}
-          <section className="container mx-auto px-4 pb-16">
-            <InspirationLinks />
-          </section>
+          {/* Inspiration Links - Now visible above fold */}
+          <InspirationLinks />
         </section>
       </main>
     )
