@@ -132,7 +132,15 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Inspiration Links - Now visible above fold */}
+          {/* Scroll hint - subtle teaser */}
+          <div className="text-center mt-12 mb-8">
+            <p className="text-gray-400 text-sm mb-2">Want more inspiration?</p>
+            <svg className="w-6 h-6 text-orange-500 mx-auto animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
+
+          {/* Full Inspiration Links - below fold */}
           <InspirationLinks />
         </section>
       </main>
