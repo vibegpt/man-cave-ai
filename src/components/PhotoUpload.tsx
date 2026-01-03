@@ -24,27 +24,60 @@ export default function PhotoUpload({ onPhotoSelect }: PhotoUploadProps) {
     }
   };
 
+  const compressImage = (file: File, maxWidth: number = 1200, quality: number = 0.7): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const img = new window.Image();
+      
+      img.onload = () => {
+        // Calculate new dimensions
+        let width = img.width;
+        let height = img.height;
+        
+        if (width > maxWidth) {
+          height = (height * maxWidth) / width;
+          width = maxWidth;
+        }
+        
+        canvas.width = width;
+        canvas.height = height;
+        
+        // Draw and compress
+        ctx?.drawImage(img, 0, 0, width, height);
+        const compressedDataUrl = canvas.toDataURL('image/jpeg', quality);
+        resolve(compressedDataUrl);
+      };
+      
+      img.onerror = reject;
+      img.src = URL.createObjectURL(file);
+    });
+  };
+
   const processFile = async (file: File) => {
     if (!file.type.startsWith('image/')) {
       alert('Please upload an image file');
       return;
     }
 
-    if (file.size > 10 * 1024 * 1024) {
-      alert('Image must be less than 10MB');
+    if (file.size > 20 * 1024 * 1024) {
+      alert('Image must be less than 20MB');
       return;
     }
 
     setIsProcessing(true);
 
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      const result = reader.result as string;
-      setPreview(result);
-      onPhotoSelect(result); // ✅ AUTO-SELECT IMAGE
+    try {
+      // Compress image to fit within Vercel's 4.5MB limit (1200px, 70% quality)
+      const compressedImage = await compressImage(file, 1200, 0.7);
+      setPreview(compressedImage);
+      onPhotoSelect(compressedImage);
+    } catch (error) {
+      console.error('Error compressing image:', error);
+      alert('Error processing image. Please try another.');
+    } finally {
       setIsProcessing(false);
-    };
-    reader.readAsDataURL(file);
+    }
   };
 
   const handleDrop = (e: React.DragEvent) => {
@@ -102,7 +135,7 @@ export default function PhotoUpload({ onPhotoSelect }: PhotoUploadProps) {
                     <h3 className="text-lg font-medium text-white mb-1">
                       {dragActive ? 'Drop to upload' : 'Drag and drop'}
                     </h3>
-                    <p className="text-sm text-gray-400">JPG or PNG, up to 10MB</p>
+                    <p className="text-sm text-gray-400">JPG or PNG, up to 20MB (auto-compressed)</p>
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-2 justify-center">

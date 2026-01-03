@@ -39,24 +39,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const response = await ai.models.generateContent({
       model: 'gemini-3-pro-image-preview',
       contents: [
+        { text: prompt },
         {
-          parts: [
-            { text: prompt },
-            {
-              inlineData: {
-                mimeType: 'image/jpeg',
-                data: base64Data
-              }
-            }
-          ]
+          inlineData: {
+            mimeType: 'image/jpeg',
+            data: base64Data
+          }
         }
       ],
       config: {
-        // Required to get an image back!
         responseModalities: ['TEXT', 'IMAGE'],
-        temperature: 1.0,
-        topP: 0.95,
-        topK: 40,
       }
     });
 
