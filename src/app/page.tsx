@@ -5,6 +5,15 @@ import PhotoUpload from '@/components/PhotoUpload'
 import StyleSelector from '@/components/StyleSelector'
 import InspirationLinks from '@/components/InspirationLinks'
 import Logo from '@/components/Logo'
+import {
+  trackPhotoUpload,
+  trackStyleSelect,
+  trackGenerationStart,
+  trackGenerationComplete,
+  trackGenerationError,
+  trackDownload,
+  trackCreateAnother,
+} from '@/lib/analytics'
 
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
@@ -18,10 +27,12 @@ export default function Home() {
     if (customDesc) {
       setCustomDescription(customDesc)
     }
+    trackStyleSelect(styleId)
   }
 
   const handleImageSelect = (imageData: string) => {
     setSelectedImage(imageData)
+    trackPhotoUpload()
   }
 
   const handleGenerate = async () => {
@@ -31,6 +42,8 @@ export default function Home() {
     }
 
     setLoading(true)
+    trackGenerationStart(selectedStyle, !!customDescription)
+    
     try {
       const response = await fetch('/api/generate-image', {
         method: 'POST',
@@ -48,9 +61,11 @@ export default function Home() {
         throw new Error(data.error || 'Generation failed')
       }
 
+      trackGenerationComplete(selectedStyle, data.processingTime || 0, data.generationId)
       setResult({ imageUrl: data.generatedImageUrl })
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error:', error)
+      trackGenerationError(selectedStyle, error.message || 'Unknown error')
       alert('Failed to generate design. Please try again.')
     } finally {
       setLoading(false)
@@ -59,6 +74,7 @@ export default function Home() {
 
   const handleDownload = () => {
     if (!result?.imageUrl) return
+    trackDownload(selectedStyle)
     const link = document.createElement('a')
     link.href = result.imageUrl
     link.download = `man-cave-${selectedStyle}-${Date.now()}.jpg`
@@ -66,6 +82,7 @@ export default function Home() {
   }
 
   const handleCreateAnother = () => {
+    trackCreateAnother(selectedStyle)
     setResult(null)
     setSelectedImage(null)
     setSelectedStyle('')

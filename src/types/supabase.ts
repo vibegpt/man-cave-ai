@@ -198,6 +198,46 @@ export interface Database {
         ]
       }
 
+      image_generations: {
+        Row: {
+          id: string
+          session_id: string | null
+          style: string
+          custom_description: string | null
+          status: string
+          processing_time: number | null
+          error_message: string | null
+          ip_address: string | null
+          user_agent: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          session_id?: string | null
+          style: string
+          custom_description?: string | null
+          status?: string
+          processing_time?: number | null
+          error_message?: string | null
+          ip_address?: string | null
+          user_agent?: string | null
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          session_id?: string | null
+          style?: string
+          custom_description?: string | null
+          status?: string
+          processing_time?: number | null
+          error_message?: string | null
+          ip_address?: string | null
+          user_agent?: string | null
+          created_at?: string
+        }
+        Relationships: []
+      }
+
       page_keywords: {
         Row: {
           page_id: string
@@ -261,3 +301,7 @@ export type ContentGenerationUpdate = Database['public']['Tables']['content_gene
 export type PageKeyword = Database['public']['Tables']['page_keywords']['Row']
 export type PageKeywordInsert = Database['public']['Tables']['page_keywords']['Insert']
 export type PageKeywordUpdate = Database['public']['Tables']['page_keywords']['Update']
+
+export type ImageGeneration = Database['public']['Tables']['image_generations']['Row']
+export type ImageGenerationInsert = Database['public']['Tables']['image_generations']['Insert']
+export type ImageGenerationUpdate = Database['public']['Tables']['image_generations']['Update']
