@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { GoogleGenerativeAI } from '@google/genai';
+import { GoogleGenAI } from '@google/genai';
 import { buildManCavePrompt } from '@/lib/ManCavePromptBuilder';
 import { supabaseAdmin } from '@/lib/supabase';
 
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || '');
+const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_API_KEY || '' });
 
 export async function POST(request: NextRequest) {
   const startTime = Date.now();
@@ -49,49 +49,35 @@ export async function POST(request: NextRequest) {
       console.error('Database logging error:', dbError);
     }
 
-    const model = genAI.getGenerativeModel({ 
+    const base64Data = imageBase64.includes(',')
+      ? imageBase64.split(',')[1]
+      : imageBase64;
+
+    const response = await ai.models.generateContent({
       model: 'gemini-2.0-flash-exp',
-      generationConfig: {
-        temperature: 0.7,
-        topK: 40,
-        topP: 0.95,
-        maxOutputTokens: 8192,
+      contents: [
+        { text: prompt },
+        {
+          inlineData: {
+            mimeType: 'image/jpeg',
+            data: base64Data
+          }
+        }
+      ],
+      config: {
         responseModalities: ['TEXT', 'IMAGE'],
       }
     });
 
-    const imageData = imageBase64.replace(/^data:image\/\w+;base64,/, '');
-    
-    const result = await model.generateContent([
-      {
-        inlineData: {
-          data: imageData,
-          mimeType: 'image/jpeg'
-        }
-      },
-      { text: prompt }
-    ]);
+    const generatedPart = response.candidates?.[0]?.content?.parts?.find(
+      (part: any) => part.inlineData
+    );
 
-    const response = await result.response;
-    
-    let generatedImageUrl: string | null = null;
-    
-    if (response.candidates && response.candidates.length > 0) {
-      const candidate = response.candidates[0];
-      
-      if (candidate.content && candidate.content.parts) {
-        for (const part of candidate.content.parts) {
-          if (part.inlineData && part.inlineData.mimeType?.startsWith('image/')) {
-            generatedImageUrl = `data:${part.inlineData.mimeType};base64,${part.inlineData.data}`;
-            break;
-          }
-        }
-      }
-    }
-
-    if (!generatedImageUrl) {
+    if (!generatedPart?.inlineData?.data) {
       throw new Error('No image generated in response');
     }
+
+    const generatedImageUrl = `data:${generatedPart.inlineData.mimeType};base64,${generatedPart.inlineData.data}`;
 
     const processingTime = Date.now() - startTime;
     
