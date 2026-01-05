@@ -26,28 +26,8 @@ export async function POST(request: NextRequest) {
 
     const prompt = buildManCavePrompt(styleId, customDescription);
 
-    try {
-      const { data: generation, error: insertError } = await supabaseAdmin
-        .from('generations')
-        .insert({
-          user_id: null,
-          project_id: null,
-          style: styleId,
-          prompt_used: prompt,
-          status: 'processing',
-          ip_address: ipAddress,
-          started_at: new Date().toISOString(),
-          model_version: 'gemini-2.0-flash-exp'
-        })
-        .select()
-        .single();
-
-      if (!insertError && generation) {
-        generationId = generation.id;
-      }
-    } catch (dbError) {
-      console.error('Database logging error:', dbError);
-    }
+    // Database logging disabled until generations table is created
+    // TODO: Create 'generations' table in Supabase and regenerate types
 
     const base64Data = imageBase64.includes(',')
       ? imageBase64.split(',')[1]
@@ -81,18 +61,7 @@ export async function POST(request: NextRequest) {
 
     const processingTime = Date.now() - startTime;
     
-    if (generationId) {
-      await supabaseAdmin
-        .from('generations')
-        .update({
-          status: 'completed',
-          generated_image_url: 'base64_image',
-          completed_at: new Date().toISOString(),
-          processing_time_ms: processingTime,
-          generation_time: Math.round(processingTime / 1000)
-        })
-        .eq('id', generationId);
-    }
+    // TODO: Log successful generation to database
 
     return NextResponse.json({
       success: true,
@@ -104,18 +73,7 @@ export async function POST(request: NextRequest) {
   } catch (error: any) {
     console.error('Generation error:', error);
 
-    if (generationId) {
-      await supabaseAdmin
-        .from('generations')
-        .update({
-          status: 'failed',
-          error_message: error.message || 'Unknown error',
-          error_type: error.name || 'UnknownError',
-          failed_at: new Date().toISOString(),
-          processing_time_ms: Date.now() - startTime
-        })
-        .eq('id', generationId);
-    }
+    // TODO: Log failed generation to database
 
     return NextResponse.json(
       { success: false, error: error.message || 'Failed to generate design. Please try again.' },
