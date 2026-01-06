@@ -192,7 +192,7 @@ export default function Home() {
               {/* Image Preview */}
               <div>
                 <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Your Photo</p>
-                <PhotoUpload onPhotoSelect={handleImageSelect} />
+                <PhotoUpload onPhotoSelect={handleImageSelect} currentImage={selectedImage} />
               </div>
               
               {/* Style Selection */}
@@ -204,7 +204,7 @@ export default function Home() {
           ) : (
             // Default layout - stacked
             <div className="space-y-6 mb-6">
-              <PhotoUpload onPhotoSelect={handleImageSelect} />
+              <PhotoUpload onPhotoSelect={handleImageSelect} currentImage={selectedImage} />
               <StyleSelector onStyleSelect={handleStyleSelect} selectedStyle={selectedStyle} />
             </div>
           )}
