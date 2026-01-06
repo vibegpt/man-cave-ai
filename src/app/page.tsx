@@ -32,7 +32,9 @@ export default function Home() {
 
   const handleImageSelect = (imageData: string) => {
     setSelectedImage(imageData)
-    trackPhotoUpload()
+    if (imageData) {
+      trackPhotoUpload()
+    }
   }
 
   const handleGenerate = async () => {
@@ -93,7 +95,6 @@ export default function Home() {
   if (result) {
     return (
       <main className="min-h-screen bg-black text-white">
-        {/* Header with Logo */}
         <header className="border-b border-gray-900">
           <div className="container mx-auto px-4 py-3">
             <Logo />
@@ -101,7 +102,6 @@ export default function Home() {
         </header>
 
         <section className="container mx-auto px-4 py-6">
-          {/* Compact Success Header */}
           <div className="text-center mb-4">
             <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-2 mb-2">
               <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -116,15 +116,11 @@ export default function Home() {
             </h1>
           </div>
 
-          {/* Before/After Images - More Compact */}
           <div className="grid md:grid-cols-2 gap-4 max-w-5xl mx-auto mb-6">
-            {/* Before */}
             <div className="bg-gray-900 rounded-xl p-3 border border-gray-800">
               <h3 className="text-xs font-semibold mb-2 text-gray-400 uppercase tracking-wider">Before</h3>
               <img src={selectedImage!} alt="Before" className="rounded-lg w-full" />
             </div>
-
-            {/* After */}
             <div className="bg-gray-900 rounded-xl p-3 border border-orange-500/30">
               <h3 className="text-xs font-semibold mb-2 text-orange-500 uppercase tracking-wider">
                 After — {selectedStyle === 'custom' ? 'Custom' : selectedStyle.replace(/_/g, ' ')}
@@ -133,7 +129,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
             <button
               onClick={handleCreateAnother}
@@ -149,15 +144,7 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Scroll hint - subtle teaser */}
-          <div className="text-center mt-12 mb-8">
-            <p className="text-gray-400 text-sm mb-2">Want more inspiration?</p>
-            <svg className="w-6 h-6 text-orange-500 mx-auto animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </div>
-
-          {/* Full Inspiration Links - below fold */}
+          {/* Inspiration Links - no scroll hint needed */}
           <InspirationLinks />
         </section>
       </main>
@@ -177,51 +164,66 @@ export default function Home() {
     )
   }
 
-  // Main homepage - Upload + Styles on same page
+  // Main homepage
   return (
     <main className="min-h-screen bg-black text-white">
-      {/* Header with Logo */}
       <header className="border-b border-gray-900">
         <div className="container mx-auto px-4 py-4">
           <Logo />
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 py-8">
-        <div className="text-center max-w-5xl mx-auto mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+      <section className="container mx-auto px-4 py-6">
+        {/* Hero */}
+        <div className="text-center max-w-3xl mx-auto mb-6">
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">
             Create your perfect <span className="text-orange-500">man cave</span>
           </h1>
-          <p className="text-base md:text-lg text-gray-400 whitespace-nowrap overflow-hidden text-ellipsis px-4">
-            Upload your garage, basement, shed or room photo & get AI Man Cave ideas in seconds
+          <p className="text-gray-400">
+            Upload a photo of your space & get AI design ideas in seconds
           </p>
         </div>
 
-        {/* Upload Section - PhotoUpload handles showing the preview */}
-        <div className="max-w-4xl mx-auto mb-8">
-          <PhotoUpload onPhotoSelect={handleImageSelect} />
-        </div>
+        {/* Main Content - Side by side when image uploaded */}
+        <div className="max-w-4xl mx-auto">
+          {selectedImage ? (
+            // Compact layout when image is uploaded
+            <div className="grid md:grid-cols-2 gap-4 mb-6">
+              {/* Image Preview */}
+              <div>
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Your Photo</p>
+                <PhotoUpload onPhotoSelect={handleImageSelect} />
+              </div>
+              
+              {/* Style Selection */}
+              <div>
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Choose Style</p>
+                <StyleSelector onStyleSelect={handleStyleSelect} selectedStyle={selectedStyle} compact />
+              </div>
+            </div>
+          ) : (
+            // Default layout - stacked
+            <div className="space-y-6 mb-6">
+              <PhotoUpload onPhotoSelect={handleImageSelect} />
+              <StyleSelector onStyleSelect={handleStyleSelect} selectedStyle={selectedStyle} />
+            </div>
+          )}
 
-        {/* Style Selector - Always visible */}
-        <div className="max-w-4xl mx-auto mb-6">
-          <StyleSelector onStyleSelect={handleStyleSelect} selectedStyle={selectedStyle} />
+          {/* Generate Button */}
+          {selectedImage && selectedStyle && (
+            <div className="text-center">
+              <button
+                onClick={handleGenerate}
+                className="px-10 py-3.5 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-bold text-base transition shadow-lg shadow-orange-600/30"
+              >
+                Generate Design
+              </button>
+              <p className="text-xs text-gray-500 mt-3">
+                ✓ Free to try  ✓ 30 second results  ✓ No signup
+              </p>
+            </div>
+          )}
         </div>
-
-        {/* Generate Button */}
-        {selectedImage && selectedStyle && (
-          <div className="text-center max-w-4xl mx-auto">
-            <button
-              onClick={handleGenerate}
-              className="px-10 py-3.5 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-bold text-base transition shadow-lg shadow-orange-600/30"
-            >
-              Generate Design
-            </button>
-            <p className="text-xs text-gray-500 mt-3">
-              ✓ Free to try  ✓ 30 second results  ✓ No signup
-            </p>
-          </div>
-        )}
       </section>
     </main>
   )
