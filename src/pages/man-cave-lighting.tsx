@@ -2,7 +2,7 @@ import SEOPageLayout from '@/components/seo/SEOPageLayout';
 
 const PAGE_DATA = {
   title: 'man-cave-lighting',
-  metaTitle: 'Man Cave Lighting Ideas 2024 | Free AI Design Generator',
+  metaTitle: 'Man Cave Lighting Ideas 2026 | Free AI Design Generator',
   metaDescription: 'Design perfect man cave lighting. Get AI-powered ideas for LED strips, neon signs, ambient lighting & more. Free visualization tool, instant results.',
   h1: 'Man Cave Lighting Ideas',
   subtitle: 'Set the perfect atmosphere with the right lighting design',

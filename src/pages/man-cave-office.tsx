@@ -2,7 +2,7 @@ import SEOPageLayout from '@/components/seo/SEOPageLayout';
 
 const PAGE_DATA = {
   title: 'man-cave-office',
-  metaTitle: 'Man Cave Office Ideas 2024 | Free AI Design Generator',
+  metaTitle: 'Man Cave Office Ideas 2026 | Free AI Design Generator',
   metaDescription: 'Design the perfect man cave home office. Get AI-powered ideas for work-from-home setups that double as retreats. Free visualization, instant results.',
   h1: 'Man Cave Office Ideas',
   subtitle: 'Create a productive workspace that doubles as your personal retreat',

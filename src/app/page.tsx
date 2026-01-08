@@ -1,9 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import PhotoUpload from '@/components/PhotoUpload'
 import StyleSelector from '@/components/StyleSelector'
 import InspirationLinks from '@/components/InspirationLinks'
+import ProductRecommendations from '@/components/ProductRecommendations'
 import Logo from '@/components/Logo'
 import {
   trackPhotoUpload,
@@ -45,7 +47,7 @@ export default function Home() {
 
     setLoading(true)
     trackGenerationStart(selectedStyle, !!customDescription)
-    
+
     try {
       const response = await fetch('/api/generate-image', {
         method: 'POST',
@@ -58,7 +60,7 @@ export default function Home() {
       })
 
       const data = await response.json()
-      
+
       if (!response.ok || !data.success) {
         throw new Error(data.error || 'Generation failed')
       }
@@ -144,8 +146,16 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Inspiration Links - no scroll hint needed */}
-          <InspirationLinks />
+          {/* Product Recommendations */}
+          <ProductRecommendations
+            selectedStyle={selectedStyle}
+            customDescription={customDescription}
+          />
+
+          {/* Inspiration Links */}
+          <div className="mt-12">
+            <InspirationLinks />
+          </div>
         </section>
       </main>
     )
@@ -164,66 +174,128 @@ export default function Home() {
     )
   }
 
-  // Main homepage
+  // Main homepage - NEW LAYOUT WITH HERO
   return (
     <main className="min-h-screen bg-black text-white">
-      <header className="border-b border-gray-900">
+      {/* Compact Hero Banner */}
+      <header className="border-b border-gray-900/50">
         <div className="container mx-auto px-4 py-4">
-          <Logo />
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            <Logo />
+            <div className="text-center md:text-right">
+              <h1 className="text-xl md:text-2xl font-bold">
+                Design Your Ultimate <span className="text-orange-500">Man Cave</span> with AI in 30 Seconds
+              </h1>
+              <p className="text-sm text-gray-400 mt-1">
+                <span className="inline-flex items-center gap-3">
+                  <span>✓ Free</span>
+                  <span>✓ No signup</span>
+                  <span>✓ Instant results</span>
+                </span>
+              </p>
+            </div>
+          </div>
         </div>
       </header>
 
-      <section className="container mx-auto px-4 py-6">
-        {/* Hero */}
-        <div className="text-center max-w-3xl mx-auto mb-6">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">
-            Create your perfect <span className="text-orange-500">man cave</span>
-          </h1>
-          <p className="text-gray-400">
-            Upload a photo of your space & get AI design ideas in seconds
-          </p>
-        </div>
-
-        {/* Main Content - Side by side when image uploaded */}
-        <div className="max-w-4xl mx-auto">
-          {selectedImage ? (
-            // Compact layout when image is uploaded
-            <div className="grid md:grid-cols-2 gap-4 mb-6">
-              {/* Image Preview */}
-              <div>
-                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Your Photo</p>
-                <PhotoUpload onPhotoSelect={handleImageSelect} currentImage={selectedImage} />
-              </div>
-              
-              {/* Style Selection */}
-              <div>
-                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Choose Style</p>
-                <StyleSelector onStyleSelect={handleStyleSelect} selectedStyle={selectedStyle} compact />
-              </div>
+      {/* Main Tool Section - Side by Side Layout */}
+      <section className="container mx-auto px-4 py-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-6 mb-6">
+            {/* Left Column: Photo Upload */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-300 mb-3 uppercase tracking-wider">
+                1. Upload Your Space
+              </label>
+              <PhotoUpload onPhotoSelect={handleImageSelect} currentImage={selectedImage ?? undefined} />
             </div>
-          ) : (
-            // Default layout - stacked
-            <div className="space-y-6 mb-6">
-              <PhotoUpload onPhotoSelect={handleImageSelect} currentImage={selectedImage} />
-              <StyleSelector onStyleSelect={handleStyleSelect} selectedStyle={selectedStyle} />
-            </div>
-          )}
 
-          {/* Generate Button */}
-          {selectedImage && selectedStyle && (
-            <div className="text-center">
-              <button
-                onClick={handleGenerate}
-                className="px-10 py-3.5 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-bold text-base transition shadow-lg shadow-orange-600/30"
-              >
-                Generate Design
-              </button>
-              <p className="text-xs text-gray-500 mt-3">
-                ✓ Free to try  ✓ 30 second results  ✓ No signup
+            {/* Right Column: Style Selection + Generate */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-300 mb-3 uppercase tracking-wider">
+                2. Choose Your Style
+              </label>
+              <StyleSelector onStyleSelect={handleStyleSelect} selectedStyle={selectedStyle} compact />
+
+              {/* Generate Button */}
+              {selectedImage && selectedStyle && (
+                <div className="mt-4">
+                  <button
+                    onClick={handleGenerate}
+                    className="w-full px-8 py-4 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-bold text-lg transition shadow-lg shadow-orange-600/30"
+                  >
+                    Generate My Man Cave Design
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Trust Indicators - only show when no image yet */}
+          {!selectedImage && (
+            <div className="text-center py-4">
+              <p className="text-sm text-gray-500">
+                Free to try • 30 second results • No signup required
               </p>
             </div>
           )}
         </div>
+
+        {/* Room-Specific Ideas Section */}
+        <section className="max-w-6xl mx-auto mt-16 px-4">
+          <h2 className="text-2xl font-bold text-center mb-2">
+            Man Cave Ideas by <span className="text-orange-500">Room Type</span>
+          </h2>
+          <p className="text-gray-400 text-center mb-8">
+            Get design inspiration tailored to your specific space
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <Link
+              href="/basement-man-cave-ideas"
+              className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-orange-500 transition-all group text-center"
+            >
+              <div className="text-4xl mb-3">🏠</div>
+              <h3 className="font-semibold text-white group-hover:text-orange-500 transition-colors mb-1">
+                Basement
+              </h3>
+              <p className="text-xs text-gray-500">Home theaters & bars</p>
+            </Link>
+
+            <Link
+              href="/garage-man-cave"
+              className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-orange-500 transition-all group text-center"
+            >
+              <div className="text-4xl mb-3">🚗</div>
+              <h3 className="font-semibold text-white group-hover:text-orange-500 transition-colors mb-1">
+                Garage
+              </h3>
+              <p className="text-xs text-gray-500">Sports bars & workshops</p>
+            </Link>
+
+            <Link
+              href="/golf-simulator-man-cave"
+              className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-orange-500 transition-all group text-center"
+            >
+              <div className="text-4xl mb-3">⛳</div>
+              <h3 className="font-semibold text-white group-hover:text-orange-500 transition-colors mb-1">
+                Golf Simulator
+              </h3>
+              <p className="text-xs text-gray-500">Indoor golf setups</p>
+            </Link>
+
+            <Link
+              href="/man-cave-shed"
+              className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-orange-500 transition-all group text-center"
+            >
+              <div className="text-4xl mb-3">🏚️</div>
+              <h3 className="font-semibold text-white group-hover:text-orange-500 transition-colors mb-1">
+                Shed
+              </h3>
+              <p className="text-xs text-gray-500">Backyard retreats</p>
+            </Link>
+          </div>
+        </section>
       </section>
     </main>
   )

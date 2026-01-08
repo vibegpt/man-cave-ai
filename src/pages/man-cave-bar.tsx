@@ -2,7 +2,7 @@ import SEOPageLayout from '@/components/seo/SEOPageLayout';
 
 const PAGE_DATA = {
   title: 'man-cave-bar',
-  metaTitle: 'Man Cave Bar Ideas 2024 | Free AI Design Generator',
+  metaTitle: 'Man Cave Bar Ideas 2026 | Free AI Design Generator',
   metaDescription: 'Design the perfect man cave bar. Get AI-powered ideas for home bars, wet bars, and sports bar setups. Free visualization tool, instant design results.',
   h1: 'Man Cave Bar Ideas',
   subtitle: 'Create your dream home bar with AI-powered design visualization',

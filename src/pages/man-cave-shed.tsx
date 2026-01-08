@@ -2,7 +2,7 @@ import SEOPageLayout from '@/components/seo/SEOPageLayout';
 
 const PAGE_DATA = {
   title: 'man-cave-shed',
-  metaTitle: 'Man Cave Shed Ideas 2024 | Free AI Design Generator',
+  metaTitle: 'Man Cave Shed Ideas 2026 | Free AI Design Generator',
   metaDescription: 'Transform your shed into an epic man cave. Get AI-powered design ideas for backyard retreats, workshops & entertainment spaces. Free tool, instant results.',
   h1: 'Man Cave Shed Ideas',
   subtitle: 'Turn your backyard shed into the ultimate escape',
@@ -16,7 +16,7 @@ const PAGE_DATA = {
     <p>Converting a basic shed requires: <strong>Insulation</strong> (walls and ceiling for year-round use), <strong>electrical</strong> (hire a licensed electrician), <strong>climate control</strong> (mini-split AC/heat), <strong>interior finishing</strong> (drywall, paneling, or leaving exposed for rustic look), and <strong>flooring</strong> (rubber mats, LVP, or epoxy over concrete).</p>
     
     <h2 class="text-xl font-bold text-white mt-8 mb-4">Shed Man Cave Benefits</h2>
-    <p>Why sheds work great: <strong>Sound isolation</strong> from the house (perfect for music or loud movies), <strong>easier permitting</strong> than home additions in most areas, <strong>dedicated space</strong> that's clearly "yours," and the ability to <strong>customize without affecting home resale</strong> concerns.</p>
+    <p>Why sheds work great: <strong>Sound isolation</strong> from the house (perfect for music or loud movies), <strong>easier permitting</strong> than home additions in most areas, <strong>dedicated space</strong> that's clearly "yours," and the ability to <strong>customize without affecting home resale</strong> concerns. If outdoor space isn't available, explore our <a href="/basement-man-cave-ideas" class="text-orange-500 hover:underline">basement man cave ideas</a> or <a href="/garage-man-cave" class="text-orange-500 hover:underline">garage conversions</a> for indoor alternatives.</p>
   `,
   relatedPages: [
     { slug: 'man-cave-ideas', title: 'Man Cave Ideas' },
@@ -40,7 +40,7 @@ const PAGE_DATA = {
       answer: 'Always hire a licensed electrician for safety and code compliance. Options include: running a buried conduit from your home\'s panel (most common), installing a sub-panel in the shed for heavy loads, or using a dedicated circuit for basic needs. Budget $1,500-4,000 depending on distance and amperage needs.'
     },
   ],
-  defaultStyle: 'custom',
+  defaultStyle: 'gaming',
 };
 
 export default function Page() {

@@ -2,7 +2,7 @@ import SEOPageLayout from '@/components/seo/SEOPageLayout';
 
 const PAGE_DATA = {
   title: 'basement-man-cave-ideas',
-  metaTitle: 'Basement Man Cave Ideas 2024 | Free AI Design Generator',
+  metaTitle: 'Basement Man Cave Ideas 2026 | Free AI Design Generator',
   metaDescription: 'Transform your basement into the ultimate man cave. Get AI-powered design ideas for sports bars, gaming rooms, home theaters & more. Free tool, no signup required.',
   h1: 'Basement Man Cave Ideas',
   subtitle: 'Transform your basement into the ultimate hangout space with AI-powered design inspiration',
@@ -13,7 +13,7 @@ const PAGE_DATA = {
     <p>The most requested basement transformations include sports-themed bars with multiple TVs, immersive gaming setups with RGB lighting, whiskey lounges with leather seating, and home theaters with projector screens. Our AI understands these styles and can adapt them to your specific basement layout.</p>
     
     <h2 class="text-xl font-bold text-white mt-8 mb-4">Making the Most of Your Basement Space</h2>
-    <p>Basements offer unique advantages for man caves: natural soundproofing for loud games or movies, temperature consistency, and usually more square footage than other rooms. Consider dividing large basements into zones—a bar area, seating area, and activity zone—for maximum functionality.</p>
+    <p>Basements offer unique advantages for man caves: natural soundproofing for loud games or movies, temperature consistency, and usually more square footage than other rooms. Consider dividing large basements into zones—a bar area, seating area, and activity zone—for maximum functionality. If you're also considering other spaces, check out our <a href="/garage-man-cave" class="text-orange-500 hover:underline">garage man cave ideas</a> or <a href="/man-cave-shed" class="text-orange-500 hover:underline">shed man cave ideas</a> for alternative locations.</p>
     
     <h2 class="text-xl font-bold text-white mt-8 mb-4">Basement-Specific Considerations</h2>
     <p>When planning your basement man cave, factor in ceiling height for mounted TVs or projectors, moisture control for electronics, and lighting since natural light is limited. Our AI designs account for typical basement characteristics to give you realistic, achievable results.</p>
@@ -40,7 +40,7 @@ const PAGE_DATA = {
       answer: 'Maximize perceived height with recessed lighting, dark ceiling paint, low-profile furniture, and wall-mounted TVs. Avoid hanging lights or ceiling fans that reduce clearance. Our AI designs account for typical basement ceiling heights of 7-8 feet.'
     },
   ],
-  defaultStyle: 'sports-bar',
+  defaultStyle: 'theater',
 };
 
 export default function Page() {

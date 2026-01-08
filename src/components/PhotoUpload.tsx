@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 interface PhotoUploadProps {
   onPhotoSelect: (imageData: string) => void;
+  currentImage?: string;
 }
 
 // Sample template images from Unsplash (free to use)
@@ -14,8 +15,8 @@ const TEMPLATES = [
   { id: 'spare-room', src: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80', label: 'Spare Room' },
 ];
 
-export default function PhotoUpload({ onPhotoSelect }: PhotoUploadProps) {
-  const [preview, setPreview] = useState<string>('');
+export default function PhotoUpload({ onPhotoSelect, currentImage }: PhotoUploadProps) {
+  const [preview, setPreview] = useState<string>(currentImage || '');
   const [isProcessing, setIsProcessing] = useState(false);
   const [showTemplates, setShowTemplates] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);

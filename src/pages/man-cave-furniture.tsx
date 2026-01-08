@@ -2,7 +2,7 @@ import SEOPageLayout from '@/components/seo/SEOPageLayout';
 
 const PAGE_DATA = {
   title: 'man-cave-furniture',
-  metaTitle: 'Man Cave Furniture Ideas 2024 | Free AI Design Generator',
+  metaTitle: 'Man Cave Furniture Ideas 2026 | Free AI Design Generator',
   metaDescription: 'Find perfect man cave furniture. Get AI-powered layout ideas for sofas, recliners, bar stools & gaming chairs. Free design tool, instant visualization.',
   h1: 'Man Cave Furniture Ideas',
   subtitle: 'Find the perfect furniture to make your man cave comfortable and functional',

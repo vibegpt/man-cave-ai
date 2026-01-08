@@ -2,7 +2,7 @@ import SEOPageLayout from '@/components/seo/SEOPageLayout';
 
 const PAGE_DATA = {
   title: 'man-cave-signs',
-  metaTitle: 'Man Cave Signs 2024 | Custom & Personalized Sign Ideas',
+  metaTitle: 'Man Cave Signs 2026 | Custom & Personalized Sign Ideas',
   metaDescription: 'Find the perfect man cave signs. Discover neon signs, vintage signs, personalized options & more. AI-powered visualization to see signs in your space.',
   h1: 'Man Cave Signs',
   subtitle: 'Add personality to your space with the perfect signage',

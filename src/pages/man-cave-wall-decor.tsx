@@ -2,7 +2,7 @@ import SEOPageLayout from '@/components/seo/SEOPageLayout';
 
 const PAGE_DATA = {
   title: 'man-cave-wall-decor',
-  metaTitle: 'Man Cave Wall Decor Ideas 2024 | Free AI Design Generator',
+  metaTitle: 'Man Cave Wall Decor Ideas 2026 | Free AI Design Generator',
   metaDescription: 'Find perfect wall decor for your man cave. Get AI-powered ideas for art, signs, memorabilia displays & more. Free visualization tool, instant results.',
   h1: 'Man Cave Wall Decor Ideas',
   subtitle: 'Transform bare walls into your personal gallery',

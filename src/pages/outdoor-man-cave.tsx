@@ -2,7 +2,7 @@ import SEOPageLayout from '@/components/seo/SEOPageLayout';
 
 const PAGE_DATA = {
   title: 'outdoor-man-cave',
-  metaTitle: 'Outdoor Man Cave Ideas 2024 | Free AI Design Generator',
+  metaTitle: 'Outdoor Man Cave Ideas 2026 | Free AI Design Generator',
   metaDescription: 'Design the perfect outdoor man cave. Get AI-powered ideas for backyard bars, sheds, patios & more. Free visualization tool, instant design results.',
   h1: 'Outdoor Man Cave Ideas',
   subtitle: 'Create your dream backyard retreat',

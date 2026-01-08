@@ -2,7 +2,7 @@ import SEOPageLayout from '@/components/seo/SEOPageLayout';
 
 const PAGE_DATA = {
   title: 'garage-man-cave',
-  metaTitle: 'Garage Man Cave Ideas 2024 | Free AI Design Generator',
+  metaTitle: 'Garage Man Cave Ideas 2026 | Free AI Design Generator',
   metaDescription: 'Turn your garage into an epic man cave. Get AI-powered design ideas for workshops, sports bars, gaming rooms & more. Free to use, instant results.',
   h1: 'Garage Man Cave Ideas',
   subtitle: 'Transform your garage into the ultimate hangout space with AI-powered design visualization',
@@ -15,8 +15,20 @@ const PAGE_DATA = {
     <h2 class="text-xl font-bold text-white mt-8 mb-4">Garage Man Cave Essentials</h2>
     <p>Key elements for garage man caves include: insulation and climate control (crucial for year-round use), epoxy flooring for durability and style, proper lighting to replace natural light, and sound considerations if you're in a residential area. Many homeowners keep one bay functional for vehicles while converting the rest.</p>
     
-    <h2 class="text-xl font-bold text-white mt-8 mb-4">Budget-Friendly Garage Upgrades</h2>
-    <p>Start your garage transformation affordably with: fresh epoxy floor coating ($200-500 DIY), pegboard organization walls, a secondhand couch and TV setup, and LED shop lights. You can always upgrade over time—our AI can help visualize both starter setups and dream builds.</p>
+    <h2 class="text-xl font-bold text-white mt-8 mb-4">Garage Man Cave Ideas on a Budget</h2>
+    <p>You don't need thousands to create an awesome garage man cave. Start with these affordable upgrades:</p>
+    <ul class="list-disc list-inside space-y-2 text-gray-300 mb-4">
+      <li><strong>DIY Epoxy Floor</strong> ($200-500) - Transforms the look instantly</li>
+      <li><strong>Used Furniture</strong> ($300-800) - Facebook Marketplace/Craigslist couches and bar stools</li>
+      <li><strong>LED Shop Lights</strong> ($50-150) - Bright, affordable lighting upgrade</li>
+      <li><strong>Pegboard Walls</strong> ($100-200) - Functional storage that looks great</li>
+      <li><strong>Smart TV + Streaming</strong> ($300-600) - Essential entertainment on a budget</li>
+      <li><strong>Mini Fridge</strong> ($150-300) - Keep drinks cold without breaking the bank</li>
+    </ul>
+    <p><strong>Total Budget Setup: $1,100-2,550</strong> - You can always upgrade over time. Our AI can help visualize both starter setups and dream builds, whether you're working with a tight budget or planning a premium conversion.</p>
+
+    <h2 class="text-xl font-bold text-white mt-8 mb-4">2 Car Garage Man Cave Ideas</h2>
+    <p>A standard 2-car garage (20ft × 20ft) offers plenty of space for creative layouts. Popular configurations include: dedicating one bay to vehicles and converting the other into a full man cave, creating a "garage mahal" with retractable dividers, or going all-in and parking outside to maximize your entertainment space. Check out our <a href="/basement-man-cave-ideas" class="text-orange-500 hover:underline">basement man cave ideas</a> for additional inspiration on maximizing enclosed spaces.</p>
   `,
   relatedPages: [
     { slug: 'man-cave-ideas', title: 'Man Cave Ideas' },
@@ -40,7 +52,7 @@ const PAGE_DATA = {
       answer: 'Epoxy coating is the top choice—it\'s durable, easy to clean, resists stains, and comes in various colors and finishes. Interlocking floor tiles are a great DIY alternative that can be removed if needed. Outdoor rugs in seating areas add comfort without permanent installation.'
     },
   ],
-  defaultStyle: 'gaming',
+  defaultStyle: 'sports_bar',
 };
 
 export default function Page() {

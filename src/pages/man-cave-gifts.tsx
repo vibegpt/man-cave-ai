@@ -2,7 +2,7 @@ import SEOPageLayout from '@/components/seo/SEOPageLayout';
 
 const PAGE_DATA = {
   title: 'man-cave-gifts',
-  metaTitle: 'Man Cave Gifts 2024 | Best Gift Ideas for His Space',
+  metaTitle: 'Man Cave Gifts 2026 | Best Gift Ideas for His Space',
   metaDescription: 'Find the perfect man cave gift. Discover unique ideas from neon signs to barware to gaming accessories. AI-powered gift visualization for any budget.',
   h1: 'Man Cave Gifts',
   subtitle: 'Find the perfect gift to upgrade any man cave',

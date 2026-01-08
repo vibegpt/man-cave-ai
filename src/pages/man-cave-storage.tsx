@@ -2,7 +2,7 @@ import SEOPageLayout from '@/components/seo/SEOPageLayout';
 
 const PAGE_DATA = {
   title: 'man-cave-storage',
-  metaTitle: 'Man Cave Storage Ideas 2024 | Free AI Design Generator',
+  metaTitle: 'Man Cave Storage Ideas 2026 | Free AI Design Generator',
   metaDescription: 'Organize your man cave with smart storage solutions. Get AI-powered ideas for shelving, cabinets, and hidden storage. Free visualization tool.',
   h1: 'Man Cave Storage Ideas',
   subtitle: 'Keep your space organized without sacrificing style',
