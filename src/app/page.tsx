@@ -96,8 +96,8 @@ export default function Home() {
   // Show results page
   if (result) {
     return (
-      <main className="min-h-screen bg-black text-white">
-        <header className="border-b border-gray-900">
+      <main className="min-h-screen bg-[#0a0a0a] text-white">
+        <header className="border-b border-red-900/30">
           <div className="container mx-auto px-4 py-3">
             <Logo />
           </div>
@@ -105,26 +105,26 @@ export default function Home() {
 
         <section className="container mx-auto px-4 py-6">
           <div className="text-center mb-4">
-            <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-2 mb-2">
-              <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/30 rounded-full px-4 py-2 mb-2">
+              <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              <span className="text-green-500 font-medium text-sm">Design complete!</span>
+              <span className="text-red-400 font-medium text-sm">Design complete!</span>
             </div>
             <h1 className="text-2xl md:text-3xl font-bold">
-              Your <span className="text-orange-500">
+              Your <span className="text-red-500">
                 {selectedStyle === 'custom' ? 'Custom' : selectedStyle.charAt(0).toUpperCase() + selectedStyle.slice(1).replace(/_/g, ' ')}
               </span> Man Cave
             </h1>
           </div>
 
           <div className="grid md:grid-cols-2 gap-4 max-w-5xl mx-auto mb-6">
-            <div className="bg-gray-900 rounded-xl p-3 border border-gray-800">
-              <h3 className="text-xs font-semibold mb-2 text-gray-400 uppercase tracking-wider">Before</h3>
+            <div className="bg-[#111] rounded-xl p-3 border border-gray-800">
+              <h3 className="text-xs font-semibold mb-2 text-gray-500 uppercase tracking-wider">Before</h3>
               <img src={selectedImage!} alt="Before" className="rounded-lg w-full" />
             </div>
-            <div className="bg-gray-900 rounded-xl p-3 border border-orange-500/30">
-              <h3 className="text-xs font-semibold mb-2 text-orange-500 uppercase tracking-wider">
+            <div className="bg-[#111] rounded-xl p-3 border border-red-500/40">
+              <h3 className="text-xs font-semibold mb-2 text-red-500 uppercase tracking-wider">
                 After — {selectedStyle === 'custom' ? 'Custom' : selectedStyle.replace(/_/g, ' ')}
               </h3>
               <img src={result.imageUrl} alt="After" className="rounded-lg w-full" />
@@ -134,13 +134,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
             <button
               onClick={handleCreateAnother}
-              className="px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-medium transition shadow-lg shadow-orange-600/20"
+              className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition shadow-lg shadow-red-600/30"
             >
               Create Another Design
             </button>
             <button
               onClick={handleDownload}
-              className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-lg font-medium transition border border-gray-700"
+              className="px-6 py-3 bg-[#1a1a1a] hover:bg-[#222] text-white rounded-lg font-medium transition border border-gray-700"
             >
               Download Image
             </button>
@@ -164,9 +164,9 @@ export default function Home() {
   // Show loading state
   if (loading) {
     return (
-      <main className="min-h-screen bg-black text-white flex items-center justify-center">
+      <main className="min-h-screen bg-[#0a0a0a] text-white flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-orange-500 mb-4"></div>
+          <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-red-500 mb-4"></div>
           <p className="text-xl text-gray-400">Generating your dream man cave...</p>
           <p className="text-sm text-gray-500 mt-2">This takes about 30 seconds</p>
         </div>
@@ -174,129 +174,188 @@ export default function Home() {
     )
   }
 
-  // Main homepage - NEW LAYOUT WITH HERO
+  // Main homepage - RED/BLACK PREMIUM DESIGN
   return (
-    <main className="min-h-screen bg-black text-white">
-      {/* Compact Hero Banner */}
-      <header className="border-b border-gray-900/50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+    <main className="min-h-screen bg-[#0a0a0a] text-white">
+      {/* Premium Header */}
+      <header className="border-b border-red-900/20 bg-gradient-to-b from-[#0f0f0f] to-[#0a0a0a]">
+        <div className="container mx-auto px-4 py-5">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <Logo />
-            <div className="text-center md:text-right">
-              <h1 className="text-xl md:text-2xl font-bold">
-                Design Your Ultimate <span className="text-orange-500">Man Cave</span> with AI in 30 Seconds
-              </h1>
-              <p className="text-sm text-gray-400 mt-1">
-                <span className="inline-flex items-center gap-3">
-                  <span>✓ Free</span>
-                  <span>✓ No signup</span>
-                  <span>✓ Instant results</span>
-                </span>
-              </p>
-            </div>
+            <nav className="hidden md:flex items-center gap-6 text-sm">
+              <Link href="/basement-man-cave-ideas" className="text-gray-400 hover:text-red-500 transition">Basements</Link>
+              <Link href="/garage-man-cave" className="text-gray-400 hover:text-red-500 transition">Garages</Link>
+              <Link href="/man-cave-bar" className="text-gray-400 hover:text-red-500 transition">Bars</Link>
+              <Link href="/golf-simulator-man-cave" className="text-gray-400 hover:text-red-500 transition">Golf Sims</Link>
+            </nav>
           </div>
         </div>
       </header>
 
-      {/* Main Tool Section - Side by Side Layout */}
-      <section className="container mx-auto px-4 py-8">
+      {/* Hero Section */}
+      <section className="py-8 md:py-12 border-b border-gray-900/50">
+        <div className="container mx-auto px-4 text-center">
+          <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/20 rounded-full px-4 py-1.5 mb-4">
+            <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+            <span className="text-red-400 text-xs font-medium uppercase tracking-wider">AI-Powered Design</span>
+          </div>
+          <h1 className="text-3xl md:text-5xl font-bold mb-3">
+            Design Your <span className="text-red-500">Man Cave</span>
+          </h1>
+          <p className="text-gray-400 text-lg max-w-xl mx-auto">
+            Transform any room into your ultimate retreat. Upload a photo, pick a style, get results in 30 seconds.
+          </p>
+          <div className="flex items-center justify-center gap-6 mt-4 text-sm text-gray-500">
+            <span className="flex items-center gap-1.5">
+              <svg className="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              Free to use
+            </span>
+            <span className="flex items-center gap-1.5">
+              <svg className="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              No signup
+            </span>
+            <span className="flex items-center gap-1.5">
+              <svg className="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              Instant results
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Tool Section */}
+      <section className="container mx-auto px-4 py-10">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-6 mb-6">
+          <div className="grid lg:grid-cols-2 gap-8">
             {/* Left Column: Photo Upload */}
             <div>
-              <label className="block text-sm font-semibold text-gray-300 mb-3 uppercase tracking-wider">
-                1. Upload Your Space
-              </label>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-8 h-8 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center text-red-500 font-bold text-sm">1</span>
+                <label className="text-sm font-semibold text-gray-300 uppercase tracking-wider">
+                  Upload Your Space
+                </label>
+              </div>
               <PhotoUpload onPhotoSelect={handleImageSelect} currentImage={selectedImage ?? undefined} />
             </div>
 
-            {/* Right Column: Style Selection + Generate */}
+            {/* Right Column: Style Selection */}
             <div>
-              <label className="block text-sm font-semibold text-gray-300 mb-3 uppercase tracking-wider">
-                2. Choose Your Style
-              </label>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-8 h-8 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center text-red-500 font-bold text-sm">2</span>
+                <label className="text-sm font-semibold text-gray-300 uppercase tracking-wider">
+                  Choose Your Style
+                </label>
+              </div>
               <StyleSelector onStyleSelect={handleStyleSelect} selectedStyle={selectedStyle} compact />
 
               {/* Generate Button */}
               {selectedImage && selectedStyle && (
-                <div className="mt-4">
+                <div className="mt-6">
                   <button
                     onClick={handleGenerate}
-                    className="w-full px-8 py-4 bg-orange-600 hover:bg-orange-700 text-white rounded-lg font-bold text-lg transition shadow-lg shadow-orange-600/30"
+                    className="w-full px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white rounded-lg font-bold text-lg transition shadow-xl shadow-red-600/30 border border-red-500/30"
                   >
-                    Generate My Man Cave Design
+                    🚀 Generate My Man Cave Design
                   </button>
                 </div>
               )}
             </div>
           </div>
 
-          {/* Trust Indicators - only show when no image yet */}
+          {/* Trust Indicators */}
           {!selectedImage && (
-            <div className="text-center py-4">
-              <p className="text-sm text-gray-500">
-                Free to try • 30 second results • No signup required
+            <div className="text-center py-8 mt-4 border-t border-gray-900/50">
+              <p className="text-sm text-gray-600">
+                Trusted by thousands of homeowners • 30 second results • No credit card required
               </p>
             </div>
           )}
         </div>
-
-        {/* Room-Specific Ideas Section */}
-        <section className="max-w-6xl mx-auto mt-16 px-4">
-          <h2 className="text-2xl font-bold text-center mb-2">
-            Man Cave Ideas by <span className="text-orange-500">Room Type</span>
-          </h2>
-          <p className="text-gray-400 text-center mb-8">
-            Get design inspiration tailored to your specific space
-          </p>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <Link
-              href="/basement-man-cave-ideas"
-              className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-orange-500 transition-all group text-center"
-            >
-              <div className="text-4xl mb-3">🏠</div>
-              <h3 className="font-semibold text-white group-hover:text-orange-500 transition-colors mb-1">
-                Basement
-              </h3>
-              <p className="text-xs text-gray-500">Home theaters & bars</p>
-            </Link>
-
-            <Link
-              href="/garage-man-cave"
-              className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-orange-500 transition-all group text-center"
-            >
-              <div className="text-4xl mb-3">🚗</div>
-              <h3 className="font-semibold text-white group-hover:text-orange-500 transition-colors mb-1">
-                Garage
-              </h3>
-              <p className="text-xs text-gray-500">Sports bars & workshops</p>
-            </Link>
-
-            <Link
-              href="/golf-simulator-man-cave"
-              className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-orange-500 transition-all group text-center"
-            >
-              <div className="text-4xl mb-3">⛳</div>
-              <h3 className="font-semibold text-white group-hover:text-orange-500 transition-colors mb-1">
-                Golf Simulator
-              </h3>
-              <p className="text-xs text-gray-500">Indoor golf setups</p>
-            </Link>
-
-            <Link
-              href="/man-cave-shed"
-              className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-orange-500 transition-all group text-center"
-            >
-              <div className="text-4xl mb-3">🏚️</div>
-              <h3 className="font-semibold text-white group-hover:text-orange-500 transition-colors mb-1">
-                Shed
-              </h3>
-              <p className="text-xs text-gray-500">Backyard retreats</p>
-            </Link>
-          </div>
-        </section>
       </section>
+
+      {/* Room-Specific Ideas Section */}
+      <section className="bg-[#0f0f0f] border-t border-b border-gray-900/50 py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                Man Cave Ideas by <span className="text-red-500">Room Type</span>
+              </h2>
+              <p className="text-gray-500">
+                Get design inspiration tailored to your specific space
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <Link
+                href="/basement-man-cave-ideas"
+                className="group relative bg-[#111] rounded-xl p-6 border border-gray-800 hover:border-red-500/50 transition-all overflow-hidden text-center"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative">
+                  <div className="text-4xl mb-4">🏠</div>
+                  <h3 className="font-semibold text-white group-hover:text-red-500 transition-colors mb-1">
+                    Basement
+                  </h3>
+                  <p className="text-xs text-gray-600">Home theaters & bars</p>
+                </div>
+              </Link>
+
+              <Link
+                href="/garage-man-cave"
+                className="group relative bg-[#111] rounded-xl p-6 border border-gray-800 hover:border-red-500/50 transition-all overflow-hidden text-center"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative">
+                  <div className="text-4xl mb-4">🚗</div>
+                  <h3 className="font-semibold text-white group-hover:text-red-500 transition-colors mb-1">
+                    Garage
+                  </h3>
+                  <p className="text-xs text-gray-600">Sports bars & workshops</p>
+                </div>
+              </Link>
+
+              <Link
+                href="/golf-simulator-man-cave"
+                className="group relative bg-[#111] rounded-xl p-6 border border-gray-800 hover:border-red-500/50 transition-all overflow-hidden text-center"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative">
+                  <div className="text-4xl mb-4">⛳</div>
+                  <h3 className="font-semibold text-white group-hover:text-red-500 transition-colors mb-1">
+                    Golf Simulator
+                  </h3>
+                  <p className="text-xs text-gray-600">Indoor golf setups</p>
+                </div>
+              </Link>
+
+              <Link
+                href="/man-cave-shed"
+                className="group relative bg-[#111] rounded-xl p-6 border border-gray-800 hover:border-red-500/50 transition-all overflow-hidden text-center"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="relative">
+                  <div className="text-4xl mb-4">🏚️</div>
+                  <h3 className="font-semibold text-white group-hover:text-red-500 transition-colors mb-1">
+                    Shed
+                  </h3>
+                  <p className="text-xs text-gray-600">Backyard retreats</p>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 text-center text-gray-600 text-sm">
+        <p>© 2025 ManCaveAI. All rights reserved.</p>
+      </footer>
     </main>
   )
 }

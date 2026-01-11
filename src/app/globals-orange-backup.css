@@ -2,9 +2,8 @@
 
 :root {
   --background: #0a0a0a;
-  --foreground: #f5f5f5;
-  --primary: #dc2626;
-  --primary-hover: #b91c1c;
+  --foreground: #ededed;
+  --orange-500: #f97316;
 }
 
 @theme inline {
@@ -29,26 +28,26 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar for premium dark theme */
+/* Custom scrollbar for dark theme */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #141414;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2a2a2a;
+  background: #333;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #dc2626;
+  background: #444;
 }
 
-/* Prose styling for SEO content - Red Theme */
+/* Prose styling for SEO content */
 .prose h2 {
   color: white;
   font-weight: 700;
@@ -56,16 +55,9 @@ html {
   margin-bottom: 1rem;
 }
 
-.prose h3 {
-  color: #dc2626;
-  font-weight: 600;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-}
-
 .prose p {
-  color: #a1a1aa;
-  line-height: 1.75;
+  color: #9ca3af;
+  line-height: 1.7;
   margin-bottom: 1rem;
 }
 
@@ -75,23 +67,12 @@ html {
 }
 
 .prose a {
-  color: #dc2626;
+  color: #f97316;
   text-decoration: none;
-  transition: color 0.2s ease;
 }
 
 .prose a:hover {
-  color: #ef4444;
   text-decoration: underline;
-}
-
-.prose ul, .prose ol {
-  color: #a1a1aa;
-  margin-bottom: 1rem;
-}
-
-.prose li {
-  margin-bottom: 0.5rem;
 }
 
 /* Animation utilities */
@@ -108,17 +89,16 @@ html {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Focus styles for accessibility - Red accent */
+/* Focus styles for accessibility */
 button:focus-visible,
 a:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid #dc2626;
+input:focus-visible {
+  outline: 2px solid #f97316;
   outline-offset: 2px;
 }
 
-/* Selection color - Red */
+/* Selection color */
 ::selection {
-  background-color: rgba(220, 38, 38, 0.3);
+  background-color: rgba(249, 115, 22, 0.3);
   color: white;
 }

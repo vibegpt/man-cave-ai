@@ -120,7 +120,7 @@ export default function PhotoUpload({ onPhotoSelect, currentImage }: PhotoUpload
   // Preview state - compact view
   if (preview) {
     return (
-      <div className="relative rounded-xl overflow-hidden border border-gray-700 bg-gray-900">
+      <div className="relative rounded-xl overflow-hidden border border-gray-800 bg-[#111]">
         <div className="aspect-video relative">
           <Image 
             src={preview} 
@@ -131,7 +131,7 @@ export default function PhotoUpload({ onPhotoSelect, currentImage }: PhotoUpload
         </div>
         <button
           onClick={clearPreview}
-          className="absolute top-2 right-2 px-3 py-1.5 bg-black/70 backdrop-blur-sm hover:bg-black/90 text-white text-sm font-medium rounded-lg transition-all"
+          className="absolute top-2 right-2 px-3 py-1.5 bg-black/70 backdrop-blur-sm hover:bg-red-600 text-white text-sm font-medium rounded-lg transition-all"
         >
           Change
         </button>
@@ -141,10 +141,10 @@ export default function PhotoUpload({ onPhotoSelect, currentImage }: PhotoUpload
 
   // Upload state
   return (
-    <div className="rounded-xl border border-gray-700 bg-gray-900/50 p-6">
+    <div className="rounded-xl border border-gray-800 bg-[#111] p-6">
       {isProcessing ? (
         <div className="text-center py-8">
-          <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-orange-500 mb-3"></div>
+          <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-red-500 mb-3"></div>
           <p className="text-sm text-gray-400">Processing image...</p>
         </div>
       ) : showTemplates ? (
@@ -163,7 +163,7 @@ export default function PhotoUpload({ onPhotoSelect, currentImage }: PhotoUpload
               <button
                 key={template.id}
                 onClick={() => loadTemplate(template.src)}
-                className="group relative aspect-video rounded-lg overflow-hidden border border-gray-700 hover:border-orange-500 transition-all"
+                className="group relative aspect-video rounded-lg overflow-hidden border border-gray-800 hover:border-red-500/50 transition-all"
               >
                 <img 
                   src={template.src} 
@@ -177,7 +177,7 @@ export default function PhotoUpload({ onPhotoSelect, currentImage }: PhotoUpload
             ))}
           </div>
           <p className="text-xs text-gray-500 text-center">
-            Or <button onClick={() => fileInputRef.current?.click()} className="text-orange-500 hover:underline">upload your own photo</button>
+            Or <button onClick={() => fileInputRef.current?.click()} className="text-red-500 hover:underline">upload your own photo</button>
           </p>
         </div>
       ) : (
@@ -185,7 +185,7 @@ export default function PhotoUpload({ onPhotoSelect, currentImage }: PhotoUpload
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={() => fileInputRef.current?.click()}
-              className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-lg transition-all inline-flex items-center justify-center gap-2"
+              className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-all inline-flex items-center justify-center gap-2 shadow-lg shadow-red-600/20"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -194,7 +194,7 @@ export default function PhotoUpload({ onPhotoSelect, currentImage }: PhotoUpload
             </button>
             <button
               onClick={() => setShowTemplates(true)}
-              className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg transition-all inline-flex items-center justify-center gap-2"
+              className="px-6 py-3 bg-[#1a1a1a] hover:bg-[#222] text-white font-medium rounded-lg transition-all inline-flex items-center justify-center gap-2 border border-gray-800 hover:border-red-500/30"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
