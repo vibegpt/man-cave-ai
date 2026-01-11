@@ -139,9 +139,9 @@ export default function PhotoUpload({ onPhotoSelect, currentImage }: PhotoUpload
     );
   }
 
-  // Upload state
+  // Upload state - match height of StyleSelector
   return (
-    <div className="rounded-xl border border-gray-800 bg-[#111] p-6">
+    <div className="rounded-xl border border-gray-800 bg-[#111] p-6 min-h-[220px] flex flex-col justify-center">
       {isProcessing ? (
         <div className="text-center py-8">
           <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-red-500 mb-3"></div>

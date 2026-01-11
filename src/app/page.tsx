@@ -348,6 +348,40 @@ export default function Home() {
                 </div>
               </Link>
             </div>
+
+            {/* Scroll indicator arrow */}
+            <div className="flex justify-center mt-10">
+              <div className="flex flex-col items-center text-gray-500 animate-bounce">
+                <span className="text-xs mb-2">More below</span>
+                <svg 
+                  width="32" 
+                  height="32" 
+                  viewBox="0 0 32 32" 
+                  fill="none" 
+                  className="text-red-500/60"
+                >
+                  <path 
+                    d="M8 12C8 12 12 8 16 8C20 8 24 12 24 12" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round"
+                  />
+                  <path 
+                    d="M16 8V24" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round"
+                  />
+                  <path 
+                    d="M10 18L16 24L22 18" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
       </section>
