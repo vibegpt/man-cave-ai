@@ -39,6 +39,14 @@ const PAGE_DATA = {
       question: 'Are gaming chairs worth it for a man cave?',
       answer: 'Gaming chairs offer good ergonomics for long sessions at a desk. However, for console gaming or watching TV, a quality recliner or sectional is more versatile. Consider your primary activities—if you\'re mostly PC gaming, invest in a good gaming chair.'
     },
+    {
+      question: 'What is the best seating for a man cave?',
+      answer: 'The best seating depends on your primary use. For home theaters, power recliners ($300-1,500) with cup holders and headrests provide the cinema experience. For sports viewing, large sectionals seat the most guests comfortably. Gaming chairs ($200-800) are ideal for PC setups with proper lumbar support. Bar stools work best around a counter or pub table for a social, sports-bar atmosphere.'
+    },
+    {
+      question: 'How do I arrange furniture in a small man cave?',
+      answer: 'In a small man cave, place an L-shaped sectional in the corner to maximize floor space and seating. Wall-mount your TV to eliminate the need for a bulky entertainment center. Use nesting tables or C-tables that slide over seat cushions instead of a large coffee table. Keep traffic lanes at least 30 inches wide so the room does not feel cramped, and avoid blocking doorways with furniture.'
+    },
   ],
   defaultStyle: 'gaming',
 };

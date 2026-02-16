@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Breadcrumbs from './Breadcrumbs';
 
 const STYLES = [
   { id: 'gaming', emoji: '🎮', label: 'Gaming' },
@@ -19,6 +20,24 @@ const LOADING_MESSAGES: { [key: string]: string[] } = {
   golf_simulator: ['Analyzing room layout...', 'Installing simulator bay...', 'Adding putting green...', 'Final adjustments...'],
   custom: ['Analyzing your vision...', 'Planning the layout...', 'Adding custom elements...', 'Bringing it to life...']
 };
+
+const ALL_PAGES = [
+  { slug: 'man-cave-ideas', title: 'Man Cave Ideas' },
+  { slug: 'basement-man-cave-ideas', title: 'Basement Man Cave' },
+  { slug: 'garage-man-cave', title: 'Garage Man Cave' },
+  { slug: 'man-cave-bar', title: 'Man Cave Bar' },
+  { slug: 'golf-simulator-man-cave', title: 'Golf Simulator' },
+  { slug: 'man-cave-shed', title: 'Man Cave Shed' },
+  { slug: 'man-cave-decor', title: 'Man Cave Decor' },
+  { slug: 'man-cave-furniture', title: 'Furniture Ideas' },
+  { slug: 'man-cave-gifts', title: 'Man Cave Gifts' },
+  { slug: 'man-cave-signs', title: 'Man Cave Signs' },
+  { slug: 'man-cave-wall-decor', title: 'Wall Decor' },
+  { slug: 'man-cave-lighting', title: 'Lighting Ideas' },
+  { slug: 'man-cave-storage', title: 'Storage Ideas' },
+  { slug: 'man-cave-office', title: 'Man Cave Office' },
+  { slug: 'outdoor-man-cave', title: 'Outdoor Man Cave' },
+];
 
 interface RelatedPage {
   slug: string;
@@ -63,6 +82,8 @@ export default function SEOPageLayout({
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string>('');
   const [error, setError] = useState<string>('');
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+
+  const canonicalUrl = `https://mancaveai.com/${title.toLowerCase().replace(/\s+/g, '-')}`;
 
   useEffect(() => {
     if (appState !== 'generating') {
@@ -163,15 +184,48 @@ export default function SEOPageLayout({
     }))
   } : null;
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": metaTitle,
+    "author": { "@type": "Organization", "name": "ManCaveAI" },
+    "publisher": { "@type": "Organization", "name": "ManCaveAI" },
+    "datePublished": "2026-01-15",
+    "dateModified": "2026-02-15",
+    "description": metaDescription,
+    "mainEntityOfPage": canonicalUrl,
+  };
+
   return (
     <>
       <Head>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
+
+        {/* Open Graph */}
         <meta property="og:title" content={metaTitle} />
         <meta property="og:description" content={metaDescription} />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href={`https://mancaveai.com/${title.toLowerCase().replace(/\s+/g, '-')}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:site_name" content="ManCaveAI" />
+        <meta property="og:image" content="https://mancaveai.com/og-image.jpg" />
+        <meta property="og:locale" content="en_US" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content="https://mancaveai.com/og-image.jpg" />
+
+        {/* AEO - AI Engine Optimization */}
+        <meta name="ai-content-summary" content={`ManCaveAI is a free AI tool that transforms photos of rooms into man cave designs. This page covers ${h1.toLowerCase()} with design tips, cost breakdowns, and a free AI visualization tool.`} />
+
+        {/* Schema: Article */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+
+        {/* Schema: FAQ */}
         {faqSchema && (
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
         )}
@@ -188,13 +242,22 @@ export default function SEOPageLayout({
               <span className="text-xl">🏠</span>
               <span className="font-semibold text-white">ManCaveAI</span>
             </Link>
+            <nav className="hidden md:flex items-center gap-4 text-sm">
+              <Link href="/man-cave-ideas" className="text-gray-400 hover:text-orange-500 transition">Ideas</Link>
+              <Link href="/basement-man-cave-ideas" className="text-gray-400 hover:text-orange-500 transition">Basements</Link>
+              <Link href="/garage-man-cave" className="text-gray-400 hover:text-orange-500 transition">Garages</Link>
+              <Link href="/man-cave-bar" className="text-gray-400 hover:text-orange-500 transition">Bars</Link>
+            </nav>
             <span className="text-sm text-gray-500">5 free designs</span>
           </div>
         </header>
 
-        <main className="pt-20 pb-16 px-6">
+        {/* Breadcrumbs */}
+        <Breadcrumbs items={[{ name: h1, href: `/${title.toLowerCase().replace(/\s+/g, '-')}` }]} />
+
+        <main className="pt-4 pb-16 px-6">
           <div className="max-w-4xl mx-auto">
-            
+
             {/* Hero */}
             <div className="text-center mb-10">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">{h1}</h1>
@@ -203,7 +266,7 @@ export default function SEOPageLayout({
 
             {/* Tool Card */}
             <div className="w-full max-w-xl mx-auto mb-16">
-              
+
               {/* UPLOAD STATE */}
               {appState === 'upload' && (
                 <div className="bg-[#141414] rounded-2xl border border-white/10 shadow-xl p-8">
@@ -218,8 +281,8 @@ export default function SEOPageLayout({
                     onDrop={handleDrop}
                     onClick={() => document.getElementById('file-input')?.click()}
                     className={`border-2 border-dashed rounded-xl p-10 mb-6 cursor-pointer group bg-white/[0.02] transition-all ${
-                      dragActive ? 'border-orange-500/60 bg-orange-500/5' 
-                      : uploadedImage ? 'border-green-500/40 bg-green-500/5' 
+                      dragActive ? 'border-orange-500/60 bg-orange-500/5'
+                      : uploadedImage ? 'border-green-500/40 bg-green-500/5'
                       : 'border-white/10 hover:border-orange-500/40'
                     }`}
                   >
@@ -290,7 +353,7 @@ export default function SEOPageLayout({
                         placeholder="Describe your ideal man cave style..."
                         className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/20 transition-all"
                       />
-                      <p className="text-xs text-gray-500 mt-2">e.g., "Rustic cabin with whiskey bar"</p>
+                      <p className="text-xs text-gray-500 mt-2">e.g., &quot;Rustic cabin with whiskey bar&quot;</p>
                     </div>
                   )}
 
@@ -343,7 +406,7 @@ export default function SEOPageLayout({
                       <span className="text-sm font-medium text-green-400">Design complete!</span>
                     </div>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6 mb-8">
                     <div className="bg-[#141414] rounded-2xl border border-white/10 overflow-hidden">
                       <div className="px-4 py-3 border-b border-white/10">
@@ -413,13 +476,54 @@ export default function SEOPageLayout({
           </div>
         </main>
 
-        <footer className="border-t border-white/5 py-8">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <Link href="/" className="flex items-center justify-center gap-2 mb-3 hover:opacity-80 transition">
-              <span className="text-lg">🏠</span>
-              <span className="font-semibold text-white">ManCaveAI</span>
-            </Link>
-            <p className="text-xs text-gray-500">&copy; {new Date().getFullYear()} ManCaveAI. Free AI-powered man cave design tool.</p>
+        {/* Comprehensive Footer */}
+        <footer className="border-t border-white/5 py-12">
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+              <div>
+                <h3 className="text-sm font-semibold text-white mb-3">Room Types</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/basement-man-cave-ideas" className="text-gray-500 hover:text-orange-500 transition">Basement</Link></li>
+                  <li><Link href="/garage-man-cave" className="text-gray-500 hover:text-orange-500 transition">Garage</Link></li>
+                  <li><Link href="/man-cave-shed" className="text-gray-500 hover:text-orange-500 transition">Shed</Link></li>
+                  <li><Link href="/outdoor-man-cave" className="text-gray-500 hover:text-orange-500 transition">Outdoor</Link></li>
+                  <li><Link href="/man-cave-office" className="text-gray-500 hover:text-orange-500 transition">Office</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-white mb-3">Features</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/man-cave-bar" className="text-gray-500 hover:text-orange-500 transition">Bar Ideas</Link></li>
+                  <li><Link href="/golf-simulator-man-cave" className="text-gray-500 hover:text-orange-500 transition">Golf Simulator</Link></li>
+                  <li><Link href="/man-cave-lighting" className="text-gray-500 hover:text-orange-500 transition">Lighting</Link></li>
+                  <li><Link href="/man-cave-storage" className="text-gray-500 hover:text-orange-500 transition">Storage</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-white mb-3">Style & Decor</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/man-cave-decor" className="text-gray-500 hover:text-orange-500 transition">Decor Ideas</Link></li>
+                  <li><Link href="/man-cave-furniture" className="text-gray-500 hover:text-orange-500 transition">Furniture</Link></li>
+                  <li><Link href="/man-cave-signs" className="text-gray-500 hover:text-orange-500 transition">Signs</Link></li>
+                  <li><Link href="/man-cave-wall-decor" className="text-gray-500 hover:text-orange-500 transition">Wall Decor</Link></li>
+                  <li><Link href="/man-cave-gifts" className="text-gray-500 hover:text-orange-500 transition">Gift Ideas</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-white mb-3">Tool</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/" className="text-gray-500 hover:text-orange-500 transition">AI Design Generator</Link></li>
+                  <li><Link href="/man-cave-ideas" className="text-gray-500 hover:text-orange-500 transition">All Ideas</Link></li>
+                </ul>
+              </div>
+            </div>
+            <div className="border-t border-white/5 pt-6 text-center">
+              <Link href="/" className="flex items-center justify-center gap-2 mb-3 hover:opacity-80 transition">
+                <span className="text-lg">🏠</span>
+                <span className="font-semibold text-white">ManCaveAI</span>
+              </Link>
+              <p className="text-xs text-gray-500">&copy; {new Date().getFullYear()} ManCaveAI. Free AI-powered man cave design tool.</p>
+            </div>
           </div>
         </footer>
       </div>

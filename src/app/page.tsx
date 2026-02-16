@@ -174,9 +174,25 @@ export default function Home() {
     )
   }
 
+  const homepageFaqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Is ManCaveAI really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You get 5 free man cave design generations with no signup or credit card required. Upload a photo, pick a style, and get your design in about 30 seconds." } },
+      { "@type": "Question", "name": "What rooms work best for a man cave?", "acceptedAnswer": { "@type": "Answer", "text": "Basements are the most popular choice because they offer space, natural soundproofing, and privacy. Garages work well if you can spare the parking. Sheds provide complete separation from the house. Spare bedrooms and bonus rooms are the easiest to convert." } },
+      { "@type": "Question", "name": "How accurate are the AI-generated designs?", "acceptedAnswer": { "@type": "Answer", "text": "Our AI analyzes your room's layout, dimensions, and lighting to create realistic transformations. The designs show what your actual space could look like with the selected man cave style." } },
+      { "@type": "Question", "name": "What man cave styles can I choose from?", "acceptedAnswer": { "@type": "Answer", "text": "ManCaveAI offers gaming setups, sports bars, home theaters, golf simulator bays, and a custom option where you describe any style you want." } },
+      { "@type": "Question", "name": "How much does it cost to build a man cave?", "acceptedAnswer": { "@type": "Answer", "text": "Costs vary dramatically by scope: budget builds run $500-$2,000, mid-range setups cost $5,000-$15,000, and premium builds range from $20,000-$50,000+." } },
+    ]
+  };
+
   // Main homepage - RED/BLACK PREMIUM DESIGN
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqSchema) }}
+      />
       {/* Premium Header */}
       <header className="border-b border-red-900/20 bg-gradient-to-b from-[#0f0f0f] to-[#0a0a0a]">
         <div className="container mx-auto px-4 py-5">
@@ -386,9 +402,185 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 text-center text-gray-600 text-sm">
-        <p>© 2025 ManCaveAI. All rights reserved.</p>
+      {/* How It Works Section */}
+      <section className="py-16 border-b border-gray-900/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                How <span className="text-red-500">ManCaveAI</span> Works
+              </h2>
+              <p className="text-gray-500">Transform any room in three simple steps</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center text-red-500 font-bold">1</div>
+                <h3 className="font-semibold text-white mb-2">Upload a Photo</h3>
+                <p className="text-sm text-gray-500">Take a photo of your basement, garage, shed, or spare room. Any angle works—our AI adapts to your space.</p>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center text-red-500 font-bold">2</div>
+                <h3 className="font-semibold text-white mb-2">Pick a Style</h3>
+                <p className="text-sm text-gray-500">Choose from gaming setups, sports bars, home theaters, golf simulators, or describe your own custom vision.</p>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center text-red-500 font-bold">3</div>
+                <h3 className="font-semibold text-white mb-2">Get Your Design</h3>
+                <p className="text-sm text-gray-500">In about 30 seconds, see your room transformed into a man cave. Download the image or try another style.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Guides Section */}
+      <section className="py-16 border-b border-gray-900/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                Man Cave Ideas by <span className="text-red-500">Style</span>
+              </h2>
+              <p className="text-gray-500">Browse design guides for every type of man cave</p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              <Link href="/man-cave-bar" className="group bg-[#111] rounded-xl p-5 border border-gray-800 hover:border-red-500/50 transition-all text-center">
+                <div className="text-3xl mb-3">🍺</div>
+                <h3 className="font-semibold text-sm text-white group-hover:text-red-500 transition">Bar Ideas</h3>
+              </Link>
+              <Link href="/man-cave-decor" className="group bg-[#111] rounded-xl p-5 border border-gray-800 hover:border-red-500/50 transition-all text-center">
+                <div className="text-3xl mb-3">🎨</div>
+                <h3 className="font-semibold text-sm text-white group-hover:text-red-500 transition">Decor</h3>
+              </Link>
+              <Link href="/man-cave-furniture" className="group bg-[#111] rounded-xl p-5 border border-gray-800 hover:border-red-500/50 transition-all text-center">
+                <div className="text-3xl mb-3">🛋️</div>
+                <h3 className="font-semibold text-sm text-white group-hover:text-red-500 transition">Furniture</h3>
+              </Link>
+              <Link href="/man-cave-lighting" className="group bg-[#111] rounded-xl p-5 border border-gray-800 hover:border-red-500/50 transition-all text-center">
+                <div className="text-3xl mb-3">💡</div>
+                <h3 className="font-semibold text-sm text-white group-hover:text-red-500 transition">Lighting</h3>
+              </Link>
+              <Link href="/man-cave-signs" className="group bg-[#111] rounded-xl p-5 border border-gray-800 hover:border-red-500/50 transition-all text-center">
+                <div className="text-3xl mb-3">🪧</div>
+                <h3 className="font-semibold text-sm text-white group-hover:text-red-500 transition">Signs</h3>
+              </Link>
+              <Link href="/man-cave-wall-decor" className="group bg-[#111] rounded-xl p-5 border border-gray-800 hover:border-red-500/50 transition-all text-center">
+                <div className="text-3xl mb-3">🖼️</div>
+                <h3 className="font-semibold text-sm text-white group-hover:text-red-500 transition">Wall Decor</h3>
+              </Link>
+              <Link href="/man-cave-storage" className="group bg-[#111] rounded-xl p-5 border border-gray-800 hover:border-red-500/50 transition-all text-center">
+                <div className="text-3xl mb-3">📦</div>
+                <h3 className="font-semibold text-sm text-white group-hover:text-red-500 transition">Storage</h3>
+              </Link>
+              <Link href="/man-cave-office" className="group bg-[#111] rounded-xl p-5 border border-gray-800 hover:border-red-500/50 transition-all text-center">
+                <div className="text-3xl mb-3">💻</div>
+                <h3 className="font-semibold text-sm text-white group-hover:text-red-500 transition">Office</h3>
+              </Link>
+              <Link href="/outdoor-man-cave" className="group bg-[#111] rounded-xl p-5 border border-gray-800 hover:border-red-500/50 transition-all text-center">
+                <div className="text-3xl mb-3">🌳</div>
+                <h3 className="font-semibold text-sm text-white group-hover:text-red-500 transition">Outdoor</h3>
+              </Link>
+              <Link href="/man-cave-gifts" className="group bg-[#111] rounded-xl p-5 border border-gray-800 hover:border-red-500/50 transition-all text-center">
+                <div className="text-3xl mb-3">🎁</div>
+                <h3 className="font-semibold text-sm text-white group-hover:text-red-500 transition">Gift Ideas</h3>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO Content Block */}
+      <section className="py-16 border-b border-gray-900/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto prose prose-invert">
+            <h2 className="text-2xl font-bold text-white mb-4">What Is a Man Cave?</h2>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              A man cave is a dedicated personal space—typically a basement, garage, shed, or spare room—designed as a retreat for relaxation and hobbies. Whether it is a sports bar with multiple screens, a gaming paradise with RGB lighting, a home theater with surround sound, or a golf simulator bay, the best man caves reflect the owner&apos;s personality and interests.
+            </p>
+            <h2 className="text-2xl font-bold text-white mb-4">How Much Does a Man Cave Cost?</h2>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              Man cave costs range widely based on scope and ambition. Budget builds ($500-$2,000) cover basic furniture, a TV, and simple decor. Mid-range setups ($5,000-$15,000) include quality furniture, a home bar, upgraded audio/visual equipment, and custom lighting. Premium man caves ($20,000-$50,000+) feature custom built-ins, golf simulators, home theaters with acoustic treatment, or full wet bars with plumbing. Our free AI design tool helps you visualize what is possible in your actual space before spending a dollar.
+            </p>
+            <h2 className="text-2xl font-bold text-white mb-4">Why Use AI to Design Your Man Cave?</h2>
+            <p className="text-gray-400 leading-relaxed">
+              Traditional interior design consultation costs $150-$500 per hour. ManCaveAI lets you upload a photo of your room and see it transformed into multiple man cave styles in seconds—completely free. Try a sports bar look, switch to a gaming setup, or describe your own custom vision. Each design is generated using AI that understands your room&apos;s dimensions, lighting, and layout to create realistic transformations you can actually build.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 border-b border-gray-900/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
+              Frequently Asked <span className="text-red-500">Questions</span>
+            </h2>
+            <div className="space-y-4">
+              {[
+                { q: 'Is ManCaveAI really free?', a: 'Yes. You get 5 free man cave design generations with no signup or credit card required. Upload a photo, pick a style, and get your design in about 30 seconds.' },
+                { q: 'What rooms work best for a man cave?', a: 'Basements are the most popular choice because they offer space, natural soundproofing, and privacy. Garages work well if you can spare the parking. Sheds provide complete separation from the house. Spare bedrooms and bonus rooms are the easiest to convert.' },
+                { q: 'How accurate are the AI-generated designs?', a: 'Our AI analyzes your room\'s layout, dimensions, and lighting to create realistic transformations. The designs show what your actual space could look like with the selected man cave style—not generic renders.' },
+                { q: 'What man cave styles can I choose from?', a: 'ManCaveAI offers gaming setups, sports bars, home theaters, golf simulator bays, and a custom option where you describe any style you want—rustic cabin, whiskey lounge, retro arcade, modern minimalist, or anything else you can imagine.' },
+                { q: 'How much does it cost to build a man cave?', a: 'Costs vary dramatically by scope: budget builds run $500-$2,000 (basic furniture and TV), mid-range setups cost $5,000-$15,000 (bar, quality furniture, better AV), and premium builds range from $20,000-$50,000+ (golf simulators, home theaters, custom built-ins).' },
+              ].map((faq, i) => (
+                <div key={i} className="bg-[#111] rounded-xl border border-gray-800 p-6">
+                  <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
+                  <p className="text-sm text-gray-400">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comprehensive Footer */}
+      <footer className="py-12 border-t border-gray-900/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+              <div>
+                <h3 className="text-sm font-semibold text-white mb-3">Room Types</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/basement-man-cave-ideas" className="text-gray-600 hover:text-red-500 transition">Basement</Link></li>
+                  <li><Link href="/garage-man-cave" className="text-gray-600 hover:text-red-500 transition">Garage</Link></li>
+                  <li><Link href="/man-cave-shed" className="text-gray-600 hover:text-red-500 transition">Shed</Link></li>
+                  <li><Link href="/outdoor-man-cave" className="text-gray-600 hover:text-red-500 transition">Outdoor</Link></li>
+                  <li><Link href="/man-cave-office" className="text-gray-600 hover:text-red-500 transition">Office</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-white mb-3">Features</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/man-cave-bar" className="text-gray-600 hover:text-red-500 transition">Bar Ideas</Link></li>
+                  <li><Link href="/golf-simulator-man-cave" className="text-gray-600 hover:text-red-500 transition">Golf Simulator</Link></li>
+                  <li><Link href="/man-cave-lighting" className="text-gray-600 hover:text-red-500 transition">Lighting</Link></li>
+                  <li><Link href="/man-cave-storage" className="text-gray-600 hover:text-red-500 transition">Storage</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-white mb-3">Style & Decor</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/man-cave-decor" className="text-gray-600 hover:text-red-500 transition">Decor Ideas</Link></li>
+                  <li><Link href="/man-cave-furniture" className="text-gray-600 hover:text-red-500 transition">Furniture</Link></li>
+                  <li><Link href="/man-cave-signs" className="text-gray-600 hover:text-red-500 transition">Signs</Link></li>
+                  <li><Link href="/man-cave-wall-decor" className="text-gray-600 hover:text-red-500 transition">Wall Decor</Link></li>
+                  <li><Link href="/man-cave-gifts" className="text-gray-600 hover:text-red-500 transition">Gift Ideas</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-white mb-3">Tool</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/" className="text-gray-600 hover:text-red-500 transition">AI Design Generator</Link></li>
+                  <li><Link href="/man-cave-ideas" className="text-gray-600 hover:text-red-500 transition">All Man Cave Ideas</Link></li>
+                </ul>
+              </div>
+            </div>
+            <div className="border-t border-gray-900/50 pt-6 text-center">
+              <p className="text-xs text-gray-600">&copy; {new Date().getFullYear()} ManCaveAI. Free AI-powered man cave design tool.</p>
+            </div>
+          </div>
+        </div>
       </footer>
     </main>
   )

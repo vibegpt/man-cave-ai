@@ -39,6 +39,14 @@ const PAGE_DATA = {
       question: 'How do I run electricity to a shed?',
       answer: 'Always hire a licensed electrician for safety and code compliance. Options include: running a buried conduit from your home\'s panel (most common), installing a sub-panel in the shed for heavy loads, or using a dedicated circuit for basic needs. Budget $1,500-4,000 depending on distance and amperage needs.'
     },
+    {
+      question: 'How do I run electricity to a shed man cave?',
+      answer: 'Hire a licensed electrician ($500-1,500 for labor) to ensure the work meets local code. The most common method is running underground conduit from your home\'s main electrical panel to the shed—typically buried 18-24 inches deep. A 20-40 amp subpanel in the shed handles most man cave needs including lighting, a TV, mini-fridge, and climate control. Factor in the distance from the house, as longer runs require thicker wire gauge to prevent voltage drop.'
+    },
+    {
+      question: 'What size shed do I need for a man cave?',
+      answer: 'A 10x12-foot shed is the minimum for a basic man cave with a TV, seating for two, and a small table. A 12x16-foot shed provides a comfortable lounge with room for a couch, entertainment center, and mini-bar area. For a full bar setup or dedicated entertainment space, go 12x20 feet or larger. Prefab sheds are faster and often cheaper ($3,000-10,000), while custom builds ($10,000-30,000+) let you choose exact dimensions, ceiling height, and window placement to match your vision.'
+    },
   ],
   defaultStyle: 'gaming',
 };

@@ -39,6 +39,14 @@ const PAGE_DATA = {
       question: 'What furniture works best for outdoor man caves?',
       answer: 'Look for: weather-resistant wicker or aluminum frames, solution-dyed acrylic fabrics (like Sunbrella), quick-dry foam cushions, and rust-proof hardware. Outdoor sectionals, bar furniture with UV-resistant finishes, and all-weather recliners are popular. Bring cushions inside during extended bad weather.'
     },
+    {
+      question: 'How do I weatherproof an outdoor man cave?',
+      answer: 'Start with a covered structure—a solid roof or pergola with a retractable canopy protects against rain and sun. Outdoor-rated TVs ($1,000-3,000+) are built to handle moisture, temperature swings, and bright sunlight. Choose weather-resistant furniture made from marine-grade materials like HDPE, teak, or powder-coated aluminum. For open-sided setups, roll-down screens or vinyl curtains block wind and rain while still letting you enjoy fresh air when the weather is good.'
+    },
+    {
+      question: 'Can I have a TV in an outdoor man cave?',
+      answer: 'Absolutely. Outdoor-rated TVs from brands like Samsung (The Terrace) and SunBrite are purpose-built for exterior use with weatherproof housings, anti-glare screens, and wider temperature tolerances. If your patio is fully covered and protected from direct moisture, a regular TV can work with proper ventilation. For a budget-friendly alternative, outdoor projectors paired with a weather-resistant screen are excellent for evening movie nights and big game watch parties.'
+    },
   ],
   defaultStyle: 'custom',
 };

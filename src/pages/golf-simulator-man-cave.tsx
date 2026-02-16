@@ -51,6 +51,14 @@ const PAGE_DATA = {
       question: 'Do I need a projector for a golf simulator?',
       answer: 'Not necessarily—many golfers start with just a launch monitor and net. However, a projector and impact screen dramatically improve the experience by showing ball flight, virtual courses, and data. Short-throw projectors work best in tight spaces, typically ranging $1,000-3,000.'
     },
+    {
+      question: 'What is the minimum room size for a golf simulator?',
+      answer: 'The minimum room size for a golf simulator is 10 feet wide, 15 feet deep, and 9 feet ceiling height. This gives enough clearance for most golfers to make a full swing with mid-irons and shorter clubs. However, 10 feet or higher ceilings are ideal for comfortable driver swings, especially for taller golfers. Width of 12 feet or more prevents feeling cramped. Always test your full swing with your longest club in the space before committing to equipment purchases.'
+    },
+    {
+      question: 'What is the best budget golf simulator setup?',
+      answer: 'The best budget golf simulator setup starts with an entry-level launch monitor like the SkyTrak at around $2,000, which provides accurate ball data and course simulation. Pair it with a quality impact screen ($200-500), a 1080p short-throw projector ($500-1,000), and a commercial-grade hitting mat ($100-300). This brings the total to roughly $2,800-3,800 for a complete setup that delivers a realistic playing experience. Add simulation software like GSPro ($250/year) for access to thousands of virtual courses.'
+    },
   ],
   defaultStyle: 'golf_simulator',
 };

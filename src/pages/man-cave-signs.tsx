@@ -39,6 +39,14 @@ const PAGE_DATA = {
       question: 'How do I hang neon signs safely?',
       answer: 'Most LED neon signs come with mounting hardware—acrylic backing with holes for screws or hanging wire. For heavy signs, use wall anchors rated for the weight. Keep away from moisture in bar areas. Ensure nearby outlets for power. Follow manufacturer instructions for safe installation.'
     },
+    {
+      question: 'How much do custom neon signs cost?',
+      answer: 'Custom LED neon signs typically cost $80-250 for standard sizes (12-24 inches), making them the most affordable custom option. Traditional glass neon signs range from $300-800 or more depending on size and complexity. Pricing varies based on the number of letters, colors, design intricacy, and whether you need a custom shape or standard backing. Most LED neon shops offer free design mockups before you commit.'
+    },
+    {
+      question: 'What size sign works best for a man cave?',
+      answer: 'The best sign size depends on placement and purpose. Small 12-18 inch signs work well on shelves, behind bottles, or as accent pieces in tight spaces. Medium 24-36 inch signs are ideal for focal walls, above a bar, or flanking a TV. Large 48 inch or bigger signs make a bold statement in dedicated bar areas or wide open walls. Measure your wall space and aim for the sign to fill about half to two-thirds of the available width for balanced proportions.'
+    },
   ],
   defaultStyle: 'sports-bar',
 };

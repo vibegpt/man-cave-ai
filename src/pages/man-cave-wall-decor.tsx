@@ -39,6 +39,14 @@ const PAGE_DATA = {
       question: 'What size wall art for a man cave?',
       answer: 'Size depends on wall space: art should fill 60-75% of available wall width. Above a sofa, aim for art 2/3 the width of the furniture. In large rooms, go bigger—undersized art looks lost. Groups of smaller pieces can fill large walls effectively. Measure before ordering.'
     },
+    {
+      question: 'How do I display sports jerseys in a man cave?',
+      answer: 'The most popular way to display sports jerseys is in shadow box frames ($30-80), which give the jersey depth and a professional look. For higher-end presentation, jersey display cases with UV-protective glass ($50-150) prevent fading and keep signed jerseys in collectible condition. Arrange multiple jerseys in a gallery wall layout with consistent spacing and matching frames for a cohesive look. Use acid-free backing materials for any jersey with sentimental or monetary value.'
+    },
+    {
+      question: 'What is the best way to hang heavy wall decor?',
+      answer: 'For heavy wall decor, always start by finding wall studs with a stud finder—screwing directly into a stud supports the most weight. When studs are not available, use toggle bolts rated for drywall, which can support up to 50 pounds per bolt. For very heavy items like large mounted TVs, oversized signs, or heavy mirrors, use a French cleat system that distributes weight evenly across the wall and makes leveling easy. Always check the weight rating of your hardware before hanging.'
+    },
   ],
   defaultStyle: 'sports-bar',
 };

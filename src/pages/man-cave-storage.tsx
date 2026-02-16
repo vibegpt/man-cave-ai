@@ -39,6 +39,14 @@ const PAGE_DATA = {
       question: 'How do I hide cables in a man cave?',
       answer: 'Cable management solutions include: cable raceways (plastic channels that attach to walls), in-wall rated cables run behind drywall, furniture with built-in cable management, velcro ties to bundle wires, and cable boxes to hide power strips. TV mounts with integrated cable channels look cleanest.'
     },
+    {
+      question: 'How do I organize a man cave with limited space?',
+      answer: 'Maximize every inch by going vertical—tall shelving units and wall-mounted shelves use height instead of floor space. Pegboard walls are excellent for organizing tools, gaming controllers, and headsets while keeping them accessible. Storage ottomans and benches with lift-top lids provide seating and hidden storage in one piece. Ceiling-mounted racks are ideal for bikes, seasonal gear, or overhead bins that stay out of the way.'
+    },
+    {
+      question: 'What are the best storage solutions for vinyl records and games?',
+      answer: 'Kallax-style cube shelving is the gold standard for vinyl and board game collections—each cube fits records perfectly and keeps them upright to prevent warping. Dedicated media cabinets with adjustable shelves handle mixed collections of games, movies, and records. Wall-mounted display racks let you showcase favorite album covers as art. For vinyl specifically, keep storage away from heat sources and direct sunlight, and maintain a climate-controlled room to prevent warping and mold.'
+    },
   ],
   defaultStyle: 'gaming',
 };

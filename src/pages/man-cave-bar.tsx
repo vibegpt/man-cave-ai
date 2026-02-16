@@ -39,6 +39,14 @@ const PAGE_DATA = {
       question: 'Do I need plumbing for a man cave bar?',
       answer: 'Not necessarily! "Dry bars" without sinks are very common and much easier to install. Use a bucket of ice for chilling, stock up on disposable cups, or simply make trips to the kitchen sink. Wet bars add convenience but significantly increase installation cost and complexity.'
     },
+    {
+      question: 'What is the difference between a dry bar and a wet bar for a man cave?',
+      answer: 'A dry bar has no plumbing—just counter space, storage, and typically a mini-fridge or kegerator. It is the easiest and most affordable option for most man caves. A wet bar includes a sink with running water and a drain, which requires a water supply line and drain connection. Professional plumbing installation for a wet bar typically costs $2,000-5,000 depending on how far the bar is from existing plumbing. Most man cave owners start with a dry bar and upgrade later if needed.'
+    },
+    {
+      question: 'What is the ideal bar height and size?',
+      answer: 'The standard bar height is 42 inches, which pairs with 28-30 inch bar stools for comfortable seating. The bar top should have a minimum depth of 2 feet (24 inches) to allow room for drinks, plates, and elbows. Allow 24 inches of width per seated person so guests are not crowded. Behind the bar, leave at least 30 inches of walkway for the bartender to move comfortably and access equipment like a mini-fridge or kegerator.'
+    },
   ],
   defaultStyle: 'sports-bar',
 };

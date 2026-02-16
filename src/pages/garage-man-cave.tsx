@@ -51,6 +51,14 @@ const PAGE_DATA = {
       question: 'What flooring is best for a garage man cave?',
       answer: 'Epoxy coating is the top choice—it\'s durable, easy to clean, resists stains, and comes in various colors and finishes. Interlocking floor tiles are a great DIY alternative that can be removed if needed. Outdoor rugs in seating areas add comfort without permanent installation.'
     },
+    {
+      question: 'Can I still park my car in a garage man cave?',
+      answer: 'Yes, dual-purpose garage man caves are very common. Use fold-away furniture like wall-mounted drop-leaf tables and folding chairs, mount your TV on the wall or ceiling to keep floor space clear, and consider a retractable projector screen that rolls up when not in use. Vertical storage systems and pegboard walls keep gear organized and out of the way when you need to pull the car in.'
+    },
+    {
+      question: 'How do I insulate a garage for year-round use?',
+      answer: 'Start with foam board insulation on the walls and ceiling at around $1-2 per square foot for materials. Add weatherstripping to the garage door and any exterior doors to seal gaps. For climate control, a mini-split AC and heating system ($1,500-3,000 installed) is the most efficient option since it heats and cools without ductwork. Insulating the garage door itself with a kit ($100-200) makes a big difference in temperature stability.'
+    },
   ],
   defaultStyle: 'sports_bar',
 };

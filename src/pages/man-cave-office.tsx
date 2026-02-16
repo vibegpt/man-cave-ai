@@ -39,6 +39,14 @@ const PAGE_DATA = {
       question: 'Is a basement good for a home office?',
       answer: 'Basements can be excellent—naturally cool, quiet, and away from household distractions. Challenges include: limited natural light (add quality LED lighting), potential moisture issues (use dehumidifiers), and ensuring good internet connectivity. Many find the separation from living spaces helps work-life balance.'
     },
+    {
+      question: 'How do I make a home office feel like a man cave?',
+      answer: 'Start with a gaming-style desk setup that looks sharp and handles both work and play. Add ambient LED lighting behind your monitors for mood and reduced eye strain. Hang sports jerseys, movie posters, or framed memorabilia on the walls to inject personality without cluttering your workspace. Keep a mini-fridge within arm\'s reach stocked with drinks so you never need to leave during focus sessions or gaming marathons.'
+    },
+    {
+      question: 'What desk setup works best for a man cave office?',
+      answer: 'L-shaped desks ($200-600) are the top choice because one side handles work while the other can hold gaming gear, a turntable, or hobby supplies. Standing desk converters add flexibility and health benefits without replacing your existing desk. Dual monitor arms free up desk space and let you position screens at the perfect height for both productivity and gaming. Cable management trays mounted under the desk keep power strips and cords hidden for a clean, streamlined look.'
+    },
   ],
   defaultStyle: 'gaming',
 };

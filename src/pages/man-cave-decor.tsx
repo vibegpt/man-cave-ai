@@ -39,6 +39,14 @@ const PAGE_DATA = {
       question: 'What colors are best for man cave decor?',
       answer: 'Dark, rich colors create the classic man cave atmosphere—deep grays, navy blue, forest green, burgundy, or team colors. Black and dark wood tones are popular for furniture and accents. Neon signs and LED lights add pops of color without overwhelming the space.'
     },
+    {
+      question: 'Where can I find unique man cave decor?',
+      answer: 'Vintage shops and estate sales are goldmines for one-of-a-kind signs, memorabilia, and conversation pieces. Online marketplaces like Etsy, eBay, and Facebook Marketplace offer everything from retro bar signs to custom artwork. For personalized touches, custom neon sign makers can create signs with your name, favorite quote, or logo for $100-300.'
+    },
+    {
+      question: 'How do I choose a color scheme for my man cave?',
+      answer: 'Start with a dark base tone like charcoal, navy, or dark green for walls—these create the immersive, den-like atmosphere that defines a great man cave. Then pick one or two accent colors that match your theme: team colors for a sports cave, red and black for a classic bar feel, or RGB lighting for a gaming setup. Keep the palette to three or four colors to avoid a cluttered look.'
+    },
   ],
   defaultStyle: 'sports-bar',
 };

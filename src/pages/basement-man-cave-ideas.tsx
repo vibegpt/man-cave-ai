@@ -39,6 +39,14 @@ const PAGE_DATA = {
       question: 'How do I deal with low ceilings in my basement man cave?',
       answer: 'Maximize perceived height with recessed lighting, dark ceiling paint, low-profile furniture, and wall-mounted TVs. Avoid hanging lights or ceiling fans that reduce clearance. Our AI designs account for typical basement ceiling heights of 7-8 feet.'
     },
+    {
+      question: 'How do I deal with moisture in a basement man cave?',
+      answer: 'Moisture is the number one basement challenge. Start with a dehumidifier ($200-400) to keep humidity below 50%. Apply waterproof paint or sealant to concrete walls and floors. Install a vapor barrier behind any framed walls to prevent mold. If you have active water intrusion, a sump pump system may be necessary before finishing the space. Always address moisture issues before investing in furniture or electronics.'
+    },
+    {
+      question: 'Do I need a permit to finish my basement?',
+      answer: 'Permit requirements vary by municipality, but most cities require permits for finishing a basement, especially when adding electrical wiring, plumbing for a wet bar or bathroom, or egress windows for bedrooms. Contact your local building department before starting work. Skipping permits can lead to fines, complications when selling your home, and safety risks from uninspected electrical or structural work.'
+    },
   ],
   defaultStyle: 'theater',
 };

@@ -39,6 +39,14 @@ const PAGE_DATA = {
       question: 'What room is best for a man cave?',
       answer: 'Basements are most popular—they offer space, soundproofing, and privacy. Garages work well if you can spare the parking and handle climate control. Dedicated spare rooms are easiest to convert. Sheds provide complete separation from the house.'
     },
+    {
+      question: 'Can I build a man cave on a budget?',
+      answer: 'Yes, you can build a solid man cave for $500-2,000. Start with LED strip lights ($15-30) for instant ambiance, a second-hand recliner ($100-300) from Facebook Marketplace or thrift stores, and a wall-mounted TV ($200-400). Add a mini fridge, some DIY wall art, and a small Bluetooth speaker to round out a comfortable space without overspending.'
+    },
+    {
+      question: 'What is the most popular man cave theme?',
+      answer: 'The sports bar theme is the most popular man cave style, featuring multiple TVs, team memorabilia, and bar seating for game day gatherings. Gaming setups rank second, especially among younger homeowners, followed by home theaters with surround sound and projector screens. Many man caves blend two or more themes to match the owner\'s interests.'
+    },
   ],
   defaultStyle: 'gaming',
 };

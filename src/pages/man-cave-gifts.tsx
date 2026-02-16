@@ -39,6 +39,14 @@ const PAGE_DATA = {
       question: 'Are neon signs good man cave gifts?',
       answer: 'Neon signs are one of the most popular man cave gifts—they\'re visually impactful, highly customizable, and work in any theme. LED "neon" signs are more affordable ($50-100) and energy-efficient than traditional glass neon ($200+). Custom designs take 1-3 weeks to produce.'
     },
+    {
+      question: 'What are the best man cave gifts under $50?',
+      answer: 'The best man cave gifts under $50 include LED strip lights ($15-30) for instant ambiance upgrades, custom beer glasses or pint sets ($25-40) that add a personal touch, vintage-style metal signs ($15-35) featuring his favorite brands or hobbies, and smart LED bulbs ($20-40) that let him control colors and brightness from his phone. All of these are practical gifts he will actually use.'
+    },
+    {
+      question: 'What is a good housewarming gift for a man cave?',
+      answer: 'Great housewarming gifts for a man cave include personalized neon signs ($80-200) featuring his name or a custom phrase, premium barware sets with a decanter and glasses, a quality Bluetooth speaker for instant entertainment, or a whiskey decanter set with engraved glasses. These gifts help establish the space right away and show you put thought into his new setup.'
+    },
   ],
   defaultStyle: 'custom',
 };

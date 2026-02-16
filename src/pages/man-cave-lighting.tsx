@@ -39,6 +39,14 @@ const PAGE_DATA = {
       question: 'Are neon signs expensive to run?',
       answer: 'LED "neon" signs are very efficient—a typical sign uses 15-30 watts, costing about $1-3/month running 8 hours daily. Traditional glass neon uses more power but is still modest. The visual impact far outweighs the minimal electricity cost.'
     },
+    {
+      question: 'What color LED lights are best for a man cave?',
+      answer: 'The best LED color depends on the zone. Warm white (2700K) creates a cozy, relaxed vibe ideal for lounges and movie areas. Cool white (4000K) provides better visibility for workshops and office setups. RGB color-changing strips are perfect for gaming rooms where you want dynamic, immersive lighting. Amber tones work great behind bars to replicate that classic pub atmosphere.'
+    },
+    {
+      question: 'How much does it cost to add smart lighting to a man cave?',
+      answer: 'Smart lighting is surprisingly affordable. Smart bulbs run $10-25 each and screw into existing fixtures for instant color and dimming control via app or voice. LED strip kits cost $20-60 depending on length and features. Smart switches ($25-50 each) let you automate existing lights without replacing bulbs. A full room setup with a mix of smart bulbs, LED strips, and a hub typically runs $100-300 total.'
+    },
   ],
   defaultStyle: 'gaming',
 };
