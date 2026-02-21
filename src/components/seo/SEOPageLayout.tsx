@@ -451,73 +451,74 @@ export default function SEOPageLayout({
 
             {/* SEO Content - only show in upload state */}
             {appState === 'upload' && (
-              <>
-                <div className="max-w-2xl mx-auto mb-16">
-                  <div className="prose prose-invert prose-orange max-w-none">
-                    <div className="text-gray-300 leading-relaxed space-y-4" dangerouslySetInnerHTML={{ __html: content }} />
-                  </div>
+              <div className="max-w-2xl mx-auto mb-16">
+                <div className="prose prose-invert prose-orange max-w-none">
+                  <div className="text-gray-300 leading-relaxed space-y-4" dangerouslySetInnerHTML={{ __html: content }} />
                 </div>
-
-                {products.length > 0 && (
-                  <section className="max-w-6xl mx-auto mt-16 px-4 mb-16">
-                    <h2 className="text-2xl font-bold mb-2 text-center">
-                      Shop the <span className="text-orange-500">Look</span>
-                    </h2>
-                    <p className="text-center text-gray-400 mb-6">
-                      Top picks to build your man cave
-                    </p>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      {products.map((product) => (
-                        <a
-                          key={product.id}
-                          href={product.affiliateUrl}
-                          target="_blank"
-                          rel="noopener noreferrer sponsored"
-                          className="group bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-orange-500 transition-all"
-                        >
-                          <div className="aspect-square bg-gray-800 overflow-hidden">
-                            <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                          </div>
-                          <div className="p-3">
-                            <p className="text-xs text-gray-400 mb-1">{product.category}</p>
-                            <h3 className="text-sm font-medium text-white mb-1 line-clamp-2 group-hover:text-orange-500 transition-colors">{product.name}</h3>
-                            <p className="text-lg font-bold text-orange-500">{product.price}</p>
-                          </div>
-                        </a>
-                      ))}
-                    </div>
-                    <p className="text-xs text-gray-500 text-center mt-4">
-                      As an Amazon Associate, we earn from qualifying purchases.
-                    </p>
-                  </section>
-                )}
-
-                {faqs.length > 0 && (
-                  <div className="max-w-2xl mx-auto mb-16">
-                    <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
-                    <div className="space-y-4">
-                      {faqs.map((faq, index) => (
-                        <div key={index} className="bg-[#141414] rounded-xl border border-white/10 p-6">
-                          <h3 className="text-lg font-semibold text-white mb-2">{faq.question}</h3>
-                          <p className="text-gray-400">{faq.answer}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                <div className="max-w-2xl mx-auto">
-                  <h2 className="text-xl font-bold text-white mb-6">Explore More Man Cave Ideas</h2>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                    {relatedPages.map((page) => (
-                      <Link key={page.slug} href={`/${page.slug}`} className="bg-[#141414] rounded-xl border border-white/10 p-4 hover:border-orange-500/30 hover:bg-white/5 transition-all group">
-                        <span className="text-sm text-gray-300 group-hover:text-white transition-colors">{page.title}</span>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </>
+              </div>
             )}
+
+            {/* Product grid - always visible */}
+            {products.length > 0 && (
+              <section className="max-w-6xl mx-auto mt-16 px-4 mb-16">
+                <h2 className="text-2xl font-bold mb-2 text-center">
+                  Shop the <span className="text-orange-500">Look</span>
+                </h2>
+                <p className="text-center text-gray-400 mb-6">
+                  Top picks to build your man cave
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {products.map((product) => (
+                    <a
+                      key={product.id}
+                      href={product.affiliateUrl}
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      className="group bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-orange-500 transition-all"
+                    >
+                      <div className="aspect-square bg-gray-800 overflow-hidden">
+                        <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                      </div>
+                      <div className="p-3">
+                        <p className="text-xs text-gray-400 mb-1">{product.category}</p>
+                        <h3 className="text-sm font-medium text-white mb-1 line-clamp-2 group-hover:text-orange-500 transition-colors">{product.name}</h3>
+                        <p className="text-lg font-bold text-orange-500">{product.price}</p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+                <p className="text-xs text-gray-500 text-center mt-4">
+                  As an Amazon Associate, we earn from qualifying purchases.
+                </p>
+              </section>
+            )}
+
+            {/* FAQs - always visible */}
+            {faqs.length > 0 && (
+              <div className="max-w-2xl mx-auto mb-16">
+                <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+                <div className="space-y-4">
+                  {faqs.map((faq, index) => (
+                    <div key={index} className="bg-[#141414] rounded-xl border border-white/10 p-6">
+                      <h3 className="text-lg font-semibold text-white mb-2">{faq.question}</h3>
+                      <p className="text-gray-400">{faq.answer}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Related pages - always visible */}
+            <div className="max-w-2xl mx-auto">
+              <h2 className="text-xl font-bold text-white mb-6">Explore More Man Cave Ideas</h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {relatedPages.map((page) => (
+                  <Link key={page.slug} href={`/${page.slug}`} className="bg-[#141414] rounded-xl border border-white/10 p-4 hover:border-orange-500/30 hover:bg-white/5 transition-all group">
+                    <span className="text-sm text-gray-300 group-hover:text-white transition-colors">{page.title}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </main>
 
