@@ -49,6 +49,15 @@ interface FAQ {
   answer: string;
 }
 
+interface Product {
+  id: string;
+  name: string;
+  price: string;
+  image: string;
+  affiliateUrl: string;
+  category: string;
+}
+
 interface SEOPageLayoutProps {
   title: string;
   metaTitle: string;
@@ -59,6 +68,7 @@ interface SEOPageLayoutProps {
   relatedPages: RelatedPage[];
   faqs?: FAQ[];
   defaultStyle?: string;
+  products?: Product[];
 }
 
 type AppState = 'upload' | 'generating' | 'results';
@@ -73,6 +83,7 @@ export default function SEOPageLayout({
   relatedPages,
   faqs = [],
   defaultStyle = 'gaming',
+  products = [],
 }: SEOPageLayoutProps) {
   const [appState, setAppState] = useState<AppState>('upload');
   const [dragActive, setDragActive] = useState(false);
@@ -446,6 +457,40 @@ export default function SEOPageLayout({
                     <div className="text-gray-300 leading-relaxed space-y-4" dangerouslySetInnerHTML={{ __html: content }} />
                   </div>
                 </div>
+
+                {products.length > 0 && (
+                  <section className="max-w-6xl mx-auto mt-16 px-4 mb-16">
+                    <h2 className="text-2xl font-bold mb-2 text-center">
+                      Shop the <span className="text-orange-500">Look</span>
+                    </h2>
+                    <p className="text-center text-gray-400 mb-6">
+                      Top picks to build your man cave
+                    </p>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                      {products.map((product) => (
+                        <a
+                          key={product.id}
+                          href={product.affiliateUrl}
+                          target="_blank"
+                          rel="noopener noreferrer sponsored"
+                          className="group bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-orange-500 transition-all"
+                        >
+                          <div className="aspect-square bg-gray-800 overflow-hidden">
+                            <img src={product.image} alt={product.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                          </div>
+                          <div className="p-3">
+                            <p className="text-xs text-gray-400 mb-1">{product.category}</p>
+                            <h3 className="text-sm font-medium text-white mb-1 line-clamp-2 group-hover:text-orange-500 transition-colors">{product.name}</h3>
+                            <p className="text-lg font-bold text-orange-500">{product.price}</p>
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                    <p className="text-xs text-gray-500 text-center mt-4">
+                      As an Amazon Associate, we earn from qualifying purchases.
+                    </p>
+                  </section>
+                )}
 
                 {faqs.length > 0 && (
                   <div className="max-w-2xl mx-auto mb-16">

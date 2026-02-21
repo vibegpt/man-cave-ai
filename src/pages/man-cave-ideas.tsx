@@ -1,4 +1,5 @@
 import SEOPageLayout from '@/components/seo/SEOPageLayout';
+import { getProductsForPage } from '@/data/productMappings';
 
 const PAGE_DATA = {
   title: 'man-cave-ideas',
@@ -173,5 +174,6 @@ const PAGE_DATA = {
 };
 
 export default function Page() {
-  return <SEOPageLayout {...PAGE_DATA} />;
+  const products = getProductsForPage('man-cave-ideas');
+  return <SEOPageLayout {...PAGE_DATA} products={products} />;
 }
