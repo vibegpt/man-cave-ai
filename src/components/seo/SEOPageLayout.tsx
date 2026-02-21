@@ -449,14 +449,12 @@ export default function SEOPageLayout({
               )}
             </div>
 
-            {/* SEO Content - only show in upload state */}
-            {appState === 'upload' && (
-              <div className="max-w-2xl mx-auto mb-16">
-                <div className="prose prose-invert prose-orange max-w-none">
-                  <div className="text-gray-300 leading-relaxed space-y-4" dangerouslySetInnerHTML={{ __html: content }} />
-                </div>
+            {/* SEO Content - always visible for crawlers and visitors */}
+            <div className="max-w-2xl mx-auto mb-16">
+              <div className="prose prose-invert prose-orange max-w-none">
+                <div className="text-gray-300 leading-relaxed space-y-4" dangerouslySetInnerHTML={{ __html: content }} />
               </div>
-            )}
+            </div>
 
             {/* Product grid - always visible */}
             {products.length > 0 && (
