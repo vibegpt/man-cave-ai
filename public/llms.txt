@@ -1,0 +1,57 @@
+# ManCaveAI
+
+> AI-powered man cave design tool. Upload a photo of your basement, garage, or spare room and get a professional AI-generated man cave design in seconds. Free to use — no sign-up required.
+
+ManCaveAI helps homeowners visualize and plan their perfect man cave using Google's Gemini AI. Users upload a room photo, select a style, and receive a photorealistic AI-generated redesign along with a curated shopping list of Amazon products to bring the look to life. The site targets basements, garages, sheds, and spare rooms across styles including Gaming, Sports Bar, Home Theater, Golf Simulator, Rustic, and Modern.
+
+## AI Design Tool
+
+- [Man Cave AI Generator](https://mancaveai.com): Upload any room photo and generate a man cave design. Supports 9 styles: Gaming, Sports Bar, Home Theater, Golf Simulator, Rustic, Modern, Luxury, Budget, and Custom. Each generation includes a "Shop This Look" product list with Amazon affiliate links.
+
+## Man Cave Ideas & Inspiration
+
+- [Man Cave Ideas](https://mancaveai.com/man-cave-ideas): Main pillar page covering all man cave styles, themes, room types, and design approaches. The hub for all inspiration content.
+- [Basement Man Cave Ideas](https://mancaveai.com/basement-man-cave-ideas): Basement-specific design guide with layouts, style ideas, cost breakdowns, and product recommendations.
+- [Garage Man Cave](https://mancaveai.com/garage-man-cave): Garage conversion guide covering insulation, flooring, layout ideas, and must-have gear.
+- [Man Cave Bar](https://mancaveai.com/man-cave-bar): Bar build guide including wet bar setup, kegerator recommendations, bar stools, and lighting.
+- [Golf Simulator Man Cave](https://mancaveai.com/golf-simulator-man-cave): Complete guide to building a home golf simulator room with equipment recommendations.
+- [Man Cave Shed](https://mancaveai.com/man-cave-shed): Outdoor shed conversion ideas for backyard man caves.
+
+## Man Cave Themes
+
+- [Gaming Man Cave](https://mancaveai.com/gaming-man-cave): Gaming setup design guide covering monitors, chairs, lighting, and room layout.
+- [Home Theater Man Cave](https://mancaveai.com/home-theater-man-cave): Home theater design guide with projector vs TV advice, seating, and acoustics.
+- [Sports Man Cave](https://mancaveai.com/sports-man-cave): Sports-themed room design with memorabilia, big screen setup, and bar integration.
+- [Man Cave on a Budget](https://mancaveai.com/man-cave-on-a-budget): Low-cost man cave ideas and affordable product picks under $1,000.
+- [Small Man Cave Ideas](https://mancaveai.com/small-man-cave-ideas): Design strategies for small rooms, tight spaces, and multi-use areas.
+- [Modern Man Cave](https://mancaveai.com/modern-man-cave): Clean, contemporary man cave design with minimalist furniture and smart tech.
+- [Rustic Man Cave](https://mancaveai.com/rustic-man-cave): Rustic, lodge, and cabin-style man cave ideas with wood, leather, and vintage elements.
+
+## Product Buying Guides
+
+- [Best Mini Fridge for Man Cave](https://mancaveai.com/best-mini-fridge-for-man-cave): Top mini fridges reviewed and ranked for man caves, with buying guide.
+- [Best Man Cave Lighting](https://mancaveai.com/best-man-cave-lighting): LED strips, neon signs, smart bulbs, and ambient lighting picks.
+- [Best Man Cave Signs](https://mancaveai.com/best-man-cave-signs): Top neon signs, metal signs, and custom signs for man caves.
+- [Best Man Cave Furniture](https://mancaveai.com/best-man-cave-furniture): Sectionals, recliners, bar stools, and entertainment furniture recommendations.
+- [Best Kegerator for Man Cave](https://mancaveai.com/best-kegerator-for-man-cave): Kegerator buying guide with top picks by budget and capacity.
+- [Best Projector for Man Cave](https://mancaveai.com/best-projector-for-man-cave): Home theater projector recommendations for man caves.
+- [Best Pool Table for Man Cave](https://mancaveai.com/best-pool-table-for-man-cave): Pool table buying guide covering size, budget, and quality tiers.
+- [Best Bar Stools for Man Cave](https://mancaveai.com/best-bar-stools-for-man-cave): Top bar stool picks for man cave bars and game rooms.
+- [Best Arcade Machine for Man Cave](https://mancaveai.com/best-arcade-machine-for-man-cave): Arcade cabinet buying guide with full-size and bartop options.
+- [Best Recliner for Man Cave](https://mancaveai.com/best-recliner-for-man-cave): Top recliner and theater seating picks for man caves.
+- [Best Soundbar for Man Cave](https://mancaveai.com/best-soundbar-for-man-cave): Soundbar recommendations for gaming rooms and home theaters.
+
+## How-To Guides
+
+- [How to Build a Man Cave Bar](https://mancaveai.com/how-to-build-a-man-cave-bar): Step-by-step guide to building a home bar in a man cave.
+- [How to Soundproof a Man Cave](https://mancaveai.com/how-to-soundproof-man-cave): Soundproofing methods, materials, and costs for basement and garage man caves.
+- [How Much Does a Man Cave Cost](https://mancaveai.com/how-much-does-a-man-cave-cost): Cost breakdown by room type, style, and budget tier.
+- [Man Cave Flooring Guide](https://mancaveai.com/man-cave-flooring-guide): Flooring options for basements and garages including epoxy, vinyl, and carpet tiles.
+- [Man Cave Lighting Guide](https://mancaveai.com/man-cave-lighting-guide): Complete lighting design guide for man caves covering layers, fixtures, and smart lighting.
+
+## About
+
+ManCaveAI is a free tool built for homeowners aged 30-55 who want to design and build their dream man cave. The AI generator is powered by Google Gemini. Product recommendations use Amazon Associates links. No subscription or account required to use the tool.
+
+- Website: https://mancaveai.com
+- Tool: https://mancaveai.com (homepage — tool is embedded)
