@@ -1,0 +1,18 @@
+Navigate to /Users/toddbyrne/man-cave-ai and examine the application's current state to understand why the crawler finds 0 pages. First, check if the development server is running by examining the package.json scripts and running `npm run dev` or `yarn dev` to start the server on port 3000. Then examine the main entry points:
+
+1. Check src/app/page.tsx or pages/index.tsx for the homepage
+2. Look for any existing navigation components in src/components/ or components/
+3. Examine the file structure to identify all available pages/routes
+4. Check next.config.js for any routing configurations
+
+Once you identify the pages, create a basic navigation component that links all discoverable pages together. If pages don't exist, create minimal pages for:
+- Homepage (/)  
+- About (/about)
+- Services (/services)
+- Contact (/contact)
+
+Add this navigation to the main layout file (src/app/layout.tsx or pages/_app.tsx) so every page includes internal links to other pages. This will solve the fundamental crawling issue by ensuring the crawler can discover and navigate between pages from the homepage entry point.
+
+The goal is to make at least 4-5 pages discoverable and interconnected so the crawler can find them and calculate meaningful ILS metrics.
+
+After making changes, DO NOT restart the dev server.

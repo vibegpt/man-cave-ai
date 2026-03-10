@@ -1,0 +1,30 @@
+Navigate to /Users/toddbyrne/man-cave-ai and improve PageRank distribution (currently 19.0/20, Gini=0.05) by creating a comprehensive footer navigation component that links to all content pages from every page on the site.
+
+Create a new footer component file at `src/components/navigation/SiteFooter.tsx` with links to all 14 content pages organized in logical categories:
+
+```tsx
+import Link from 'next/link';
+
+export default function SiteFooter() {
+  return (
+    <footer className="bg-gray-900 text-white py-8 mt-16">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="font-bold mb-4">Space Types</h3>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/basement-man-cave-ideas" className="hover:text-orange-400">Basement Man Caves</Link></li>
+              <li><Link href="/garage-man-cave" className="hover:text-orange-400">Garage Man Caves</Link></li>
+              <li><Link href="/man-cave-shed" className="hover:text-orange-400">Man Cave Sheds</Link></li>
+              <li><Link href="/man-cave-office" className="hover:text-orange-400">Man Cave Offices</Link></li>
+              <li><Link href="/outdoor-man-cave" className="hover:text-orange-400">Outdoor Man Caves</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold mb-4">Design & Decor</h3>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/man-cave-decor" className="hover:text-orange-400">Man Cave Decor</Link></li>
+              <li><Link href="/man-cave-furniture" className="hover:text-orange-400">Furniture Ideas</Link></li>
+              <li><Link href="/man-cave-lighting" className="hover:text-orange-400">Lighting Solutions</Link></li>
+              <li><Link href="/man-cave-wall-decor" className="hover:text-orange-400">Wall Decor</Link></li>
+              <li><Link href="/man-cave-signs"

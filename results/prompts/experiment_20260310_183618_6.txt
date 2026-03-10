@@ -1,0 +1,26 @@
+Navigate to /Users/toddbyrne/man-cave-ai and improve PageRank distribution (currently 19.0/20, Gini=0.05) by creating strategic internal links from the homepage to content pages, bypassing the hub structure.
+
+Open src/app/page.tsx and locate the main content section. Add a new "Popular Man Cave Ideas" section that directly links to 3-4 high-value content pages like /basement-man-cave-ideas, /garage-man-cave, /man-cave-bar, and /golf-simulator-man-cave.
+
+Insert this code after the existing hero section:
+
+```jsx
+<section className="py-16 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+      Popular Man Cave Ideas
+    </h2>
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <Link href="/basement-man-cave-ideas" className="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6">
+        <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 mb-2">Basement Ideas</h3>
+        <p className="text-gray-600">Transform your basement into the ultimate retreat</p>
+      </Link>
+      <Link href="/garage-man-cave" className="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6">
+        <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 mb-2">Garage Conversion</h3>
+        <p className="text-gray-600">Convert your garage into a man cave sanctuary</p>
+      </Link>
+      <Link href="/man-cave-bar" className="group bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6">
+        <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-600 mb-2">Home Bar Setup</h3>
+        <p className="text-gray-600">Create the perfect entertainment bar area</p>
+      </Link>
+      <Link href="/golf-simulator-man-cave" className="group bg-white rounded-lg

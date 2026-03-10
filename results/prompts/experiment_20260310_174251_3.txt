@@ -1,0 +1,32 @@
+Navigate to /Users/toddbyrne/man-cave-ai and examine the file structure to understand the application layout. Check if there's a running Next.js server and identify the root cause of the 0 pages crawled issue.
+
+First, list the contents of the root directory to see the project structure:
+```bash
+ls -la /Users/toddbyrne/man-cave-ai
+```
+
+Then check if the development server is actually running by examining the package.json and testing the localhost:3000 endpoint:
+```bash
+cd /Users/toddbyrne/man-cave-ai
+cat package.json
+curl -I http://localhost:3000
+```
+
+If the server isn't running, start it:
+```bash
+npm run dev
+```
+
+Once confirmed the server is running, examine the pages directory structure to understand what pages should be available:
+```bash
+find . -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" | grep -E "(pages|app)" | head -20
+```
+
+Check the main entry point file (likely pages/index.js or app/page.js) and ensure it contains proper HTML structure with internal links:
+```bash
+find . -name "index.*" -o -name "page.*" | head -5 | xargs cat
+```
+
+If no internal links exist in the homepage, add a simple navigation structure to the main page component to create discoverable internal links for the crawler. Focus on creating links that will establish basic site navigation and allow pages to be discovered.
+
+After making changes, DO NOT restart the dev server.

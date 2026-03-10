@@ -1,0 +1,16 @@
+Analyze the Next.js application at /Users/toddbyrne/man-cave-ai to identify why 0 pages are being crawled. The issue appears to be that the crawler cannot access or find any pages on the localhost:3000 server. 
+
+First, check if the development server is actually running by examining the package.json scripts and verifying the Next.js configuration. Then examine the app directory structure to understand the routing.
+
+If pages exist but aren't being crawled, create a simple sitemap.xml file in the public directory that explicitly lists all available routes to help the crawler discover pages. Include routes for:
+- Homepage (/)
+- Any dynamic routes based on the file structure
+- Static pages
+
+Generate the sitemap.xml with proper XML formatting including lastmod dates and priority values. Set homepage priority to 1.0, main sections to 0.8, and other pages to 0.6.
+
+If the issue is that no pages actually exist yet, create a basic homepage at app/page.tsx with proper internal navigation structure including a header with navigation links to main sections, and ensure each link uses Next.js Link components for proper internal linking.
+
+Focus on creating discoverable internal link pathways from the homepage to enable the crawler to find and traverse multiple pages within 3 clicks.
+
+After making changes, DO NOT restart the dev server.

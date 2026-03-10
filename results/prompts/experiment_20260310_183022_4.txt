@@ -1,0 +1,22 @@
+Navigate to /Users/toddbyrne/man-cave-ai and improve PageRank distribution (currently 19.0/20, Gini=0.05) by creating strategic cross-links from high-authority content pages to related content pages through contextual inline mentions.
+
+Open src/app/basement-man-cave-ideas/page.tsx and locate the main content section. Add these contextual inline links within existing paragraphs:
+
+1. In a paragraph about basement layouts, add: "Consider incorporating a [man cave bar](/man-cave-bar) area in one corner"
+2. In lighting discussion, add: "Proper [man cave lighting](/man-cave-lighting) is crucial for basement spaces"
+3. In furniture section, add: "Choose [man cave furniture](/man-cave-furniture) that fits your basement dimensions"
+
+Open src/app/garage-man-cave/page.tsx and add similar contextual links:
+
+1. In storage discussion: "Effective [man cave storage](/man-cave-storage) solutions are essential in garage conversions"
+2. In decor section: "Add personality with unique [man cave signs](/man-cave-signs) and [wall decor](/man-cave-wall-decor)"
+3. In workspace area: "Create a dedicated [man cave office](/man-cave-office) corner for projects"
+
+Open src/app/man-cave-bar/page.tsx and add:
+
+1. In setup section: "Complement your bar with proper [man cave lighting](/man-cave-lighting) for ambiance"
+2. In space discussion: "Works great in [basement man caves](/basement-man-cave-ideas) or [garage conversions](/garage-man-cave)"
+
+These inline contextual links will distribute PageRank more evenly across content pages while maintaining natural reading flow, targeting the lowest-scoring ILS component.
+
+After making changes, DO NOT restart the dev server.

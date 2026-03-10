@@ -1,0 +1,59 @@
+Navigate to /Users/toddbyrne/man-cave-ai and improve PageRank distribution (currently 19.0/20, Gini=0.05) by adding a navigation breadcrumb system that creates additional internal link pathways.
+
+Create a new breadcrumb component at src/components/navigation/Breadcrumbs.tsx:
+
+```tsx
+import Link from 'next/link';
+
+interface BreadcrumbProps {
+  items: { label: string; href: string }[];
+}
+
+export default function Breadcrumbs({ items }: BreadcrumbProps) {
+  return (
+    <nav className="mb-6">
+      <ol className="flex items-center space-x-2 text-sm text-gray-600">
+        <li>
+          <Link href="/" className="hover:text-blue-600">Home</Link>
+        </li>
+        {items.map((item, index) => (
+          <li key={item.href} className="flex items-center">
+            <span className="mx-2">/</span>
+            {index === items.length - 1 ? (
+              <span className="text-gray-900">{item.label}</span>
+            ) : (
+              <Link href={item.href} className="hover:text-blue-600">
+                {item.label}
+              </Link>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
+}
+```
+
+Then modify src/components/seo/SEOPageLayout.tsx to include breadcrumbs for all content pages. Add the import and update the component:
+
+```tsx
+import Breadcrumbs from '../navigation/Breadcrumbs';
+
+// Add breadcrumb logic before the return statement
+const breadcrumbItems = [
+  { label: 'Man Cave Ideas', href: '/man-cave-ideas' }
+];
+```
+
+Add the Breadcrumbs component right after the opening main tag:
+
+```tsx
+<main className="flex-grow">
+  <Breadcrumbs items={breadcrumbItems} />
+  {/* existing content */}
+</main>
+```
+
+This creates systematic Home → Hub → Content page link paths, distributing PageRank more evenly across the site architecture.
+
+After making changes, DO NOT restart the dev server.

@@ -1,0 +1,18 @@
+Navigate to /Users/toddbyrne/man-cave-ai and improve hub connectivity (currently 5/10) by creating a comprehensive hub-to-hub cross-linking system. Examine the site structure first, then add bidirectional links between related hubs in navigation components.
+
+First, identify all hub pages by checking app/ directory structure. Look for state hubs, city hubs, or category hubs that should be cross-linked.
+
+Then modify the main navigation component (likely in components/ or app/components/) to include a "Related Areas" or "Explore More" section that creates hub-to-hub connections. If no central navigation exists, add cross-linking sections to individual hub page templates.
+
+Focus on creating logical bidirectional relationships:
+- Geographic hubs should link to nearby regions
+- Category hubs should link to related categories
+- Parent hubs should link to child hubs and vice versa
+
+Add the cross-links as proper <Link> components with meaningful anchor text that includes location or category keywords. Ensure each hub page gains at least 2-3 outbound links to other hubs, and receives similar inbound links.
+
+If hub pages are dynamically generated, modify the template file to include a consistent cross-linking pattern. If they're static pages, add the links manually to each hub page.
+
+The goal is to create a web of hub-to-hub connections that improves the bidirectional connectivity score from 5/10 toward 8-10/10.
+
+After making changes, DO NOT restart the dev server.

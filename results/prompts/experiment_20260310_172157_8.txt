@@ -1,0 +1,28 @@
+Navigate to /Users/toddbyrne/man-cave-ai and examine the Next.js application to identify why the crawler cannot discover any pages. First, check if the development server is running on http://localhost:3000 by making a curl request. Then examine the main layout file and homepage to ensure there are discoverable internal links.
+
+Start by checking the server status:
+```bash
+curl -I http://localhost:3000
+```
+
+If the server is not responding, start it:
+```bash
+cd /Users/toddbyrne/man-cave-ai
+npm run dev
+```
+
+Then examine the main application files to understand the routing structure:
+```bash
+find . -name "*.tsx" -o -name "*.ts" -o -name "*.jsx" -o -name "*.js" | grep -E "(page|layout|index)" | head -10
+cat app/layout.tsx 2>/dev/null || cat src/app/layout.tsx 2>/dev/null || cat pages/_app.js 2>/dev/null
+cat app/page.tsx 2>/dev/null || cat src/app/page.tsx 2>/dev/null || cat pages/index.js 2>/dev/null
+```
+
+Look for any existing navigation components:
+```bash
+find . -name "*.tsx" -o -name "*.jsx" | xargs grep -l "Link\|href\|navigation" | head -5
+```
+
+Once the structure is understood, add a simple navigation component to the homepage to create discoverable internal links that the crawler can follow. Create or modify the main page to include at least 3-5 internal links to ensure the crawler can discover multiple pages.
+
+After making changes, DO NOT restart the dev server.

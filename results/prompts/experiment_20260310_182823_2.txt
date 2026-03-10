@@ -1,0 +1,17 @@
+Navigate to /Users/toddbyrne/man-cave-ai and improve PageRank distribution (currently 19.0/20, Gini=0.05) by creating strategic internal links from high-authority pages to distribute PageRank more evenly across the site.
+
+Add contextual cross-links within the content body of the homepage (/) to directly link to 3-4 key content pages, bypassing the hub and creating more direct PageRank flow paths:
+
+1. Open src/app/page.tsx (homepage)
+2. Find the main content section where the AI tool is described
+3. Add contextual inline links within existing paragraphs that mention relevant topics:
+   - Link "basement" to /basement-man-cave-ideas
+   - Link "garage" to /garage-man-cave  
+   - Link "bar area" to /man-cave-bar
+   - Link "lighting" to /man-cave-lighting
+
+Insert these as natural <Link> components within the existing text, maintaining readability while creating direct PageRank paths from the high-authority homepage to specific content pages.
+
+This targets the PageRank distribution component by creating alternative link paths that don't flow through the hub, potentially reducing the Gini coefficient by distributing authority more directly to content pages.
+
+After making changes, DO NOT restart the dev server.

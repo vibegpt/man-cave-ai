@@ -1,0 +1,9 @@
+Navigate to /Users/toddbyrne/man-cave-ai and improve PageRank distribution (currently 19.0/20, Gini=0.05) by creating a strategic cross-linking network between content pages that bypasses the hub structure.
+
+Edit src/components/seo/SEOPageLayout.tsx and modify the relatedPages rendering section to include 2-3 additional strategic cross-links per page. Target creating direct page-to-page connections between thematically related content (e.g., /man-cave-bar → /man-cave-furniture, /basement-man-cave-ideas → /man-cave-lighting, /garage-man-cave → /man-cave-storage).
+
+Find the section that renders relatedPages links and add a new "You Might Also Like" section that programmatically adds contextual cross-links based on page slug matching patterns. For pages containing "decor/furniture/lighting/storage", cross-link to complementary design pages. For location-specific pages like "basement/garage/outdoor", cross-link to relevant amenity pages like "bar/office/entertainment".
+
+The goal is to create a mesh network of direct page-to-page links that distributes PageRank more evenly across content pages rather than having all authority flow through the central hub. This should reduce the Gini coefficient by creating multiple pathways for PageRank flow.
+
+After making changes, DO NOT restart the dev server.

@@ -1,0 +1,55 @@
+Navigate to /Users/toddbyrne/man-cave-ai and examine the package.json and next.config.js files to understand the Next.js configuration. Then check if there's a pages directory or app directory structure. The crawler finding 0 pages suggests either the application isn't running properly or there's a routing configuration issue.
+
+First, verify the application structure:
+```bash
+ls -la /Users/toddbyrne/man-cave-ai
+cat package.json
+```
+
+If using App Router (app directory), check for a basic layout.js and page.js:
+```bash
+ls -la app/
+cat app/layout.js 2>/dev/null || cat app/layout.tsx 2>/dev/null
+cat app/page.js 2>/dev/null || cat app/page.tsx 2>/dev/null
+```
+
+If using Pages Router (pages directory), check for _app.js and index.js:
+```bash
+ls -la pages/
+cat pages/_app.js 2>/dev/null || cat pages/_app.tsx 2>/dev/null
+cat pages/index.js 2>/dev/null || cat pages/index.tsx 2>/dev/null
+```
+
+If no basic pages exist, create a minimal homepage at the root route. For App Router, create:
+```javascript
+// app/page.js
+export default function Home() {
+  return (
+    <div>
+      <h1>Man Cave AI</h1>
+      <nav>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+      </nav>
+    </div>
+  );
+}
+```
+
+For Pages Router, create:
+```javascript
+// pages/index.js
+export default function Home() {
+  return (
+    <div>
+      <h1>Man Cave AI</h1>
+      <nav>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+      </nav>
+    </div>
+  );
+}
+```
+
+After making changes, DO NOT restart the dev server.

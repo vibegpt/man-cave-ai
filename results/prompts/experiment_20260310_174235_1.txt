@@ -1,0 +1,34 @@
+Navigate to /Users/toddbyrne/man-cave-ai and examine the package.json file to understand the project structure. Then check if there's a Next.js application running on localhost:3000 by examining the pages or app directory structure. The critical issue is that 0 pages are being crawled, which suggests the crawler cannot access the homepage or discover any internal links.
+
+First, examine the project structure:
+```bash
+ls -la /Users/toddbyrne/man-cave-ai
+cat package.json
+```
+
+Then check for Next.js pages structure:
+```bash
+ls -la pages/ 2>/dev/null || ls -la app/ 2>/dev/null || ls -la src/pages/ 2>/dev/null || ls -la src/app/ 2>/dev/null
+```
+
+If pages exist but the homepage is missing or not properly configured, create a basic index.js file in the pages directory with essential internal links to enable crawler discovery:
+
+```javascript
+// pages/index.js
+export default function Home() {
+  return (
+    <div>
+      <h1>Man Cave AI</h1>
+      <nav>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+  );
+}
+```
+
+If the app directory structure is used instead, create the equivalent in app/page.js. The goal is to ensure the crawler has a discoverable homepage with internal links to start the crawling process.
+
+After making changes, DO NOT restart the dev server.

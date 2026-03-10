@@ -1,0 +1,25 @@
+Navigate to /Users/toddbyrne/man-cave-ai and improve PageRank distribution (currently 19.0/20, Gini=0.05) by creating bidirectional cross-links between thematically related content pages. Since all previous attempts at cross-linking were reverted, this experiment will add just 2-3 strategic cross-links per page to avoid over-optimization.
+
+Edit the relatedPages arrays in these content page files to create reciprocal linking patterns:
+
+In src/app/basement-man-cave-ideas/page.tsx, add 'man-cave-bar' and 'man-cave-lighting' to the relatedPages array.
+
+In src/app/man-cave-bar/page.tsx, add 'basement-man-cave-ideas' and 'man-cave-furniture' to the relatedPages array.
+
+In src/app/man-cave-lighting/page.tsx, add 'basement-man-cave-ideas' and 'man-cave-decor' to the relatedPages array.
+
+In src/app/man-cave-furniture/page.tsx, add 'man-cave-bar' and 'man-cave-decor' to the relatedPages array.
+
+In src/app/man-cave-decor/page.tsx, add 'man-cave-lighting' and 'man-cave-furniture' to the relatedPages array.
+
+In src/app/garage-man-cave/page.tsx, add 'man-cave-storage' and 'outdoor-man-cave' to the relatedPages array.
+
+In src/app/man-cave-storage/page.tsx, add 'garage-man-cave' and 'man-cave-shed' to the relatedPages array.
+
+In src/app/outdoor-man-cave/page.tsx, add 'garage-man-cave' and 'man-cave-shed' to the relatedPages array.
+
+In src/app/man-cave-shed/page.tsx, add 'man-cave-storage' and 'outdoor-man-cave' to the relatedPages array.
+
+This creates two thematic clusters: indoor spaces (basement/bar/lighting/furniture/decor) and storage/outdoor spaces (garage/storage/outdoor/shed), with strategic bidirectional links to distribute PageRank more evenly across the content network.
+
+After making changes, DO NOT restart the dev server.

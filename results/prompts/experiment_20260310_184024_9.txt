@@ -1,0 +1,49 @@
+Navigate to /Users/toddbyrne/man-cave-ai and improve PageRank distribution (currently 19.0/20, Gini=0.05) by creating peer-to-peer cross-links between content pages that share common themes, bypassing the hub structure to create more direct pathways.
+
+Open src/app/man-cave-bar/page.tsx and add to the relatedPages array:
+```typescript
+relatedPages: [
+  '/man-cave-ideas',
+  '/man-cave-furniture',
+  '/man-cave-decor',
+  '/man-cave-lighting',
+  '/basement-man-cave-ideas'
+]
+```
+
+Open src/app/man-cave-furniture/page.tsx and add to the relatedPages array:
+```typescript
+relatedPages: [
+  '/man-cave-ideas',
+  '/man-cave-bar',
+  '/man-cave-decor',
+  '/man-cave-storage',
+  '/man-cave-office'
+]
+```
+
+Open src/app/garage-man-cave/page.tsx and add to the relatedPages array:
+```typescript
+relatedPages: [
+  '/man-cave-ideas',
+  '/man-cave-storage',
+  '/man-cave-furniture',
+  '/outdoor-man-cave',
+  '/man-cave-shed'
+]
+```
+
+Open src/app/golf-simulator-man-cave/page.tsx and add to the relatedPages array:
+```typescript
+relatedPages: [
+  '/man-cave-ideas',
+  '/basement-man-cave-ideas',
+  '/garage-man-cave',
+  '/man-cave-lighting',
+  '/man-cave-furniture'
+]
+```
+
+This creates strategic cross-links between thematically related content pages, allowing PageRank to flow more evenly across the site rather than concentrating in the hub. The connections follow logical user journeys (bar → furniture → decor, garage → storage → shed) while maintaining hub connectivity.
+
+After making changes, DO NOT restart the dev server.

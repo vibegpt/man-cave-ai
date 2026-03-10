@@ -1,0 +1,13 @@
+Analyze the Next.js application at /Users/toddbyrne/man-cave-ai to fix the fundamental crawling issue where 0 pages are being discovered. The problem appears to be that the site is not accessible or properly serving content at http://localhost:3000.
+
+First, check if the development server is running by examining the package.json scripts and running the appropriate command. Then verify the site structure by examining the pages directory and ensuring there are actual pages to crawl.
+
+Look at /Users/toddbyrne/man-cave-ai/package.json to identify the correct dev command, then start the development server using `npm run dev` or `yarn dev` or whatever command is specified. 
+
+Once the server is running, verify that http://localhost:3000 returns valid HTML content by checking the main page component in the pages or app directory. Look for any routing issues, missing components, or build errors that would prevent pages from rendering.
+
+If pages exist but aren't being discovered, check for a sitemap.xml file in the public directory, or create one if missing. Also examine any navigation components to ensure they contain proper internal links between pages.
+
+The goal is to get the crawler to discover actual pages so we have a baseline to work from. Without discoverable pages, all ILS components will remain at zero.
+
+After making changes, DO NOT restart the dev server.

@@ -1,0 +1,47 @@
+I need to analyze the website at /Users/toddbyrne/man-cave-ai to understand why the crawl depth is 0/40 (meaning pages aren't reachable within 3 clicks) and propose a surgical fix.
+
+First, let me examine the site structure to identify the root cause of the crawling issue:
+
+```bash
+cd /Users/toddbyrne/man-cave-ai
+find . -name "*.html" -o -name "*.js" -o -name "*.tsx" -o -name "*.ts" | grep -E "(pages|components|app)" | head -20
+```
+
+Now examine the main navigation structure:
+
+```bash
+find . -name "*.tsx" -o -name "*.ts" | xargs grep -l "Link\|href\|navigate" | head -10
+```
+
+Check the main layout/navigation component:
+
+```bash
+find . -name "*layout*" -o -name "*nav*" -o -name "*header*" | head -5
+cat $(find . -name "*layout*" | head -1) 2>/dev/null || echo "No layout file found"
+```
+
+Examine the routing structure:
+
+```bash
+find . -path "*/app/*" -name "page.tsx" -o -path "*/pages/*" -name "*.tsx" | head -10
+ls -la app/ 2>/dev/null || ls -la pages/ 2>/dev/null || ls -la src/ 2>/dev/null
+```
+
+Based on the structure found, add a comprehensive navigation menu with internal links to the main layout component. Target the file that contains the primary navigation (likely app/layout.tsx or similar):
+
+```typescript
+// Add or enhance the navigation component with proper internal linking
+const navigation = [
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Services', href: '/services' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '/contact' }
+];
+
+// Ensure each page has a proper navigation menu with these links rendered as <Link> components
+```
+
+Create missing page files if they don't exist to establish a connected site structure that enables proper crawling within 3 clicks.
+
+After making changes, DO NOT restart the dev server.

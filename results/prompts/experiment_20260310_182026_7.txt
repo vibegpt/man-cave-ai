@@ -1,0 +1,11 @@
+Navigate to /Users/toddbyrne/man-cave-ai and improve PageRank distribution (currently 19.0/20, Gini=0.05) by creating strategic cross-links within individual content pages. Instead of modifying shared components, directly edit specific content page files to add contextual internal links that will redistribute PageRank more evenly.
+
+Edit the file `src/app/basement-man-cave-ideas/page.tsx` and add a "Related Ideas" section within the page content that includes contextual links to 3-4 related pages like /man-cave-bar, /man-cave-furniture, and /man-cave-lighting. Place this section after the main content but before any existing footer content.
+
+Similarly, edit `src/app/garage-man-cave/page.tsx` to add contextual links to /man-cave-storage, /man-cave-office, and /golf-simulator-man-cave within the page content.
+
+Finally, edit `src/app/man-cave-bar/page.tsx` to include links to /man-cave-furniture, /man-cave-lighting, and /man-cave-decor within a "Complete Your Bar Setup" section.
+
+These direct page edits will create additional internal link paths that bypass the hub structure, redistributing PageRank more evenly across the site and reducing the Gini coefficient from 0.05 to a lower value.
+
+After making changes, DO NOT restart the dev server.

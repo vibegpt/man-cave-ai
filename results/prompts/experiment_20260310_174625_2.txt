@@ -1,0 +1,13 @@
+Navigate to /Users/toddbyrne/man-cave-ai and improve hub connectivity by creating bidirectional cross-links between related content pages. The hub_connectivity score is only 5/10, indicating missing bidirectional links between hub and child pages.
+
+First, examine the current page structure in the src/app directory to identify existing pages. Then implement a systematic cross-linking strategy by:
+
+1. Adding a "Related Pages" or "See Also" section to each content page that links to 2-3 other relevant pages
+2. Ensuring these links are reciprocal - if page A links to page B, page B should also link back to page A
+3. Focus on creating hub-child relationships where main topic pages link to subtopic pages and vice versa
+
+For each page component file you find (like page.tsx, layout.tsx, or individual page files), add a links section at the bottom with anchor tags pointing to other pages using relative paths like "/about", "/services", "/contact", etc. Make sure the links use descriptive anchor text that includes relevant keywords.
+
+The key is creating a web of interconnected pages where users can easily navigate between related content, which will improve the bidirectional connectivity metric that measures hub<->child link relationships.
+
+After making changes, DO NOT restart the dev server.

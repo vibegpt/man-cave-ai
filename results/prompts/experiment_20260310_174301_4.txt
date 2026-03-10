@@ -1,0 +1,12 @@
+Navigate to /Users/toddbyrne/man-cave-ai and examine the package.json file to understand if the development server is properly configured and running. Then check if there's a basic index.html or page.tsx file that should be serving content at localhost:3000. The crawler finding 0 pages suggests either the server isn't running properly or there's no accessible entry point.
+
+First, check if the dev server is actually serving content by examining:
+1. package.json for scripts and dependencies
+2. The main application entry point (likely app/page.tsx, pages/index.tsx, or public/index.html)
+3. Next.js configuration files
+
+If the server appears configured correctly but pages aren't being served, create a minimal working homepage at app/page.tsx with basic content and internal links to establish a crawlable entry point. The goal is to get at least 1 page discoverable so the crawler can begin analysis.
+
+Make sure to use proper Next.js 13+ app directory structure if that's what's configured, or pages directory for older versions. Include a simple navigation structure with at least 2-3 internal links to other pages within the same domain.
+
+After making changes, DO NOT restart the dev server.

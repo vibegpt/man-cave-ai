@@ -1,0 +1,13 @@
+Navigate to /Users/toddbyrne/man-cave-ai and improve the PageRank distribution (currently 19.0/20, Gini=0.05) by adding strategic cross-links between content pages to create a more interconnected web structure.
+
+Examine the file src/components/seo/SEOPageLayout.tsx to understand how the relatedPages array works for cross-linking. Then modify src/app/man-cave-decor/page.tsx to add more related pages to its relatedPages array, specifically targeting pages that would benefit from additional PageRank flow.
+
+Add these additional cross-links to the relatedPages array in src/app/man-cave-decor/page.tsx:
+- /man-cave-wall-decor (closely related decorative topic)
+- /man-cave-signs (another decorative element)
+- /man-cave-lighting (lighting is part of decor)
+- /man-cave-furniture (furniture complements decor)
+
+This will create more pathways for PageRank to flow between related content pages, potentially improving the Gini coefficient by distributing PageRank more evenly across the site. The experiment targets the lowest-scoring component (PageRank distribution at 19.0/20) and builds upon the existing cross-linking infrastructure that's already in place.
+
+After making changes, DO NOT restart the dev server.

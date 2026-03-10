@@ -940,6 +940,41 @@ export const CONTENT_PAGE_PRODUCTS: Record<string, Product[]> = {
     },
   ],
 
+  'man-cave-renovation-cost': [
+    {
+      id: 'reno-projector',
+      name: 'BenQ TK700STi 4K HDR Short-Throw Projector',
+      price: '$999',
+      image: 'https://images.unsplash.com/photo-1560725056-41c1d5e1ca00?w=400&q=80',
+      affiliateUrl: amz('B08VDTYVNB'),
+      category: 'Electronics',
+    },
+    {
+      id: 'reno-theater-recliner',
+      name: 'Flash Furniture Home Theater Recliners Row of 2',
+      price: '$799',
+      image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400&q=80',
+      affiliateUrl: amz('B07DHJBL3Z'),
+      category: 'Furniture',
+    },
+    {
+      id: 'reno-garmin-r10',
+      name: 'Garmin Approach R10 Golf Launch Monitor',
+      price: '$599',
+      image: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=400&q=80',
+      affiliateUrl: amz('B09BCQHRWX'),
+      category: 'Golf Simulator',
+    },
+    {
+      id: 'reno-epoxy',
+      name: "Rust-Oleum RockSolid Garage Floor Epoxy Kit",
+      price: '$99',
+      image: 'https://images.unsplash.com/photo-1615875221248-d0b2d1500f4d?w=400&q=80',
+      affiliateUrl: amz('B00AXZGRQO'),
+      category: 'Flooring',
+    },
+  ],
+
   'man-cave-office': [
     {
       id: 'office-monitor-arm',

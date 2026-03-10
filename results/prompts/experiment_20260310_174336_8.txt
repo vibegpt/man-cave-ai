@@ -1,0 +1,11 @@
+Navigate to /Users/toddbyrne/man-cave-ai and examine the Next.js application structure. The crawler is finding 0 pages, indicating a fundamental issue with page discoverability. First, check if the development server is running by examining the project structure and identifying the entry points.
+
+Start by listing the contents of the project root directory to understand the application structure. Then examine the package.json to understand the project setup and dependencies. Look for the pages or app directory structure to identify where routes are defined.
+
+Check if there's a pages/index.js, pages/index.tsx, app/page.js, or app/page.tsx file that serves as the homepage. If the homepage exists, examine its content to see if it has any internal links.
+
+If no homepage is found, create a basic homepage at the appropriate location (pages/index.js for Pages Router or app/page.js for App Router) with navigation links to enable crawling. Include at least 5-10 internal links to different sections or pages to establish a baseline for crawl depth measurement.
+
+Ensure the homepage includes proper HTML structure with navigation elements and internal links using Next.js Link components. Create placeholder pages if necessary to provide link targets.
+
+After making changes, DO NOT restart the dev server.

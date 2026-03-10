@@ -1,0 +1,11 @@
+Navigate to /Users/toddbyrne/man-cave-ai and improve PageRank distribution (currently 19.0/20, Gini=0.05) by creating a contextual cross-linking system within content pages. Open src/components/seo/SEOPageLayout.tsx and modify the component to add inline contextual links within the content body, not just in the relatedPages sidebar.
+
+Add a new prop `contextualLinks` to the component interface and create a function that injects relevant anchor links directly into the page content based on keyword matching. For example, when a page mentions "bar" it should link to /man-cave-bar, when it mentions "garage" it should link to /garage-man-cave.
+
+Then update 3-4 high-authority content pages like /basement-man-cave-ideas, /man-cave-bar, and /garage-man-cave by adding contextualLinks arrays that specify which keywords should become internal links and their target pages.
+
+This will distribute PageRank more evenly across the content network by creating multiple pathways between related pages, moving beyond the current hub-and-spoke model toward a more interconnected web structure.
+
+Test the changes by visiting the updated pages at http://localhost:3000 to verify the contextual links appear inline within the content.
+
+After making changes, DO NOT restart the dev server.

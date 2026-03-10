@@ -1,0 +1,100 @@
+{
+  "url": "http://localhost:3000",
+  "site_type": "flat",
+  "timestamp": "2026-03-10T16:30:20.423772",
+  "ILS": 99.0,
+  "breakdown": {
+    "crawl_depth": {
+      "score": 40.0,
+      "max": 40,
+      "detail": {
+        "total_pages": 17,
+        "within_3_clicks": 17,
+        "pct_within_3": 100.0,
+        "score": 40.0
+      }
+    },
+    "orphan_rate": {
+      "score": 30.0,
+      "max": 30,
+      "detail": {
+        "total_pages": 17,
+        "orphan_count": 0,
+        "orphan_rate": 0.0,
+        "sample_orphans": [],
+        "score": 30.0
+      }
+    },
+    "pagerank_distribution": {
+      "score": 19.0,
+      "max": 20,
+      "detail": {
+        "gini_coefficient": 0.05,
+        "top_10_pages": [
+          [
+            "http://localhost:3000/basement-man-cave-ideas",
+            0.061949
+          ],
+          [
+            "http://localhost:3000/garage-man-cave",
+            0.061949
+          ],
+          [
+            "http://localhost:3000/man-cave-bar",
+            0.061949
+          ],
+          [
+            "http://localhost:3000/golf-simulator-man-cave",
+            0.061949
+          ],
+          [
+            "http://localhost:3000/man-cave-shed",
+            0.061949
+          ],
+          [
+            "http://localhost:3000/man-cave-decor",
+            0.061949
+          ],
+          [
+            "http://localhost:3000/man-cave-furniture",
+            0.061949
+          ],
+          [
+            "http://localhost:3000/man-cave-lighting",
+            0.061949
+          ],
+          [
+            "http://localhost:3000/man-cave-signs",
+            0.061949
+          ],
+          [
+            "http://localhost:3000/man-cave-wall-decor",
+            0.061949
+          ]
+        ],
+        "score": 19.0
+      }
+    },
+    "hub_connectivity": {
+      "score": 10.0,
+      "max": 10,
+      "detail": {
+        "hub_url": "http://localhost:3000/man-cave-ideas",
+        "total_child_pages": 14,
+        "hub_links_to_child_pct": 100.0,
+        "child_links_to_hub_pct": 100.0,
+        "missing_from_hub": [],
+        "missing_hub_backlink": [],
+        "score": 10.0
+      }
+    }
+  },
+  "page_count": 17,
+  "page_types": {
+    "homepage": 2,
+    "content_hub": 1,
+    "content_page": 14,
+    "utility": 0,
+    "other": 0
+  }
+}

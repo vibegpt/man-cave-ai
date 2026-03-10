@@ -1,0 +1,49 @@
+Analyze the Next.js application at /Users/toddbyrne/man-cave-ai to fix the critical crawling issue preventing any page discovery. The crawler is finding 0 pages, indicating a fundamental problem with the site's crawlability.
+
+First, examine the project structure:
+```bash
+find /Users/toddbyrne/man-cave-ai -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" | head -20
+```
+
+Check if the development server is actually serving content by examining the main entry point:
+```bash
+cat /Users/toddbyrne/man-cave-ai/package.json
+```
+
+Look for the homepage/root page:
+```bash
+ls -la /Users/toddbyrne/man-cave-ai/src/app/
+ls -la /Users/toddbyrne/man-cave-ai/pages/
+```
+
+If using App Router, ensure page.tsx exists in the root:
+```bash
+cat /Users/toddbyrne/man-cave-ai/src/app/page.tsx
+```
+
+Create a minimal crawlable homepage if missing. In /Users/toddbyrne/man-cave-ai/src/app/page.tsx, add:
+```tsx
+import Link from 'next/link'
+
+export default function HomePage() {
+  return (
+    <main>
+      <h1>Man Cave AI</h1>
+      <nav>
+        <Link href="/about">About</Link>
+        <Link href="/services">Services</Link>
+        <Link href="/contact">Contact</Link>
+      </nav>
+    </main>
+  )
+}
+```
+
+Create corresponding pages:
+- /Users/toddbyrne/man-cave-ai/src/app/about/page.tsx
+- /Users/toddbyrne/man-cave-ai/src/app/services/page.tsx  
+- /Users/toddbyrne/man-cave-ai/src/app/contact/page.tsx
+
+Each with basic content and back-links to homepage using Next.js Link components.
+
+After making changes, DO NOT restart the dev server.

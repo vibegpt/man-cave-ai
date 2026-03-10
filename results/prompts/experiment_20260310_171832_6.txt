@@ -1,0 +1,9 @@
+Navigate to /Users/toddbyrne/man-cave-ai and examine the application to identify why the crawler finds 0 pages. Check if the dev server is running by making a curl request to http://localhost:3000. If it returns a valid HTML response, examine the homepage content to ensure it contains proper internal links. If the server isn't running, start it with `npm run dev` or `yarn dev`. 
+
+Look at the main layout files (app/layout.tsx, pages/_app.tsx, or similar) and the homepage (app/page.tsx, pages/index.tsx, or index.html) to verify they contain navigational elements with internal links using proper href attributes pointing to other pages within the site.
+
+If the homepage lacks internal navigation, add a simple navigation menu with links to key sections like "/about", "/services", or "/contact" - whatever pages exist in the application structure. Ensure these links use relative paths and proper anchor tags so they can be discovered by the crawler.
+
+The goal is to establish basic internal linking from the homepage so the crawler can discover at least some pages and begin calculating meaningful ILS scores.
+
+After making changes, DO NOT restart the dev server.

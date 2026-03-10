@@ -1,0 +1,19 @@
+Analyze the Next.js application at /Users/toddbyrne/man-cave-ai to identify why the crawler cannot discover any pages (0 pages crawled). Check the homepage at src/app/page.tsx or pages/index.tsx and ensure it contains proper HTML links using <a> tags or Next.js <Link> components. The crawler likely cannot find navigation links to discover other pages.
+
+First, locate the main homepage file:
+- Check src/app/page.tsx (App Router)  
+- Check pages/index.tsx (Pages Router)
+- Check src/pages/index.tsx
+
+Then examine the current navigation structure and add missing internal links. If there's a navigation component, ensure it uses proper <a href="/path"> or <Link href="/path"> tags instead of onClick handlers or buttons. Look for files like:
+- src/components/Navigation.tsx
+- src/components/Header.tsx  
+- src/app/layout.tsx
+
+Add at least 3-5 internal navigation links to different sections/pages of the site using standard HTML anchor tags or Next.js Link components. Ensure the href attributes contain valid internal paths that the crawler can follow.
+
+If pages don't exist yet, create basic placeholder pages in the appropriate directory structure with simple content and cross-links back to the homepage.
+
+Priority: Fix the fundamental crawlability issue preventing any page discovery, which is causing the 0/40 crawl depth score.
+
+After making changes, DO NOT restart the dev server.
