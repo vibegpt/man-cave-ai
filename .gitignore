@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+results/
+crawl.py
+compare.py
+loop.sh
+generate_experiment.py
+log_result.py
