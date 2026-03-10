@@ -52,6 +52,28 @@ const PAGE_DATA = {
   defaultStyle: 'sports-bar',
 };
 
+
+export const metadata = {
+  title: PAGE_DATA.metaTitle,
+  description: PAGE_DATA.metaDescription,
+  alternates: { canonical: `/${PAGE_DATA.title}` },
+  openGraph: {
+    title: PAGE_DATA.metaTitle,
+    description: PAGE_DATA.metaDescription,
+    url: `https://mancaveai.com/${PAGE_DATA.title}`,
+    type: 'article' as const,
+    siteName: 'ManCaveAI',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image' as const,
+    title: PAGE_DATA.metaTitle,
+    description: PAGE_DATA.metaDescription,
+    images: ['/og-image.jpg'],
+  },
+};
+
 export default function Page() {
   const products = getProductsForPage('man-cave-wall-decor');
   return <SEOPageLayout {...PAGE_DATA} products={products} />;
