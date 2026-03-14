@@ -45,3 +45,9 @@ compare.py
 loop.sh
 generate_experiment.py
 log_result.py
+results/
+crawl.py
+compare.py
+loop.sh
+generate_experiment.py
+log_result.py

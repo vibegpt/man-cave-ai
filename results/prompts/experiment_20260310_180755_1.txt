@@ -1,9 +1,0 @@
-Navigate to /Users/toddbyrne/man-cave-ai and improve hub connectivity (currently 5/10) by ensuring the /man-cave-ideas hub page contains comprehensive links to ALL child content pages and vice versa.
-
-First, examine the current hub page at src/app/man-cave-ideas/page.tsx to see what links are missing. Then check each child page (basement-man-cave-ideas, garage-man-cave, man-cave-bar, golf-simulator-man-cave, man-cave-shed, man-cave-decor, man-cave-furniture, man-cave-lighting, man-cave-signs, man-cave-wall-decor, man-cave-storage, man-cave-office, outdoor-man-cave, man-cave-gifts, man-cave-renovation-cost) to ensure they all have proper back-links to the hub.
-
-The goal is to achieve 100% bidirectional connectivity between the hub and its children. Add any missing links directly in the page content, not in navigation components. Focus on the main content area where the crawler will find them.
-
-Check the relatedPages arrays in each page's metadata and ensure they include the hub page. Also verify the hub page has a comprehensive list of links to all 15 child pages in its main content.
-
-After making changes, DO NOT restart the dev server.
