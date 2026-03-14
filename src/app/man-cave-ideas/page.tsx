@@ -143,6 +143,7 @@ const PAGE_DATA = {
     { slug: 'man-cave-furniture', title: 'Furniture Ideas' },
     { slug: 'man-cave-lighting', title: 'Lighting Ideas' },
     { slug: 'man-cave-decor', title: 'Man Cave Decor' },
+    { slug: 'man-cave-renovation-cost', title: 'Renovation Cost Guide' },
   ],
   faqs: [
     {
