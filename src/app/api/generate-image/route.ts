@@ -56,14 +56,19 @@ export async function POST(request: NextRequest) {
 
     // Generate with Gemini
     const response = await ai.models.generateContent({
-      model: 'gemini-2.0-flash-exp',
+      model: 'gemini-2.5-flash-image',
       contents: [
-        { text: prompt },
         {
-          inlineData: {
-            mimeType: 'image/jpeg',
-            data: base64Data
-          }
+          role: 'user',
+          parts: [
+            { text: prompt },
+            {
+              inlineData: {
+                mimeType: 'image/jpeg',
+                data: base64Data
+              }
+            }
+          ]
         }
       ],
       config: {
@@ -102,7 +107,8 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error: any) {
-    console.error('Generation error:', error);
+    console.error('Generation error:', error.message);
+    console.error('Generation error full:', JSON.stringify(error, Object.getOwnPropertyNames(error), 2));
     const processingTime = Date.now() - startTime;
 
     // Update generation record with failure
