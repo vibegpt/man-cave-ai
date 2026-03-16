@@ -3,8 +3,8 @@ import { getProductsForPage } from '@/data/productMappings';
 
 const PAGE_DATA = {
   title: 'man-cave-renovation-cost',
-  metaTitle: 'Man Cave Renovation Cost Guide 2026 | MancaveAI',
-  metaDescription: 'From $500 garage makeovers to $50,000 custom builds — real man cave renovation costs broken down by room type, plus the products worth spending on.',
+  metaTitle: 'Man Cave Renovation Cost: $500–$50,000+ (2026 Guide)',
+  metaDescription: 'Man cave renovation costs range from $500 (DIY garage makeover) to $50,000+ (full basement build). See real cost breakdowns by room type, budget tier, and where to save.',
   h1: 'Man Cave Renovation Cost: What to Actually Budget in 2026',
   subtitle: 'Real numbers from real builds — not vague estimates. Whether you\'re converting a garage corner for $500 or building a full basement entertainment space for $30,000, here\'s exactly where the money goes.',
   content: `
